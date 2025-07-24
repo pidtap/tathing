@@ -94,8 +94,12 @@ document.addEventListener('DOMContentLoaded', () => {
             button.className = 'server-btn';
             button.textContent = source.name;
             button.onclick = () => {
-                document.querySelectorAll('#server-list .server-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('#server-list .server-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.disabled = false;
+                });
                 button.classList.add('active');
+                button.disabled = true;
                 playInIframe(source.url);
                 localStorage.setItem(`lastSourceUrl_${movieId}`, source.url);
                 localStorage.setItem(`lastAudioType_${movieId}`, selectedAudioType);
@@ -121,11 +125,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Xử lý cấu trúc `sources` mới (2 cấp)
     if (movie.sources && Object.keys(movie.sources).length > 0) {
         const audioTypes = Object.keys(movie.sources);
 
-        // Hiển thị phần chọn loại âm thanh nếu có nhiều hơn 1 loại
         if (audioTypes.length > 1) {
             sourceTitle.innerHTML = `<i class="fas fa-headphones"></i> Loại âm thanh`;
             audioTypes.forEach(type => {
@@ -133,18 +135,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 button.className = 'server-btn audio-type-btn';
                 button.textContent = type;
                 button.onclick = () => {
-                    document.querySelectorAll('.audio-type-btn').forEach(btn => btn.classList.remove('active'));
+                    document.querySelectorAll('.audio-type-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                        btn.disabled = false;
+                    });
                     button.classList.add('active');
+                    button.disabled = true;
                     renderServerButtons(movie.sources[type], type);
                 };
                 audioTypeSelection.appendChild(button);
             });
-            // Thêm tiêu đề "Nguồn phát" sau các nút loại âm thanh
             const serverTitle = document.createElement('h2');
             serverTitle.innerHTML = `<i class="fas fa-server"></i> Nguồn phát`;
             audioTypeSelection.parentNode.insertBefore(serverTitle, serverList);
         } else {
-             // Nếu chỉ có 1 loại, không cần hiển thị các nút chọn loại âm thanh
              sourceTitle.innerHTML = `<i class="fas fa-server"></i> Nguồn phát`;
         }
 

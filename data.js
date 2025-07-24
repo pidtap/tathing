@@ -2019,8 +2019,8 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/a83133c9c1dc" },
-                 { "name": "Sever 2", "url": "https://short.icu/e40c_2LD5" },
+                { "name": "Sever 1", "url": "https://helvid.net/play/index/20a7a7e2e892" },
+                 { "name": "Sever 2", "url": "https://short.icu/U-SLDgV_Y" },
             ]
         }
     },
