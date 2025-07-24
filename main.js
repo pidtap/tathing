@@ -54,7 +54,7 @@ function createMovieCard(movie) {
     return div;
 }
 
-window.openInfoPopup = function(movieId) {
+window.openInfoPopup = function (movieId) {
     console.log("Attempting to open info popup for movie ID:", movieId);
     const movie = MOVIES_DATA.find(m => m.id === movieId);
     if (!movie) {
@@ -72,13 +72,13 @@ window.openInfoPopup = function(movieId) {
 
     const infoPopup = document.getElementById('movie-info-popup');
     const popupOverlay = document.getElementById('popup-overlay');
-    
+
     // Đảm bảo các phần tử popup tồn tại trên trang hiện tại
     if (!infoPopup || !popupOverlay) {
         console.warn("Movie info popup elements not found on this page. Redirecting to watch page directly.");
         // Nếu không tìm thấy popup, chuyển hướng trực tiếp đến trang xem phim
         startWatching(movieId);
-        return; 
+        return;
     }
 
     popupOverlay.style.display = 'block';
@@ -96,13 +96,13 @@ window.openInfoPopup = function(movieId) {
     console.log("Movie info popup displayed.");
 }
 
-window.closeInfoPopup = function() {
+window.closeInfoPopup = function () {
     console.log("Closing info popup.");
     document.getElementById('popup-overlay').style.display = 'none';
     document.getElementById('movie-info-popup').style.display = 'none';
 }
 
-window.startWatching = function(movieId) {
+window.startWatching = function (movieId) {
     console.log("Starting to watch movie ID:", movieId);
     window.location.href = `watch.html?id=${movieId}`;
 }
@@ -122,7 +122,7 @@ function initializeHomepage() {
     console.log("Initializing homepage.");
     const sliderContainer = document.querySelector('.hero-slider-container');
     if (!sliderContainer) return;
-    
+
     // Lọc tất cả các phim có "slide": "1"
     featuredMovies = MOVIES_DATA.filter(movie => movie.slide === "1");
 
@@ -390,7 +390,7 @@ function showHomepageView() {
 
     initializeHistorySection();
     const searchInput = document.getElementById('search-input');
-    if(searchInput) searchInput.value = '';
+    if (searchInput) searchInput.value = '';
     scrollToTop(); // Cuộn lên đầu trang
 }
 
@@ -593,14 +593,23 @@ function performSearch(query, originalQuery, page = 1) {
     lastSearchQuery = query; // Lưu lại query
     searchCurrentPage = page;
 
-    // Logic lọc tìm kiếm
-    searchResultsData = MOVIES_DATA.filter(m => removeVietnameseTones(m.title.toLowerCase()).includes(query));
+    // Logic lọc tìm kiếm đã được cập nhật
+    searchResultsData = MOVIES_DATA.filter(m => {
+        // Chuẩn hóa tiêu đề phim về chữ thường, không dấu
+        const normalizedTitle = removeVietnameseTones(m.title.toLowerCase());
+
+        // Chuẩn hóa danh sách diễn viên về chữ thường, không dấu.
+        // Kiểm tra xem phim có trường 'actor' hay không để tránh lỗi.
+        const normalizedActors = m.actor ? removeVietnameseTones(m.actor.toLowerCase()) : '';
+
+        // Trả về true nếu từ khóa tìm kiếm xuất hiện trong tiêu đề HOẶC trong danh sách diễn viên
+        return normalizedTitle.includes(query) || normalizedActors.includes(query);
+    });
 
     const homepageContent = document.getElementById('homepage-content');
     const allMoviesContainer = document.getElementById('all-movies-container');
     const historyContainer = document.getElementById('history-container');
     const homepageSuggestionsContainer = document.getElementById('homepage-suggestions-container');
-    // searchResultsContainer không cần ẩn ở đây vì nó sẽ được renderMovieGridWithPagination xử lý
 
     if (homepageContent) homepageContent.style.display = 'none';
     if (allMoviesContainer) allMoviesContainer.style.display = 'none';
@@ -623,15 +632,15 @@ function performSearch(query, originalQuery, page = 1) {
 let filterCurrentPage = 1;
 let currentFilteredData = []; // Dữ liệu đã lọc bởi bộ lọc
 
-// Hàm populate các option cho dropdown lọc
+// Hàm mới: populate các option cho dropdown lọc (giờ là checkbox)
 function populateFilterOptions() {
-    console.log("Populating filter options...");
-    const genreSelect = document.getElementById('filter-genre');
-    const yearSelect = document.getElementById('filter-year');
-    const countrySelect = document.getElementById('filter-country');
+    console.log("Populating filter options with checkboxes...");
+    const genreContainer = document.getElementById('filter-genre-container');
+    const yearContainer = document.getElementById('filter-year-container');
+    const countryContainer = document.getElementById('filter-country-container');
 
-    if (!genreSelect || !yearSelect || !countrySelect) {
-        console.warn("One or more filter select elements not found.");
+    if (!genreContainer || !yearContainer || !countryContainer) {
+        console.warn("One or more filter container elements not found.");
         return;
     }
 
@@ -651,52 +660,60 @@ function populateFilterOptions() {
         }
     });
 
+    // Hàm trợ giúp để tạo một checkbox item
+    const createCheckboxItem = (container, value, name) => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'checkbox-item';
+        const checkboxId = `${name}-${value.replace(/[^a-zA-Z0-9]/g, '')}`; // Tạo ID hợp lệ
+
+        itemDiv.innerHTML = `
+            <input type="checkbox" id="${checkboxId}" name="${name}" value="${value}">
+            <label for="${checkboxId}">${value}</label>
+        `;
+        container.appendChild(itemDiv);
+    };
+
+    // Xóa nội dung cũ
+    genreContainer.innerHTML = '';
+    yearContainer.innerHTML = '';
+    countryContainer.innerHTML = '';
+
     // Populate genres
-    genres.forEach(genre => {
-        const option = document.createElement('option');
-        option.value = genre;
-        option.textContent = genre;
-        genreSelect.appendChild(option);
-    });
+    Array.from(genres).sort().forEach(genre => createCheckboxItem(genreContainer, genre, 'genre'));
 
     // Populate years (sorted descending)
-    Array.from(years).sort((a, b) => b - a).forEach(year => {
-        const option = document.createElement('option');
-        option.value = year;
-        option.textContent = year;
-        yearSelect.appendChild(option);
-    });
+    Array.from(years).sort((a, b) => b - a).forEach(year => createCheckboxItem(yearContainer, year, 'year'));
 
     // Populate countries (sorted alphabetically)
-    Array.from(countries).sort().forEach(country => {
-        const option = document.createElement('option');
-        option.value = country;
-        option.textContent = country;
-        countrySelect.appendChild(option);
-    });
+    Array.from(countries).sort().forEach(country => createCheckboxItem(countryContainer, country, 'country'));
+
     console.log("Filter options populated.");
 }
 
 
-// Hàm hiển thị phim dựa trên bộ lọc
+// Hàm hiển thị phim dựa trên bộ lọc (đã cập nhật cho multi-select)
 function displayFilteredMovies(filters, page = 1) {
-    console.log("displayFilteredMovies called.");
+    console.log("displayFilteredMovies called with multi-select.");
     console.log("  Filters:", filters);
     filterCurrentPage = page;
 
-    // Check if we are on the watch page
     if (document.getElementById('watch-page-container')) {
-        // Store filter criteria in session storage and redirect to index.html
         sessionStorage.setItem('appliedFilters', JSON.stringify(filters));
         window.location.href = 'index.html';
-        return; // Stop further execution on watch.html
+        return;
     }
 
-    // Logic lọc cho index.html
     currentFilteredData = MOVIES_DATA.filter(movie => {
-        const matchesGenre = filters.genre === '' || (movie['movie-genre'] && movie['movie-genre'].includes(filters.genre));
-        const matchesYear = filters.year === '' || movie.year === filters.year;
-        const matchesCountry = filters.country === '' || movie.country === filters.country;
+        // Lọc Thể loại: Phim phải có ÍT NHẤT MỘT thể loại nằm trong danh sách đã chọn
+        const movieGenres = movie['movie-genre'] ? movie['movie-genre'].split(',').map(g => g.trim()) : [];
+        const matchesGenre = filters.genre.length === 0 || filters.genre.some(selectedGenre => movieGenres.includes(selectedGenre));
+
+        // Lọc Năm: Năm của phim phải nằm trong danh sách năm đã chọn
+        const matchesYear = filters.year.length === 0 || filters.year.includes(movie.year);
+
+        // Lọc Quốc gia: Quốc gia của phim phải nằm trong danh sách quốc gia đã chọn
+        const matchesCountry = filters.country.length === 0 || filters.country.includes(movie.country);
+
         return matchesGenre && matchesYear && matchesCountry;
     });
 
@@ -704,7 +721,6 @@ function displayFilteredMovies(filters, page = 1) {
     const allMoviesContainer = document.getElementById('all-movies-container');
     const homepageSuggestionsContainer = document.getElementById('homepage-suggestions-container');
     const historyContainer = document.getElementById('history-container');
-    // searchResultsContainer không cần ẩn ở đây vì nó sẽ được renderMovieGridWithPagination xử lý
 
     if (homepageContent) homepageContent.style.display = 'none';
     if (allMoviesContainer) allMoviesContainer.style.display = 'none';
@@ -718,7 +734,7 @@ function displayFilteredMovies(filters, page = 1) {
         'Kết quả lọc phim',
         filterCurrentPage,
         totalPages,
-        (newPage) => displayFilteredMovies(filters, newPage) // Callback để chuyển trang
+        (newPage) => displayFilteredMovies(filters, newPage)
     );
 }
 
@@ -726,7 +742,7 @@ function displayFilteredMovies(filters, page = 1) {
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOMContentLoaded fired.");
     const header = document.querySelector('header');
-    if(header) {
+    if (header) {
         window.addEventListener('scroll', () => {
             header.classList.toggle('scrolled', window.scrollY > 50);
         });
@@ -752,17 +768,27 @@ document.addEventListener('DOMContentLoaded', () => {
             const parsedFilters = JSON.parse(appliedFilters);
             currentFilters = parsedFilters; // Set current filters
             displayFilteredMovies(parsedFilters); // Display filtered movies
-            
-            // Optionally update filter dropdowns to reflect applied filters
-            if (document.getElementById('filter-genre')) {
-                document.getElementById('filter-genre').value = parsedFilters.genre;
+
+            // Cập nhật lại trạng thái của checkbox dựa trên bộ lọc đã lưu
+            if (document.getElementById('filter-genre-container')) {
+                parsedFilters.genre.forEach(value => {
+                    const cb = document.querySelector(`#filter-genre-container input[value="${value}"]`);
+                    if (cb) cb.checked = true;
+                });
             }
-            if (document.getElementById('filter-year')) {
-                document.getElementById('filter-year').value = parsedFilters.year;
+            if (document.getElementById('filter-year-container')) {
+                parsedFilters.year.forEach(value => {
+                    const cb = document.querySelector(`#filter-year-container input[value="${value}"]`);
+                    if (cb) cb.checked = true;
+                });
             }
-            if (document.getElementById('filter-country')) {
-                document.getElementById('filter-country').value = parsedFilters.country;
+            if (document.getElementById('filter-country-container')) {
+                parsedFilters.country.forEach(value => {
+                    const cb = document.querySelector(`#filter-country-container input[value="${value}"]`);
+                    if (cb) cb.checked = true;
+                });
             }
+
         } else if (redirectSearchQuery) {
             console.log("Redirect search query found in session storage. Performing search.");
             sessionStorage.removeItem('redirectSearch');
@@ -782,7 +808,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const searchResultsContainer = document.getElementById('search-results-container');
         // If currently displaying search/filter results, go back to homepage view
         if (searchResultsContainer && searchResultsContainer.style.display === 'block') {
-             showHomepageView();
+            showHomepageView();
         } else {
             // Otherwise, just reload index.html
             window.location.href = 'index.html';
@@ -809,7 +835,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.key === 'Enter') searchMovies();
         });
         searchInput.addEventListener('search', () => {
-            if(searchInput.value === '' && !document.getElementById('watch-page-container')) {
+            if (searchInput.value === '' && !document.getElementById('watch-page-container')) {
                 showHomepageView();
             }
         });
@@ -853,7 +879,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (filterFab && filterPopup && filterCloseBtn && applyFilterBtn && filterOverlay) {
         console.log("Filter FAB elements found.");
-        // populateFilterOptions(); // Moved to outside of this block to ensure it's called on all pages
 
         filterFab.addEventListener('click', () => {
             console.log("Filter FAB clicked.");
@@ -871,12 +896,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         applyFilterBtn.addEventListener('click', () => {
             console.log("Apply filter button clicked.");
-            currentFilters.genre = document.getElementById('filter-genre').value;
-            currentFilters.year = document.getElementById('filter-year').value;
-            currentFilters.country = document.getElementById('filter-country').value;
-            displayFilteredMovies(currentFilters); // This will handle redirection if on watch.html
-            filterPopup.style.display = 'none'; // Hide popup after applying filter
-            filterOverlay.style.display = 'none'; // Hide overlay after applying filter
+
+            // Lấy TẤT CẢ các giá trị đã được chọn từ các checkbox
+            const selectedGenres = Array.from(document.querySelectorAll('#filter-genre-container input:checked')).map(cb => cb.value);
+            const selectedYears = Array.from(document.querySelectorAll('#filter-year-container input:checked')).map(cb => cb.value);
+            const selectedCountries = Array.from(document.querySelectorAll('#filter-country-container input:checked')).map(cb => cb.value);
+
+            currentFilters = {
+                genre: selectedGenres,
+                year: selectedYears,
+                country: selectedCountries
+            };
+
+            displayFilteredMovies(currentFilters);
+            filterPopup.style.display = 'none';
+            filterOverlay.style.display = 'none';
         });
 
         // Close filter popup if clicked outside (including the overlay)
@@ -893,13 +927,36 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log("filterCloseBtn:", filterCloseBtn);
         console.log("applyFilterBtn:", applyFilterBtn);
     }
+    // Đặt đoạn mã này bên cạnh các khai báo biến của filter
+    // Đặt đoạn mã này bên cạnh các khai báo biến của filter
+    const resetFilterBtn = document.getElementById('reset-filter-btn');
+
+    if (resetFilterBtn) {
+        resetFilterBtn.addEventListener('click', () => {
+            console.log("Reset filter button clicked.");
+
+            // Bỏ chọn tất cả các checkbox trong popup
+            const checkboxes = document.querySelectorAll('#filter-popup input[type="checkbox"]');
+            checkboxes.forEach(cb => cb.checked = false);
+
+            // Đặt lại biến lưu trữ bộ lọc
+            currentFilters = {
+                genre: [],
+                year: [],
+                country: []
+            };
+
+            // --- ĐÃ XÓA CÁC DÒNG ĐÓNG POPUP VÀ HIỂN THỊ LẠI TRANG CHỦ ---
+            // Giờ đây người dùng có thể chọn lại bộ lọc hoặc nhấn "Áp dụng"
+        });
+    }
 });
 function searchMovies() {
     const query = document.getElementById("search-input").value.trim();
     if (query) {
         // Tên query không dấu và chữ thường
         const normalizedQuery = removeVietnameseTones(query.toLowerCase());
-        
+
         // Kiểm tra xem đang ở trang xem phim hay không
         if (document.getElementById('watch-page-container')) {
             // Nếu ở trang watch, lưu query vào sessionStorage và chuyển hướng về index.html
