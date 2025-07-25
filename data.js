@@ -1,520 +1,895 @@
-// "slide": "0",TOÀN BỘ DỮ LIỆU ĐÃ ĐƯỢC CẬP NHẬT SANG CẤU TRÚC 
-// "sources" MỚI
 const MOVIES_DATA = [
-   {
-        "id": "guinea-pig-3-he-never-dies",
-        "title": "Guinea Pig 3: He Never Dies...!",
-        "year": "1986",
-        "actor": "Shinsuke Araki, Satô Masahiro, Keisuke Shinki, Rie Shibata, Ivu",
-        "poster": "img/guinea-pig-3-he-never-dies.webp",
-        "category": "phim-le",
-        "country": "Nhật Bản",
-        "description": " Bạn có thể chịu đựng để xem truyện kinh dị Nhật Bản gây sốc nhất mọi thời đại? Guinea Pig tiếp tục với một gore tập hài nếm (Senritsu Shinanai otoko)! Về một người đàn ông chán nản cố gắng tự tử nhưng ông không thể thành công đến chết.",
-        "movie-genre": "Kinh dị, Giật gân",
-        "slide": "1",
-        "sources": {
-            "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/ZeoNv0jwZ" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/3400977484401?nochat=1" },
-            ]
-        }
-    },
-     {
-        "id": "those-merry-souls",
-        "title": "Trời Ban May Mắn - Those Merry Souls",
-        "year": "1985",
-        "actor": "Nguyên Bưu, Tăng Chí Vỹ, Lâm Chánh Anh, Phùng Thối Phàm, Lý Lệ Lệ",
-        "poster": "img/those-merry-souls.webp",
-        "category": "phim-le",
-        "country": "Hồng Kông",
-        "description": "Triệu Tử Long (Nguyên Bưu) và Ngô Quý Đức (Tăng Chí Vĩ) là đôi bạn thân chơi từ nhỏ đến lớn và cùng nhau tham gia phim trường để thực hiện những màn thế thân cho các diễn viên. Chẳng may mạng của A Đức tới số chết nhưng ba của A Long là bác Triệu (Phùng Thối Phàm)lại là quỷ sai vì thương A Đức như con ruột nên đã ngăn quỷ sai khác bắt hồn của A Đức. Chính vì lẽ đó nên bác Triệu đã bị các vong hồn khác ganh ghét lấy mạng của bác Triệu. Tới 7749 ngày, hồn bác Triệu về bắt A Long là con mình phải tiếp tục thay bác làm quỷ sai để bắt hồn những người khác. Nhưng A Long không chịu đành nhờ ba của A Đức là thầy pháp (Lâm Chánh Anh) cứu nhưng cũng không thể làm được gì. Cuối cùng phải nhờ đến Dì Trân Châu (Lý Lệ Lệ) cùng hợp sức lại đánh đuổi những con ma khác đang đeo bám A Long.",
-        "movie-genre": "Hài, Kinh dị",
-        "slide": "1",
-        "sources": {
-            "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/wE0CE6nhn" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/3400977549937?nochat=1" },
-            ]
-        }
-    },
-     {
-        "id": "ghost-eyes",
-        "title": "Ghost Eyes - Quỷ Nhãn",
-        "year": "1974",
-        "actor": "Chen Szu-chia, Lam Wai-Tiu, Teresa Ha, Wong Ching-Ho",
-        "poster": "img/ghost-eyes.webp",
-        "category": "phim-le",
-        "country": "Hồng Kông",
-        "description": "Không ai làm phim kinh dị giống như hãng Shaw Brothers. Tác giả Ric Meyers của cuốn sách nổi tiếng For One Week Only: The World Of Exploitation Films từng mô tả các tác phẩm của họ là “những bộ phim tàn nhẫn, lạnh lùng, đầy rẫy giòi bọ, nơi không có gì là giới hạn”. Đạo diễn Quế Chi Hùng – người đã ghi dấu ấn qua các phim giật gân như The Bamboo House of Dolls – tiếp tục mang phong cách gai góc của mình vào một câu chuyện bạo lực, gợi cảm và đầy ám ảnh với một bài học rõ ràng: đừng bao giờ nhận kính áp tròng từ một hồn ma tâm thần. Nhân vật chính – Chen Szu-chia – đã phạm sai lầm đó và phải trả giá đắt bằng thân xác của mình (theo nghĩa đen lẫn nghĩa bóng), cùng cái chết ghê rợn của những người bạn xung quanh. Mọi lời mô tả về một bộ phim kinh dị của Shaw Brothers đều không thể lột tả hết cường độ ám ảnh đến nghẹt thở mà đoàn làm phim tạo nên – tất cả chỉ nhằm một mục tiêu duy nhất: khiến bạn rợn tóc gáy từ đầu đến cuối.",
-        "movie-genre": "Kinh dị, Giật gân",
-        "slide": "1",
-        "sources": {
-            "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/RmnwJ2VHB" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/3400977615473?nochat=1" },
-            ]
-        }
-    },
-        {
-        "id": "the-siamese-twins",
-        "title": "Cặp Song Sinh Quái Dị - The Siamese Twins",
-        "year": "1984",
-        "actor": "Trần Ngọc Liên, Thang Trấn Tông, Điềm Nữu, Quan Hải Sơn, Margaret Lee",
-        "poster": "img/the-siamese-twins.webp",
-        "category": "phim-le",
-        "country": "Hồng Kông",
-        "description": "Ở tuổi 24, Chen Yu-lien – người đã nổi tiếng qua nhiều vai chính bên cạnh Châu Nhuận Phát trong các phim truyền hình Hồng Kông – đã có bước ngoặt táo bạo trong sự nghiệp khi nhận vai một chị em song sinh dính liền còn sống sót trong The Siamese Twins, một trong những bộ phim kinh dị rùng rợn nhất thập niên 1980. Trong phim, cô vào vai Bonnie – một du học sinh tốt nghiệp đại học ở Canada trở về Hồng Kông và dần phát hiện những bí mật rùng rợn về quá khứ, khiến hiện tại của cô trở nên hỗn loạn. Các mối quan hệ của Bonnie với những người đàn ông theo đuổi, như bạn học điển trai Mai Tak-lo và một bác sĩ tâm lý trẻ tuổi (Tang Chen-tsung), cũng bị ảnh hưởng nặng nề. Khi bị hồn ma của người chị em song sinh đã mất ám ảnh, Bonnie buộc phải vén màn bí ẩn đằng sau những cái chết kỳ lạ xảy ra quanh mình. Đây là một trong số ít tác phẩm kinh dị do nữ đạo diễn thực hiện, và là một điểm nhấn lạ lùng nhưng độc đáo trong làn sóng điện ảnh mới của Hồng Kông.",
-        "movie-genre": "Kinh dị, Giật gân",
-        "slide": "1",
-        "sources": {
-            "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/qy0ktq_Si" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/3400977746545?nochat=1" },
-            ]
-        }
-    },
-    {
-        "id": "scorpio-nights-2",
-        "title": "Đêm Của Thiên Yết 2 - Scorpio Nights 2",
-        "year": "1999",
-        "actor": "Albert Martinez, Joyce Jimenez, Daisy Reyes, Janus Del Prado, Manny Castañeda",
-        "poster": "img/scorpio-nights-2.webp",
-        "category": "phim-le",
-        "country": "Philippines",
-        "description": "Phim Đêm Của Thiên Yết 2 xoay quanh câu chuyện về Andrew, một người có tính cách tỉ mỉ và luôn theo đuổi sự hoàn hảo trong mọi khía cạnh của cuộc sống. Từ cách anh ấy sắp xếp quần áo cho đến cách anh ấy dạy Vật lý, đều phản ánh sự cẩn thận và ám ảnh của Andrew. Tuy nhiên, sự ổn định và trật tự trong cuộc sống của anh bỗng chốc bị xáo trộn khi Valerie, một sinh viên nồng nhiệt và thích phiêu lưu tình dục, bắt đầu quyến rũ anh. Andrew, mặc dù ban đầu kiên định trước sức hấp dẫn của Valerie, nhưng dần trở nên lún sâu vào mối quan hệ đầy cấu trúc với cô. Mặc cho những lời khuyên cảnh báo và điều đóng cửa từ xung quanh, họ tiếp tục sống trong thế giới của họ, nơi mà những giới hạn dường như không tồn tại. Đạo diễn Erik Matti đã tạo nên một tác phẩm lôi cuốn với dàn diễn viên đầy tài năng như Albert Martinez, Joyce Jimenez, Daisy Reyes, Janus Del Prado, Manny Castañeda. Sự kết hợp giữa kịch tính, tâm lý và tình cảm trong Đêm Của Thiên Yết 2 hứa hẹn đưa người xem qua những cung bậc cảm xúc đầy khó quên. Đêm Của Thiên Yết 2 không chỉ là một bộ phim truyền hình, mà còn là một tác phẩm nghệ thuật đầy sức lôi cuốn. Với một câu chuyện đậm chất con người, đạo diễn và dàn diễn viên xuất sắc, bộ phim chắc chắn sẽ lưu lại dấu ấn khó phai trong lòng khán giả.",
-        "movie-genre": "Tâm lý, Tình cảm",
-        "age": "18+",
-        "slide": "1",
-        "sources": {
-            "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/eoD0QADLe" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/3400977812081?nochat=1" },
-            ]
-        }
-    },
-    {
-        "id": "guinea-pig-4-mermaid-in-a-manhole",
-        "title": "Guinea Pig 4: Mermaid in a Manhole...!",
-        "year": "1988",
-        "actor": "Mari Somei, Tsuyoshi Toshishige, Gô Riju, Saiki Shigeru, Masami Hisamoto",
-        "poster": "img/guinea-pig-4-mermaid-in-a-manhole.webp",
-        "category": "phim-le",
-        "country": "Nhật Bản",
-        "description": "Trong Mermaid trong Manhole (Za ginipiggu 4: Manhoru no naka không ningyō) là một họa sĩ tìm thấy một người bệnh dưới cống và bắt đầu vẽ của mình. Nhưng ngươiì đó bị nặng hơn. Ông đưa cô đến căn hộ của ông, sau đó cô bắt đầu chảy máu và chảy mủ. Và người đàn ông của mình để sử dụng mủ sơn công việc của mình. Nhưng điều này chỉ là sự khởi đầu!",
-        "movie-genre": "Kinh dị, Giật gân",
-        "slide": "0",
-        "sources": {
-            "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/gWraykLyR" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/3401073822321?nochat=1" },
-            ]
-        }
-    },
-    {
-        "id": "hoa-chuc-quy",
-        "title": "Hoả Chúc Quỷ - Burning Sensation",
-        "year": "1989",
-        "actor": "Trịnh Du Linh, Chung Trấn Đào, Lê Yến San, Diệp Vinh Tổ, Ngọ Mã",
-        "poster": "img/hoa-chuc-quy.webp",
-        "category": "phim-le",
-        "country": "Hồng Kông",
-        "description": "Phim kể về A Linh – một nữ diễn viên hát tuồng chết trong vụ hỏa hoạn và trở thành hồn ma. Ba mươi năm sau, lính cứu hỏa A Kiện vô tình cứu bài vị của Linh và được cô âm thầm bảo vệ, rồi cả hai nảy sinh tình cảm. Trong khi đó, một hồn ma hung ác tên Phiêu Hồng chuyên sát hại đàn ông xuất hiện và đe dọa tính mạng Kiện cùng anh trai anh là Mã Hậu Pháo. Nhờ sự giúp đỡ của Linh và một pháp sư mù tên Trần, họ đánh bại được Phiêu Hồng. Sau cùng, Kiện quay ngược thời gian cứu Linh, và cả ba người sống hạnh phúc bên nhau.",
-        "movie-genre": "Kinh dị, Tình cảm",
-        "slide": "1",
-        "sources": {
-            "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/8Znp2GHc3" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/3491454782065?nochat=1" },
-            ]
-        }
-    },
-    {
-        "id": "dong-mau-oan-hon",
-        "title": "Dòng Máu Oan Hồn - New Blood",
-        "year": "2002",
-        "actor": "Nhan Dĩnh Tư, Trương Mẫn, Lý Xán Sâm",
-        "poster": "img/dong-mau-oan-hon.webp",
-        "category": "phim-le",
-        "country": "Hồng Kông",
-        "description": "Ba người xa lạ gặp nhau trong bệnh viện để hiến máu khẩn cấp, nhằm cứu sống một cặp đôi đã cùng nhau tự tử vì một trong hai mắc bệnh ung thư giai đoạn cuối. Tuy nhiên, ca truyền máu chỉ thành công một nửa: chàng trai rơi vào hôn mê, còn cô gái thì không qua khỏi.",
-        "movie-genre": "Kinh dị, Tâm lý",
-        "slide": "1",
-        "sources": {
-            "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/uXU3fGjQc" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/3491745696369?nochat=1" },
-            ]
-        }
-    },
-    {
-        "id": "thanh-thi-dac-canh",
-        "title": "Thành Thị Đặc Cảnh - The Big Heat",
-        "year": "1988",
-        "actor": "Lý Tử Hùng, Vương Tổ Hiền, Huỳnh Diễn Mông, Quách Chấn Phong, Chu Giang",
-        "poster": "img/thanh-thi-dac-canh.webp",
-        "category": "phim-le",
-        "country": "Hồng Kông",
-        "description": "Thanh tra Huỳnh Duy Bang đã phải làm đơn từ chức vì có liên quan đến vụ giết người bí ẩn của người bạn cộng tác cũ. Và nhóm của anh gồm ba người công an khác đã phát hiện ra là một âm mưu thâm độc hơn nhiều so với dự đoán ban đầu của họ. Lý Tử Hùng, Vương Tổ Hiền, Huỳnh Diễn Mông, Quách Chấn Phong, Chu Giang, Mạch Thúy Nhàn, Lê Bỉ Đắc, Chu Văn Kiện, Trương Diệu Dương, Cừu Vân Ba, Ông Thế Kiệt",
-        "movie-genre": "Hành động, Hình sự, Giật gân",
-        "slide": "1",
-        "sources": {
-            "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/Ub4MW9al6" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/3492006398577?nochat=1" },
-            ]
-        }
-    },
-    {
-        "id": "danur-i-can-see-ghosts",
-        "title": "Bạn Âm - Danur: I Can See Ghosts",
-        "year": "2017",
-        "actor": "Prilly Latuconsina, Sandrinna Michelle, Shareefa Daanish, Kinaryosih",
-        "poster": "img/danur-i-can-see-ghosts.webp",
-        "category": "phim-le",
-        "country": "Indonesia",
-        "description": "Risa, một cô bé sống cô lập trong gia đình không hạnh phúc, vô tình kết bạn với ba hồn ma người Hà Lan sau khi nghe bài hát “Boneka Abdi”. Chín năm sau, cô trở lại ngôi nhà cũ để chăm sóc bà và phát hiện y tá Asih thực chất là một hồn ma từng giết con rồi tự sát. Asih bắt cóc em gái Riri, buộc Risa phải nhờ đến sự giúp đỡ của các hồn ma để giải cứu. Cuối cùng, lời nguyền được hóa giải, nhưng chiếc lược của Asih bị người khác nhặt lên, báo hiệu tai họa chưa kết thúc.",
-        "movie-genre": "Kinh dị",
-        "slide": "1",
-        "sources": {
-            "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/ArcHMTZO8" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/3511634954865?nochat=1" },
-            ]
-        }
-    },
-    {
-        "id": "once-upon-a-time-in-hong-kong",
-        "title": "Bóng Tối Hồng Kông – Once Upon a Time in Hong Kong",
-        "year": "2021",
-        "actor": "Cổ Thiên Lạc, Lương Gia Huy, Ngô Trấn Vũ, Lâm Gia Đống",
-        "poster": "img/once-upon-a-time-in-hong-kong.webp",
-        "category": "phim-le",
-        "country": "Hồng Kông",
-        "description": "Nội dung phim Bóng Tối Hồng Kông – Once Upon a Time in Hong Kong (2021): Cổ Thiên Lạc cùng Lâm Gia Đống vào vai các điều tra viên của Ủy ban Độc lập chống tham những (ICAC) Hồng Kông chống lại trùm ma túy khét tiếng Crippled Ho (Lương Triều Vỹ đóng) và cảnh sát thoái hóa Chui Lok (Ngô Trấn Vũ đóng)",
-        "movie-genre": "Hành động, Hình sự",
-        "slide": "0",
-        "sources": {
-            "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/rPesKSpnb" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/3570952243825?nochat=1" },
-            ]
-        }
-    },
-    {
-        "id": "nhuc-bo-doan-3",
-        "title": "Nhục Bồ Đoàn 3 : Khâm Sai Chốn Thanh Lâu - The Carnal Sutra Mat III",
-        "year": "1996",
-        "actor": "Từ Cẩm Giang, Quan Bảo Tuệ, Dương Ngọc Mai, Hà Gia Câu, Lâm Thượng Nghi",
-        "poster": "img/nhuc-bo-doan-3.webp",
-        "category": "phim-le",
-        "country": "Hồng Kông",
-        "description": "Khâm Sai Chốn Thanh Lâu - Yu Pui Tsuen Iii (1996) Đại Nội Mật Thám Linh Linh Tinh Tinh - Yu Pui Tsuen III (1996) là một bộ phim 18+ Cổ Trang do Hồng Kong sản xuất, phim được thực hiện bởi đạo diễn Lê Khải Cường cùng sự góp mặt của dàn diễn viên 18+ quen thuộc Từ Cẩm Giang, Quan Bảo Tuệ, Dương Ngọc Mai, Hà Gia Câu, Lâm Thượng Nghi, Huỳnh Nhất Phi, Hồng Hiểu Vân... Nội dung phim xoay quanh một tên mật thám của nhà Minh có biệt danh là 000, hắn ta nhận được nhiệm vụ từ cấp trên điều tra về việc một tửu lầu có khách bị đầu độc bởi nha phiến. Tuy nhiên khi đến đây điều tra trong phim Đại Nội Mật Thám Linh Linh Tinh Tinh - Yu Pui Tsuen III (1996), tên mật thám này chưa nắm rõ ràng chứng cứ thì lại rõ từng người kĩ nữ làm việc tại đây. Cho đến một ngày khi cô giúp việc bị mù tình cờ nghe được chuyện thuốc độc trên, 000 đã rũ bỏ gái gú để điều tra nhằm lập công rồi sau đó quay lại mua lại lầu xanh này.",
-        "movie-genre": "Cổ trang, Điều tra",
-        "age": "18+",
-        "slide": "1",
-        "sources": {
-            "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/TLCRHnQ1J" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/3575577119345?nochat=1" },
-            ]
-        }
-    },
-    {
-        "id": "chanh-tong-nhuc-bo-doan",
-        "title": "Chánh Tông Nhục Bồ Đoàn - The Carnal Sutra Mat",
-        "year": "1987",
-        "actor": "Chung-Kun Teng, Yuen-Man Cheng, Chi-Wai Yu, Sun Yueh, Chin Fei Lam",
-        "poster": "img/chanh-tong-nhuc-bo-doan.webp",
-        "category": "phim-le",
-        "country": "Hồng Kông",
-        "description": "Chánh Tông Nhục Bồ Đoàn là bộ phim Hồng Kông ra mắt năm 1987, do đạo diễn Fan Ho chỉ đạo với sự tham gia của các diễn viên như Chung-Kun Teng, Yuen-Man Cheng, Chi-Wai Yu... Phim xoay quanh một chàng trai mơ thấy mình chết đuối sau một đêm hoan lạc và nhờ một nhà sư lý giải giấc mơ kỳ lạ đó. Nhà sư cảnh báo rằng giấc mơ là lời nhắc không nên đắm chìm trong dục vọng, nhưng chàng trai bỏ ngoài tai và tiếp tục chạy theo khoái lạc bằng cách cưới một trinh nữ và quan hệ liên tục. Dần dần, anh ta bắt đầu hiểu ra sự đúng đắn trong lời khuyên của nhà sư và phải đối mặt với những hậu quả nghiệt ngã do chính lối sống buông thả của mình gây ra.",
-        "movie-genre": "Cổ trang, Tâm lý",
-        "age": "18+",
-        "slide": "0",
-        "sources": {
-            "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/uhbPydUmx" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/3576029383281?nochat=1" },
-            ]
-        }
-    },
-    {
-        "id": "truc-phu-nhan",
-        "title": "Trúc Phu Nhân - Madame Bamboo",
-        "year": "1991",
-        "actor": "Đơn Lập Văn, Lâm Hy Sến, Lý Nguyệt tiên, Trương Trinh",
-        "poster": "img/truc-phu-nhan.webp",
-        "category": "phim-le",
-        "country": "Hồng Kông",
-        "description": "Trúc Phu Nhân – Madame Bamboo (1991) xoay quanh 2 cô nàng kỹ nữ với những câu chuyện trong quá khứ đã đưa họ đến với lầu xanh. Người phụ nữ đầu tiên đã có chồng với nhu cầu chăn gối cao hơn người thường, trong lúc chồng đi làm việc xa nhà, ả ta lén lút với một gã thợ rèn to khỏe, có thể phục vụ ả mọi lúc mọi nơi. Thế rồi, “đi đêm lắm cũng có ngày gặp ma” khi vào một ngày đẹp trời ả bị chồng bắt gặp đang ân ái cuồng nhiệt với gã thợ rèn nên đã bị bán vào lầu xanh. Người phụ nữ thứ hai đã đính hôn với người con trai cô yêu nhưng cha mẹ cô vì tiền bạc mà hứa hôn với một cậu bé mới 7 tuổi. Không thể chống lại quyết định của cha mẹ, cô đành chấp nhận lên kiệu hoa với một đứa trẻ, và trong cái đêm tân hôn của 2 người, người yêu của cô nàng đã lén lút đột nhập vào phòng tân hôn để ân ái cùng người mình yêu để rồi sau cũng bị người ta phát hiện và kết cục là bị bán vào lầu xanh.",
-        "movie-genre": "Cổ trang, Tâm lý",
-        "age": "18+",
-        "slide": "1",
-        "sources": {
-            "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/k2aFHtmwN" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/3576360340081?nochat=1" },
-            ]
-        }
-    },
-    {
-        "id": "ran-doc--naked-poison",
-        "title": "Rắn Độc – Naked Poison",
-        "year": "2000",
-        "actor": "Lương Trác Mãn, Đàm Quân, Nhan仟 văn, Trịnh Hạo Nam",
-        "poster": "img/ran-doc--naked-poison.webp",
-        "category": "phim-le",
-        "country": "Hồng Kông",
-        "description": "Ông Kim là một y sĩ chuyên bào chế và bán thuốc đông y, nhưng lại không muốn cháu mình là Mẫn đi theo nghề vì chuyện hồi nhỏ của anh luôn lén nhìn phụ nữ đi vệ sinh, thích chụp lén quần xì của các cô gái ngoài đường. Trong một lần trông thấy ông ngoại đang lấy nọc rắn để bào chế thuốc độc thì vô tình té ngã ra chết, mọi thứ để lại hết cho thằng cháu, cũng chỉ mong thằng cháu nên người. Nhưng, từ khi biết được công thức từ nọc rắn độc thì Mẫn lại dùng nó mà đầu độc những người đã ức hiếp anh. Từ sếp cho đến cô thư ký và ngay cả cô hàng xóm mướn nhà anh. Có được thứ thuốc đó, anh đầu độc từng người và bắt họ nghe lời anh, dâng hiến anh tiền bạc và bắt phải “nhún nhảy, đẩy đưa” cùng anh hằng đêm...",
-        "movie-genre": "Kinh dị, Giật gân",
-        "age": "18+",
-        "slide": "1",
-        "sources": {
-            "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/4nj1jN9oD" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/3578159368817?nochat=1" },
-            ]
-        }
-    },
-    {
-        "id": "cuc-do-thu-tinh",
-        "title": "Cực Độ Thú Tính - Evil Instinct",
-        "year": "1996",
-        "actor": "Carrie Ng, Diana Pang, Bowie Lam, Mak Bau, Stuart Yung",
-        "poster": "img/cuc-do-thu-tinh.webp",
-        "category": "phim-le",
-        "country": "Hồng Kông",
-        "description": "Cực Độ Thú Tính - Evil Instinct 1996 xoay quanh câu chuyện của anh chàng cảnh sát tên Sam đã tình cờ làm quen được 2 mỹ nữ trong quán bar và sau đó cả 3 người xảy ra một cuộc quan hệ đầy máu lửa trong đêm cùng nhau vô cùng thõa mãn. Trong khi đang quan hệ, nhóm của Sam bị phá rối bởi một cuộc gọi nặc danh thông báo về vụ án mạng chết người gần đó trong phim Cực Độ Thú Tính - Evil Instinct (1996). Nhưng tất cả chỉ là khởi màn của các vụ án mạng sẽ xảy ra sau đó, khi Sam điều tra theo manh mối đến một tủ bảo hiểm thì phát hiện ra 2 cô gái mình từng quan hệ đang làm việc tại đây.",
-        "movie-genre": "Hành động, Xã hội",
-        "age": "18+",
-        "slide": "1",
-        "sources": {
-            "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/13WDL7idQO" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/3578415549041?nochat=1" },
-            ]
-        }
-    },
-    {
-        "id": "kim-binh-song-diem",
-        "title": "Kim Bình Song Diễm - The Golden Lotus",
-        "year": "1974",
-        "actor": "Dương Quân, Hồ Cẩm, Điềm Ni, Trần Bình, Vương Lai, Thành Long",
-        "poster": "img/kim-binh-song-diem.webp",
-        "category": "phim-le",
-        "country": "Hồng Kông",
-        "description": "Kim Bình Song Diễm - The Golden Lotus (1974) là một bộ Hồng Kong của đạo diễn Lý Hàn Tường, có sự tham gia của các diễn viên Thành Long, Dương Quân, Điềm Ni, Thạch Thiên, Trần Bình... Kim Bình Song Diễm quy tụ những cái tên đình đám trong làng điện ảnh như đạo diễn Lý Hàn Tường, nhà sản xuất Thiệu Dật Phu, tài tử Thành Long (Kim Bình Song Diễm bộ phim đầu tay củangôi sao võ thuật), đây chắc hẳn là đội hình mạnh nhất trong lịch sử phim cấp 3 xứ Cảng thơm.Peter Yang,Hồ Cẩm,Điềm Ni,Trần Bình,Wang Lai,Thành Long,Hạ Bình,Uông Vũ,",
-        "movie-genre": "Cổ trang, Tâm lý",
-        "age": "18+",
-        "slide": "0",
-        "sources": {
-            "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/1S_HljKVM" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/3578878233201?nochat=1" },
-            ]
-        }
-    },
-    {
-        "id": "kim-binh-phong-nguyet",
-        "title": "Kim Bình Phong Nguyệt - The Golden Lotus: Love and Desire",
-        "year": "1991",
-        "actor": "Đơn Lập Văn, Phương D玉婷, Kỷ倩 nhi, Tào Tra理",
-        "poster": "img/kim-binh-phong-nguyet.webp",
-        "category": "phim-le",
-        "country": "Hồng Kông",
-        "description": "Tây Môn Khánh, một tên quan vô lại, tham lam và dâm dục, 2 thứ mà hắn thèm khát chính là phụ nữ và tiền bạc, theo đuổi người vợ trẻ của anh trai mình, Lý Bình Nhi. Bình Nhi đã nhanh chóng bị cuốn hút với vẻ ngoài hấp dẫn và đào hoa của cậu em chồng, trong khi người chồng của cô suốt ngày chỉ biết say sỉn thì cô và Tây Môn Khánh thường “tranh thủ” thực hiện những tư thế mới được vẽ trong cuốn “Golden Lotus”.",
-        "movie-genre": "Cổ trang, Tâm lý",
-        "age": "18+",
-        "slide": "0",
-        "sources": {
-            "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/1S_HljKVM" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/3578878233201?nochat=1" },
-            ]
-        }
-    },
-    {
-        "id": "that-nghiep-sinh",
-        "title": "Thất Nghiệp Sinh - On Trial",
-        "year": "1981",
-        "actor": "Trần Bách Cường, Trương Quốc Vinh, Chung Bảo La, Đặng藹霖, Hoàng Mạn Ng凝",
-        "poster": "img/that-nghiep-sinh.webp",
-        "category": "phim-le",
-        "country": "Hồng Kông",
-        "description": "Bộ phim kể về ba người bạn thân từ thời trung học: Khổng Gia Bảo (Trần Bách Cường), Lâm Chí Vinh (Trương Quốc Vinh) và em trai của Gia Bảo là Khổng Gia Huy (Chung Bảo La). Sau khi tốt nghiệp, mỗi người chọn cho mình một con đường riêng: Gia Bảo theo đuổi đam mê âm nhạc và sau nhiều thất bại đã tổ chức thành công liveshow của riêng mình; Chí Vinh sinh ra trong gia cảnh nghèo khó, tính cách nổi loạn và trải qua nhiều gian truân; còn Gia Huy thì sống phóng túng nhưng cuối cùng lại chọn con đường mà cha mẹ mong muốn. Phim có hai kết thúc: một là Chí Vinh sa ngã, bị xã hội đen lừa và bị chém đến chết; hai là Chí Vinh xuất hiện tại buổi diễn của Gia Bảo, ôm bạn gái nói lời chia tay. Khi phát hành tại rạp, phim dùng kết thúc đầu tiên; phiên bản đĩa VCD chủ yếu cũng giữ kết thúc này, chỉ một số ít có kết thúc thứ hai. Đến năm 2017, bản phục chế kỹ thuật số và bản Blu-ray phát hành năm 2018 sử dụng kết thúc thứ hai.",
-        "movie-genre": "Drama, Học đường",
-        "slide": "1",
-        "sources": {
-            "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/RtVz4-qrl" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/3727903230577?nochat=1" },
-            ]
-        }
-    },
-    {
-        "id": "khuc-nhac-thang-7",
-        "title": "Khúc Nhạc Tháng 7 - July Rhapsody",
-        "year": "2002",
-        "actor": "Trương Học Hữu, Mai Diễm Phương, Lâm Gia Hân, Đàm Tuấn Ngạn",
-        "poster": "img/khuc-nhac-thang-7.webp",
-        "category": "phim-le",
-        "country": "Hồng Kông",
-        "description": "Lam Yiu-kwok (Trương Học Hữu), một giáo viên trung học ở Hồng Kông, đang đối mặt với khủng hoảng tuổi trung niên, hôn nhân rạn nứt và sự quyến rũ từ một nữ sinh. Anh sống cùng vợ là Man-ching (Mai Diễm Phương) và hai con trai trong một căn hộ nhỏ, nhưng con trai cả Ang thực chất là kết quả từ mối quan hệ giữa Man-ching và thầy giáo cũ – ông Shing. Khi xưa, Man-ching từng quyến rũ thầy Shing khi còn là học sinh, dẫn đến việc mang thai. Trong khi bạn bè cũ của Yiu-kwok đều thành đạt và sống xa hoa, anh vẫn chật vật với nghề giáo. Khi ông Shing trở về Hồng Kông trong bệnh tật và tuổi già, Man-ching cảm thấy có trách nhiệm chăm sóc tình cũ, khiến mối quan hệ vợ chồng thêm căng thẳng. Cùng lúc, Yiu-kwok dần không cưỡng lại được sự ve vãn của Choi-lam (Lâm Gia Hân), một nữ sinh trong lớp yêu thầm anh.",
-        "movie-genre": "Drama, Tình cảm",
-        "slide": "0",
-        "sources": {
-            "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/1NzWQ6L-x" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/3772642429553?nochat=1" },
-            ]
-        }
-    },
-    {
-        "id": "the-dead-and-the-deadly",
-        "title": "Tang Lễ Và Lễ Tang - The Dead And The Deadly",
-        "year": "1982",
-        "actor": "Hồng Kim Bảo, Ngọ Mã, Lâm Chánh Anh, Chung Sở Hồng, Trần Long",
-        "poster": "img/the-dead-and-the-deadly.webp",
-        "category": "phim-le",
-        "country": "Hồng Kông",
-        "description": "Chu Hoằng Lợi (do Hồng Kim Bảo thủ vai) là một thợ phụ trong tiệm làm đồ mã, từ nhỏ được nhị thúc công đạo sĩ (Lâm Chánh Anh) nuôi dưỡng. Tuy không giỏi đạo thuật và đôi khi hành xử vụng về, nhưng anh luôn giữ tấm lòng chính trực. Vì sợ liên lụy đến vị hôn thê Á Vân (Chung Sở Hồng), anh thường cố tỏ ra lạnh nhạt với cô. Một ngày, người bạn thân Mã Lân Tường (Ngọ Mã) trở về quê trong hình hài một xác chết, cùng nhóm người lạ áp giải thi thể và một phụ nữ tự xưng là vợ đang mang thai của anh. Thực chất, Mã Lân Tường giả chết để đột nhập mộ tổ nhằm trộm báu vật, nhưng sau khi phát hiện kho báu không có giá trị, đồng bọn đã giết anh để cướp tài sản thật sự do trưởng thôn nắm giữ. Linh hồn oan khuất của Lân Tường tìm đến Chu Hoằng Lợi nhờ báo thù. Bất chấp nguy hiểm, Chu Hoằng Lợi nhờ nhị thúc công trợ giúp để tiêu diệt đám phản bội. Trong quá trình nhập hồn cho bạn báo thù, linh hồn của anh không kịp trở lại thể xác trước bình minh, khiến anh mất mạng và bị quỷ sai bắt xuống địa phủ. Trong đau khổ, Á Vân cầu cứu nhị thúc công và quyết chiến cùng quỷ sai trong đêm thất thất để đoạt lại hồn phách của người yêu.",
-        "movie-genre": "Hài, Kinh dị, Hành động",
-        "slide": "0",
-        "sources": {
-            "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/F8-eQIEF7" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/3875730950769?nochat=1" },
-            ]
-        }
-    },
-    {
-        "id": "ma-vui-ve-4",
-        "title": "Ma Vui Vẻ 4 - Happy Ghost 4",
-        "year": "1990",
-        "actor": "Hoàng Bách Minh, Beyond, Lý Lệ Trân, Trần Gia Linh, Dương Bảo Linh",
-        "poster": "img/ma-vui-ve-4.webp",
-        "category": "phim-le",
-        "country": "Hồng Kông",
-        "description": "Ma Vui Vẻ 4 là bộ phim Hồng Kông ra mắt năm 1990, thuộc thể loại hài – kinh dị, mang đến một trải nghiệm giải trí độc đáo và mới mẻ. Nội dung phim xoay quanh một nhóm sinh viên đại học tình cờ phát hiện hài cốt của một vị bạo tướng thời xưa và vô tình đánh thức linh hồn của ông. Từ đó, hàng loạt tình huống kỳ quái, rùng rợn nhưng cũng đầy hài hước liên tiếp xảy ra. Dưới sự chỉ đạo của đạo diễn Clifton Ko, bộ phim có sự góp mặt của nhiều tên tuổi như Dương Bảo Linh, Hồ Phong và Hoàng Bách Minh. Với lối kể chuyện duyên dáng, phim không chỉ mang lại tiếng cười sảng khoái mà còn gợi mở những suy ngẫm về tâm lý, nhân quả và sự tác động của quá khứ đến hiện tại. Ma Vui Vẻ 4 là sự pha trộn khéo léo giữa yếu tố ma quái và đời thường, mang đậm dấu ấn điện ảnh Hồng Kông thập niên 90.",
-        "movie-genre": "Hài, Ma",
-        "slide": "0",
-        "sources": {
-            "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/1UA-fFD7H" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/3920021752433?nochat=1" },
-            ]
-        }
-    },
-    {
-        "id": "tan-that-long-chau",
-        "title": "Tân Thất Long Châu - Dragon Ball The Magic Begins",
-        "year": "1991",
-        "actor": "Trần Tử Cường, Tạ Kim Yến, Hoàng Trọng Dụ, Trịnh Đồng Chấn",
-        "poster": "img/tan-that-long-chau.webp",
-        "category": "phim-le",
-        "country": "Hồng Kông",
-        "description": "Trái Đất có bảy viên ngọc rồng, mỗi viên được đánh dấu từ một đến bảy sao và phân tán khắp nơi trên thế giới. Khi ai đó thu thập đủ bảy viên, họ có thể triệu hồi rồng thần Shenlong để ban cho một điều ước. Trong một buổi lễ nhậm chức trưởng làng mới, ngọc rồng được xem là báu vật của làng bất ngờ bị Ma Ngưu Vương – một sinh vật ngoài hành tinh – cùng thuộc hạ xông vào cướp lấy. Hắn tin rằng nếu sở hữu đủ bảy viên ngọc rồng, hắn sẽ có thể thống trị nhân loại. Sau khi có trong tay hai viên, hắn phái Sparta và Maria đi truy tìm năm viên còn lại. Thuộc hạ của hắn đã tìm được ngọc rồng bốn sao từ Tôn Ngộ Phàn, giết ông và cướp lấy viên ngọc. Tôn Ngộ Không, sau khi vừa quen biết một cô gái, phát hiện ông nội bị giết liền tức giận và quyết tâm trả thù. Trên hành trình, cậu gặp Lạc Ba và Ú Long, sau đó hợp lực cùng Quy Lão Tiên Sinh để đối đầu với Ma Ngưu Vương. Cuối cùng, phát hiện Tôn Ngộ Phàn chưa chết, và các viên ngọc rồng đều đang nằm trong bụng Ma Ngưu Vương. Ngộ Không dùng gậy Như Ý đánh viên ngọc cuối cùng vào bụng hắn, triệu hồi rồng thần. Cô con gái của trưởng làng đã ước tất cả mọi người sống lại, kết thúc phim trong niềm vui hân hoan của mọi người.",
-        "movie-genre": "Hành động, Phiêu lưu, Giả tưởng",
-        "slide": "1",
-        "sources": {
-            "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/4a3KiyIyA" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/4050764302961?nochat=1" },
-            ]
-        }
-    },
-    {
-        "id": "horoscope-ii-the-woman-from-hell",
-        "title": "Chớ Tới Gần Người Lạ: Giáng Đầu Thuật - Horoscope II: The Woman from Hell",
-        "year": "2000",
-        "actor": "Trương Văn Từ, Nhan仟 văn, Nhậm Đạt Hoa, Hà Hoa 초, Chung Khiết",
-        "poster": "img/horoscope-ii-the-woman-from-hell.webp",
-        "category": "phim-le",
-        "country": "Hồng Kông",
-        "description": "Sau cái chết của đứa con sơ sinh, vợ chồng Yeung từ một cặp đôi hạnh phúc dần trở nên xa cách và lạnh nhạt. Vào ngày kỷ niệm hôn nhân, Jimmy – một người bạn thân của họ – bất ngờ tự sát sau khi nói rằng mình bị trúng bùa chú. Từ đó, hàng loạt cơn ác mộng kỳ lạ và đáng sợ liên tiếp xảy ra, khiến Yeung và vợ bị cuốn vào một chuỗi hiện tượng siêu nhiên đầy ám ảnh.",
-        "movie-genre": "Kinh dị, Bí ẩn",
-        "slide": "0",
-        "sources": {
-            "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/_McMDMI3Q" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/4106505161329?nochat=1" },
-            ]
-        }
-    },
-    {
-        "id": "cau-chuyen-ma-am",
-        "title": "Câu Chuyện Ma Ám - Haunted Tales",
-        "year": "1980",
-        "actor": "Tỉnh Lệ, Lăng雲, Lâm Trân Kỳ, Lưu Lục Hoa",
-        "poster": "img/cau-chuyen-ma-am.webp",
-        "category": "phim-le",
-        "country": "Hồng Kông",
-        "description": "Một vụ tai nạn thảm khốc khiến người chồng tử vong và người vợ bị thương nặng, nhưng bi kịch chưa dừng lại khi linh hồn người chồng quay trở lại, mang theo ý định đưa vợ sang thế giới bên kia cùng mình. Trong một câu chuyện khác, một người trông nhà may mắn trúng số nhờ sự giúp đỡ của hồn ma cư ngụ trong một chiếc đĩa cổ, thế nhưng mọi chuyện nhanh chóng trở nên tồi tệ khi anh ta phá vỡ lời hứa với linh hồn đó, khiến tai họa liên tiếp ập đến.",
-        "movie-genre": "Kinh dị, Tâm linh",
-        "slide": "0",
-        "sources": {
-            "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/gPoahf0mx" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/4165351049841?nochat=1" },
-            ]
-        }
-    },
-    {
-        "id": "khong-son-linh-vu",
-        "title": "Không Sơn Linh Vũ - Raining In The Mountain",
-        "year": "1979",
-        "actor": "Từ Phong, Tôn Việt, Điền Phong, Trần Tuệ Lâu, Thạch Tuấn",
-        "poster": "img/khong-son-linh-vu.webp",
-        "category": "phim-le",
-        "country": "Hồng Kông",
-        "description": "Sau khi nghe tin trụ trì chùa Tam Bảo sắp viên tịch, giới giang hồ xôn xao bởi lời đồn về quyển kinh viết tay quý giá “Đại Thừa Khởi Tín Luận” đang được lưu giữ tại đây. Quyển kinh này sẽ thuộc về người kế nhiệm vị trí trụ trì, khiến nhiều thế lực âm thầm nhòm ngó. Trụ trì có ba đệ tử và muốn truyền kinh bát cho một trong số họ, nên đã mời Vương tướng quân, thí chủ Văn An và pháp sư Ngộ Ngoại đến bàn bạc. Tuy nhiên, Vương tướng quân và Văn An đều có âm mưu chiếm đoạt quyển kinh, thậm chí Văn An còn mang theo nữ tặc Bạch Hồ phòng khi có biến. Trong ba đệ tử, chỉ có Tam sư đệ Tuệ Tư là người thật tâm bảo vệ chùa, còn hai người còn lại đã bị thu mua. Đúng lúc tình hình căng thẳng, một người đàn ông tên Khâu Minh – dân tị nạn lang bạt giang hồ – bất ngờ vào chùa xin quy y, mang theo nhiều ẩn tình chưa được sáng tỏ.",
-        "movie-genre": "Võ thuật, Phiêu lưu",
-        "slide": "0",
-        "sources": {
-            "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/3mJb3_Vaa8" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/4327388875377?nochat=1" },
-            ]
-        }
-    },
-    {
-        "id": "quai-vat-yokai",
-        "title": "Quái vật Yokai: 100 Quái Vật - Yokai Monsters: 100 Monsters",
-        "year": "1968",
-        "actor": "Jun Fujimaki, Miwa Takada, Ryūtarō Gomi, Shinobu Araki",
-        "poster": "img/quai-vat-yokai.webp",
-        "category": "phim-le",
-        "country": "Nhật Bản",
-        "description": "Một thế giới kỳ ảo chưa từng thấy mở ra khi một tên phát triển bất động sản tham lam bắt tay với vị quan đền tham nhũng nhằm cưỡng ép người dân rời khỏi khu nhà tập thể và phá hủy ngôi đền linh thiêng phía sau. Tuy nhiên, hắn đã phạm sai lầm nghiêm trọng khi tổ chức nghi lễ kể 100 chuyện ma mà không thực hiện nghi thức thanh tẩy kết thúc, vô tình mở cánh cổng cho các Yōkai – những yêu quái cổ truyền – xuất hiện để trừng phạt kẻ ác.",
-        "movie-genre": "Kinh dị, Kỳ ảo",
-        "slide": "1",
-        "sources": {
-            "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/jN4636wy9" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/4378453412465?nochat=1" },
-            ]
-        }
-    },
-    {
-        "id": "can-phong-mau-do-1999",
-        "title": "Căn Phòng Màu Đỏ 1- Red Room 1",
-        "year": "1999",
-        "actor": "Yuki Tsukamoto, Mayumi Ookawa, Chiyuki Makimoto, Sheena Nagamori",
-        "poster": "img/can-phong-mau-do-1999.webp",
-        "category": "phim-le",
-        "country": "Nhật Bản",
-        "description": "Một nhóm người tham gia Trò Chơi Vua để tranh giải thưởng trị giá mười triệu yên. Bốn người chơi – vợ chồng Isawa và Masako đang chìm trong nợ nần, nữ sinh Hiromi và nhân viên văn phòng Kanako – bị nhốt chung trong một căn phòng được giám sát bằng camera ẩn. Họ phải lần lượt rút một trong bốn lá bài. Người rút được lá bài Vua có thể ra lệnh cho hai người còn lại làm bất cứ điều gì. Bất kỳ ai từ chối thử thách sẽ mất tiền thưởng. Các vòng chơi ngày càng trở nên cực đoan hơn – từ sỉ nhục và đánh đập đến ép uống nước tiểu và lạm dụng tình dục.",
-        "movie-genre": "Kinh dị, Giật gân",
-        "age": "18+",
-        "slide": "0",
-        "sources": {
-            "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/uTptLRu7o" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/4397499091569?nochat=1" },
-            ]
-        }
-    },
-    
+    {
+        "id": "tam-canh-three-extremes-2-2002",
+        "title": "Tam Canh - Three Extremes 2",
+        "year": "2002",
+        "poster": "img/tam-canh-three-extremes-2-2002.webp",
+        "country": "Hồng Kông, Hàn Quốc, Thái Lan",
+        "movie-genre": "Kinh dị, Giật gân, Tâm lý",
+        "actor": "Lê Minh, Bạch Linh, Dương Quý Mị, Trần Khả Tân, Nguyên Kim",
+        "category": "phim-le",
+        "age": "",
+        "slide": "0",
+        "description": "Tam Canh 2 (Three Extremes II) là một bộ phim kinh dị hợp tuyển năm 2002 gồm ba phân đoạn phim ngắn được đạo diễn bởi ba đạo diễn khác nhau đến từ Hồng Kông, Hàn Quốc và Thái Lan.",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Server 1",
+                    "url": "https://short.icu/RlVmVyenO"
+                }
+            ]
+        }
+    },
+    {
+        "id": "mieu-nhai-thap-nhi-thieu-the-prince-of-temple-street-1992",
+        "title": "Miếu Nhai Thập Nhị Thiếu - The Prince Of Temple Street",
+        "year": "1992",
+        "poster": "img/mieu-nhai-thap-nhi-thieu-the-prince-of-temple-street-1992.webp",
+        "country": "Hồng Kông",
+        "movie-genre": "Hành động, Tội phạm, Drama",
+        "actor": "Lưu Đức Hoa, Vương Tổ Hiền, Ngô Mạnh Đạt, Ngũ Vệ Quốc, Khương Đại Vệ",
+        "category": "phim-le",
+        "age": "",
+        "slide": "0",
+        "description": "Lưu Đức Hoa đóng vai chính trong Thái Tử Đường Miếu, một câu chuyện kinh điển về danh dự và công lý. Lưu Đức Hoa vào vai “Thiếu gia thứ mười hai”, được gọi như vậy vì anh được mười hai cha mẹ nuôi thuộc giới giang hồ nuôi dưỡng. Là một cư dân trọn đời của Đường Miếu, vị thiếu gia trẻ tuổi quen thuộc với cuộc sống băng nhóm, đã gắn bó với chúng từ nhỏ. Nhưng mọi thứ thay đổi khi anh gặp một nữ truyền giáo xinh đẹp tên Teresa (do Vương Tổ Hiền thủ vai). Teresa mong muốn mang lại hy vọng và niềm tin cho khu Đường Miếu, và chàng thiếu gia bị thu hút mạnh mẽ bởi cô.",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Server 1",
+                    "url": "https://short.icu/yMFdjPbeX"
+                }
+            ]
+        }
+    },
+    {
+        "id": "nhan-gian-that-cach-believe-it-or-not-1999",
+        "title": "Nhân Gian Thất Cách - Believe It Or Not",
+        "year": "1999",
+        "poster": "img/nhan-gian-that-cach-believe-it-or-not-1999.webp",
+        "country": "Hồng Kông",
+        "movie-genre": "Kinh dị, Giật gân",
+        "actor": "Trần Mỹ An, Trương Hạo Long, Trịnh Tán Sênh, Trịnh Tán Sênh, Lý Thần Húc, Mông Gia Tuệ,Ngô Trấn Vũ",
+        "category": "phim-le",
+        "age": "",
+        "slide": "0",
+        "description": "Một thiếu niên đột nhiên chết trong căn hộ của mình và sĩ quan Kenny phải điều tra vụ án. Đồng thời, Joe, Lon và Fatty trải nghiệm những điều kỳ lạ vào ngày 'Lễ hội ma'.",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Server 1",
+                    "url": "https://short.icu/B5vLb3p7D"
+                }
+            ]
+        }
+    },
+    {
+        "id": "thien-than-sa-oa-devil-angel-1995",
+        "title": "Thiên Thần Sa Đọa - Devil Angel",
+        "year": "1995",
+        "poster": "img/thien-than-sa-oa-devil-angel-1995.webp",
+        "country": "Hong Kong, Đài Loan",
+        "movie-genre": "Lãng mạn, Giật gân",
+        "actor": "Trịnh Quốc Kiệt, Giang Quốc Tân, Dương Thi Man, Từ Nhược Huyên, Ân Phái",
+        "category": "phim-le",
+        "age": "18+",
+        "slide": "0",
+        "description": "Phim Thiên Thần Sa Đọa xoay quanh câu chuyện 3 người gồm một cặp tình nhân trẻ với nhiều hoài bão, đang đắm mình trong hạnh phúc thì người con trai không chấp nhận cuộc sống giản dị với một túp lều tranh, 2 trái tim vàng, mà anh ta chạy theo một cô nàng giàu có khác, anh ta muốn chứng tỏ mình là một trai bao tài giỏi và bỏ mặc người yêu vốn đang chịu cú sốc lớn, người từng nói với anh ta rằng sẽ giết chết anh ta nếu như bị phản bội",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Server 1",
+                    "url": "https://short.icu/SiMgJBq8o"
+                }
+            ]
+        }
+    },
+    {
+        "id": "nguoi-an-ba-trong-hop-woman-in-a-box-virgin-sacrifice-1985",
+        "title": "Người Đàn Bà Trong Hộp - Woman in a Box: Virgin Sacrifice",
+        "year": "1985",
+        "poster": "img/nguoi-an-ba-trong-hop-woman-in-a-box-virgin-sacrifice-1985.webp",
+        "country": "Nhật Bản",
+        "movie-genre": "Kinh dị, giật gân",
+        "actor": "Reiko Sai, Saeko Kizuki, Kōjirō Kusanagi, Takashi Obara, Hiroshi Tamura",
+        "category": "phim-le",
+        "age": "18+",
+        "slide": "0",
+        "description": "Một người phụ nữ bị săn lùng trong còng tay đêm màu xanh, tra tấn nước và xỏ khuyên! Đây là một bộ phim SM kinh hoàng dựa trên một câu chuyện có thật khiến Hoa Kỳ rung chuyển!",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Server 1",
+                    "url": "https://short.icu/c2XzFL8SK"
+                }
+            ]
+        }
+    },
+    {
+        "id": "co-ban-gai-goi-cam-my-horny-girl-friend-2002",
+        "title": "Cô Bạn Gái Gợi Cảm - My Horny Girl Friend",
+        "year": "2002",
+        "poster": "img/co-ban-gai-goi-cam-my-horny-girl-friend-2002.webp",
+        "country": "Trung Quốc",
+        "movie-genre": "Kịch, Lãng mạn",
+        "actor": "Oscar Lam Wai-Kin, Grace Lam Nga-Si, Yumi Ohsako, Bessie Chan Ming-Kwan, Eddie Lam Kim-Fung, Hoh Kan-Yee",
+        "category": "phim-le",
+        "age": "18+",
+        "slide": "0",
+        "description": "Grace suýt chết đuối trước khi cô được cứu bởi một nhân viên cứu hộ đẹp trai tên là Gordon. Cô yêu Gordon và quyết định tham gia các bài học cứu hộ. Tuy nhiên, Gordon yêu Pamila. Grace được hỗ trợ bởi Eddie và Dawn, nhưng họ không thể tách Gordon và Pamila. Trên thực tế, Eddie có tình cảm lãng mạn dành cho ân sủng nhưng đã có một đêm với bình minh, các mối quan hệ nhanh chóng trở nên phức tạp, làm thế nào tất cả có thể được sắp xếp?",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Server 1",
+                    "url": "https://short.icu/sx9FhFf3y"
+                }
+            ]
+        }
+    },
+    {
+        "id": "duyen-am-poor-ghost--2004",
+        "title": "Duyên Âm - Poor Ghost",
+        "year": "2004",
+        "poster": "img/duyen-am-poor-ghost--2004.webp",
+        "country": "Trung Quốc",
+        "movie-genre": "Ma, Tâm lý",
+        "actor": "Ngô Đình, Đồng Ninh, Thái Đạt Hoa.",
+        "category": "phim-le",
+        "age": "18+",
+        "slide": "0",
+        "description": "Câu chuyện kể về một anh thanh niên đi mướn phòng trọ, những lúc anh nằm mơ đều thấy 1 cô gái trong tình trạng thiếu vải cùng anh quan hệ tình dờ ục. Đến lúc tỉnh dậy anh hay bị mộng tinh nhiều ngày, cho đến một hôm anh nhận ra, người mà trong mơ anh hay quan hệ thật chất là một con ma nữ đã ch.ế.t trong căn phòng nơi anh trọ.",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Server 1",
+                    "url": "https://short.icu/XVnUBOtHG"
+                }
+            ]
+        }
+    },
+    {
+        "id": "ai-dich-virus-than-chet-the-sadness-2021",
+        "title": "Đại Dịch Virus Thần Chết - The Sadness",
+        "year": "2021",
+        "poster": "img/ai-dich-virus-than-chet-the-sadness-2021.webp",
+        "country": "Đài Loan",
+        "movie-genre": "Kinh dị, Xác sống, Hành động, Thảm họa",
+        "actor": "Berant Zhu, Regina Lei, Lan Wei-Hua, Ralf Chiu, Tsai Ru-Hsueh",
+        "category": "phim-le",
+        "age": "",
+        "slide": "0",
+        "description": "Một cặp đôi trẻ đang cố gắng đoàn tụ giữa một thành phố bị tàn phá bởi một bệnh dịch biến nạn nhân thành những kẻ tàn bạo khát máu, điên loạn.",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Server 1",
+                    "url": "https://short.icu/qAjknhujt"
+                }
+            ]
+        }
+    },
+    {
+        "id": "quy-duc-vo-hinh-the-stealth-sex-fiend-2003",
+        "title": "Quỷ Dục Vô Hình - The Stealth Sex Fiend",
+        "year": "2003",
+        "poster": "img/quy-duc-vo-hinh-the-stealth-sex-fiend-2003.webp",
+        "country": "Hồng Kông",
+        "movie-genre": "Viễn tưởng, Tâm lý",
+        "actor": "Chưa có thông tin",
+        "category": "phim-le",
+        "age": "18+",
+        "slide": "0",
+        "description": "Một anh chàng phát hiện ra một loại thuốc ma thuật khiến anh ta vô hình.",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Server 1",
+                    "url": "https://short.icu/8oHd72vwG"
+                }
+            ]
+        }
+    },
+    {
+        "id": "chuyen-tau-am-anh-subway-serial-rape-lover-hunting-1988",
+        "title": "Chuyến Tàu Ám Ảnh - Subway Serial Rape: Lover Hunting",
+        "year": "1988",
+        "poster": "img/chuyen-tau-am-anh-subway-serial-rape-lover-hunting-1988.webp",
+        "country": "Nhật Bản",
+        "movie-genre": "Kinh dị, Hình sự",
+        "actor": "Sayaka Hitomi, Yukijirô Hotaru, Bunmei Tobayama",
+        "category": "phim-le",
+        "age": "18+",
+        "slide": "0",
+        "description": "Một người phụ nữ bị hãm hiếp trên một tàu điện ngầm đông đúc. Không ai báo cáo với cảnh sát. Một hãng phim truyền hình khai thác vụ việc để tăng xếp hạng, với kết quả bi thảm, bao gồm cả nạn nhân của phóng viên được gửi đến để quấy rối các thành viên băng đảng đã phạm tội.",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Server 1",
+                    "url": "https://short.icu/8Nu5jZ-le"
+                }
+            ]
+        }
+    },
+    {
+        "id": "guinea-pig-3-he-never-dies",
+        "title": "Guinea Pig 3: He Never Dies...!",
+        "year": "1986",
+        "actor": "Shinsuke Araki, Satô Masahiro, Keisuke Shinki, Rie Shibata, Ivu",
+        "poster": "img/guinea-pig-3-he-never-dies.webp",
+        "category": "phim-le",
+        "country": "Nhật Bản",
+        "description": " Bạn có thể chịu đựng để xem truyện kinh dị Nhật Bản gây sốc nhất mọi thời đại? Guinea Pig tiếp tục với một gore tập hài nếm (Senritsu Shinanai otoko)! Về một người đàn ông chán nản cố gắng tự tử nhưng ông không thể thành công đến chết.",
+        "movie-genre": "Kinh dị, Giật gân",
+        "slide": "1",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/ZeoNv0jwZ"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/3400977484401?nochat=1"
+                }
+            ]
+        }
+    },
+    {
+        "id": "those-merry-souls",
+        "title": "Trời Ban May Mắn - Those Merry Souls",
+        "year": "1985",
+        "actor": "Nguyên Bưu, Tăng Chí Vỹ, Lâm Chánh Anh, Phùng Thối Phàm, Lý Lệ Lệ",
+        "poster": "img/those-merry-souls.webp",
+        "category": "phim-le",
+        "country": "Hồng Kông",
+        "description": "Triệu Tử Long (Nguyên Bưu) và Ngô Quý Đức (Tăng Chí Vĩ) là đôi bạn thân chơi từ nhỏ đến lớn và cùng nhau tham gia phim trường để thực hiện những màn thế thân cho các diễn viên. Chẳng may mạng của A Đức tới số chết nhưng ba của A Long là bác Triệu (Phùng Thối Phàm)lại là quỷ sai vì thương A Đức như con ruột nên đã ngăn quỷ sai khác bắt hồn của A Đức. Chính vì lẽ đó nên bác Triệu đã bị các vong hồn khác ganh ghét lấy mạng của bác Triệu. Tới 7749 ngày, hồn bác Triệu về bắt A Long là con mình phải tiếp tục thay bác làm quỷ sai để bắt hồn những người khác. Nhưng A Long không chịu đành nhờ ba của A Đức là thầy pháp (Lâm Chánh Anh) cứu nhưng cũng không thể làm được gì. Cuối cùng phải nhờ đến Dì Trân Châu (Lý Lệ Lệ) cùng hợp sức lại đánh đuổi những con ma khác đang đeo bám A Long.",
+        "movie-genre": "Hài, Kinh dị",
+        "slide": "1",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/wE0CE6nhn"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/3400977549937?nochat=1"
+                }
+            ]
+        }
+    },
+    {
+        "id": "ghost-eyes",
+        "title": "Ghost Eyes - Quỷ Nhãn",
+        "year": "1974",
+        "actor": "Chen Szu-chia, Lam Wai-Tiu, Teresa Ha, Wong Ching-Ho",
+        "poster": "img/ghost-eyes.webp",
+        "category": "phim-le",
+        "country": "Hồng Kông",
+        "description": "Không ai làm phim kinh dị giống như hãng Shaw Brothers. Tác giả Ric Meyers của cuốn sách nổi tiếng For One Week Only: The World Of Exploitation Films từng mô tả các tác phẩm của họ là “những bộ phim tàn nhẫn, lạnh lùng, đầy rẫy giòi bọ, nơi không có gì là giới hạn”. Đạo diễn Quế Chi Hùng – người đã ghi dấu ấn qua các phim giật gân như The Bamboo House of Dolls – tiếp tục mang phong cách gai góc của mình vào một câu chuyện bạo lực, gợi cảm và đầy ám ảnh với một bài học rõ ràng: đừng bao giờ nhận kính áp tròng từ một hồn ma tâm thần. Nhân vật chính – Chen Szu-chia – đã phạm sai lầm đó và phải trả giá đắt bằng thân xác của mình (theo nghĩa đen lẫn nghĩa bóng), cùng cái chết ghê rợn của những người bạn xung quanh. Mọi lời mô tả về một bộ phim kinh dị của Shaw Brothers đều không thể lột tả hết cường độ ám ảnh đến nghẹt thở mà đoàn làm phim tạo nên – tất cả chỉ nhằm một mục tiêu duy nhất: khiến bạn rợn tóc gáy từ đầu đến cuối.",
+        "movie-genre": "Kinh dị, Giật gân",
+        "slide": "1",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/RmnwJ2VHB"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/3400977615473?nochat=1"
+                }
+            ]
+        }
+    },
+    {
+        "id": "the-siamese-twins",
+        "title": "Cặp Song Sinh Quái Dị - The Siamese Twins",
+        "year": "1984",
+        "actor": "Trần Ngọc Liên, Thang Trấn Tông, Điềm Nữu, Quan Hải Sơn, Margaret Lee",
+        "poster": "img/the-siamese-twins.webp",
+        "category": "phim-le",
+        "country": "Hồng Kông",
+        "description": "Ở tuổi 24, Chen Yu-lien – người đã nổi tiếng qua nhiều vai chính bên cạnh Châu Nhuận Phát trong các phim truyền hình Hồng Kông – đã có bước ngoặt táo bạo trong sự nghiệp khi nhận vai một chị em song sinh dính liền còn sống sót trong The Siamese Twins, một trong những bộ phim kinh dị rùng rợn nhất thập niên 1980. Trong phim, cô vào vai Bonnie – một du học sinh tốt nghiệp đại học ở Canada trở về Hồng Kông và dần phát hiện những bí mật rùng rợn về quá khứ, khiến hiện tại của cô trở nên hỗn loạn. Các mối quan hệ của Bonnie với những người đàn ông theo đuổi, như bạn học điển trai Mai Tak-lo và một bác sĩ tâm lý trẻ tuổi (Tang Chen-tsung), cũng bị ảnh hưởng nặng nề. Khi bị hồn ma của người chị em song sinh đã mất ám ảnh, Bonnie buộc phải vén màn bí ẩn đằng sau những cái chết kỳ lạ xảy ra quanh mình. Đây là một trong số ít tác phẩm kinh dị do nữ đạo diễn thực hiện, và là một điểm nhấn lạ lùng nhưng độc đáo trong làn sóng điện ảnh mới của Hồng Kông.",
+        "movie-genre": "Kinh dị, Giật gân",
+        "slide": "1",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/qy0ktq_Si"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/3400977746545?nochat=1"
+                }
+            ]
+        }
+    },
+    {
+        "id": "scorpio-nights-2",
+        "title": "Đêm Của Thiên Yết 2 - Scorpio Nights 2",
+        "year": "1999",
+        "actor": "Albert Martinez, Joyce Jimenez, Daisy Reyes, Janus Del Prado, Manny Castañeda",
+        "poster": "img/scorpio-nights-2.webp",
+        "category": "phim-le",
+        "country": "Philippines",
+        "description": "Phim Đêm Của Thiên Yết 2 xoay quanh câu chuyện về Andrew, một người có tính cách tỉ mỉ và luôn theo đuổi sự hoàn hảo trong mọi khía cạnh của cuộc sống. Từ cách anh ấy sắp xếp quần áo cho đến cách anh ấy dạy Vật lý, đều phản ánh sự cẩn thận và ám ảnh của Andrew. Tuy nhiên, sự ổn định và trật tự trong cuộc sống của anh bỗng chốc bị xáo trộn khi Valerie, một sinh viên nồng nhiệt và thích phiêu lưu tình dục, bắt đầu quyến rũ anh. Andrew, mặc dù ban đầu kiên định trước sức hấp dẫn của Valerie, nhưng dần trở nên lún sâu vào mối quan hệ đầy cấu trúc với cô. Mặc cho những lời khuyên cảnh báo và điều đóng cửa từ xung quanh, họ tiếp tục sống trong thế giới của họ, nơi mà những giới hạn dường như không tồn tại. Đạo diễn Erik Matti đã tạo nên một tác phẩm lôi cuốn với dàn diễn viên đầy tài năng như Albert Martinez, Joyce Jimenez, Daisy Reyes, Janus Del Prado, Manny Castañeda. Sự kết hợp giữa kịch tính, tâm lý và tình cảm trong Đêm Của Thiên Yết 2 hứa hẹn đưa người xem qua những cung bậc cảm xúc đầy khó quên. Đêm Của Thiên Yết 2 không chỉ là một bộ phim truyền hình, mà còn là một tác phẩm nghệ thuật đầy sức lôi cuốn. Với một câu chuyện đậm chất con người, đạo diễn và dàn diễn viên xuất sắc, bộ phim chắc chắn sẽ lưu lại dấu ấn khó phai trong lòng khán giả.",
+        "movie-genre": "Tâm lý, Tình cảm",
+        "age": "18+",
+        "slide": "1",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/eoD0QADLe"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/3400977812081?nochat=1"
+                }
+            ]
+        }
+    },
+    {
+        "id": "guinea-pig-4-mermaid-in-a-manhole",
+        "title": "Guinea Pig 4: Mermaid in a Manhole...!",
+        "year": "1988",
+        "actor": "Mari Somei, Tsuyoshi Toshishige, Gô Riju, Saiki Shigeru, Masami Hisamoto",
+        "poster": "img/guinea-pig-4-mermaid-in-a-manhole.webp",
+        "category": "phim-le",
+        "country": "Nhật Bản",
+        "description": "Trong Mermaid trong Manhole (Za ginipiggu 4: Manhoru no naka không ningyō) là một họa sĩ tìm thấy một người bệnh dưới cống và bắt đầu vẽ của mình. Nhưng ngươiì đó bị nặng hơn. Ông đưa cô đến căn hộ của ông, sau đó cô bắt đầu chảy máu và chảy mủ. Và người đàn ông của mình để sử dụng mủ sơn công việc của mình. Nhưng điều này chỉ là sự khởi đầu!",
+        "movie-genre": "Kinh dị, Giật gân",
+        "slide": "0",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/gWraykLyR"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/3401073822321?nochat=1"
+                }
+            ]
+        }
+    },
+    {
+        "id": "hoa-chuc-quy",
+        "title": "Hoả Chúc Quỷ - Burning Sensation",
+        "year": "1989",
+        "actor": "Trịnh Du Linh, Chung Trấn Đào, Lê Yến San, Diệp Vinh Tổ, Ngọ Mã",
+        "poster": "img/hoa-chuc-quy.webp",
+        "category": "phim-le",
+        "country": "Hồng Kông",
+        "description": "Phim kể về A Linh – một nữ diễn viên hát tuồng chết trong vụ hỏa hoạn và trở thành hồn ma. Ba mươi năm sau, lính cứu hỏa A Kiện vô tình cứu bài vị của Linh và được cô âm thầm bảo vệ, rồi cả hai nảy sinh tình cảm. Trong khi đó, một hồn ma hung ác tên Phiêu Hồng chuyên sát hại đàn ông xuất hiện và đe dọa tính mạng Kiện cùng anh trai anh là Mã Hậu Pháo. Nhờ sự giúp đỡ của Linh và một pháp sư mù tên Trần, họ đánh bại được Phiêu Hồng. Sau cùng, Kiện quay ngược thời gian cứu Linh, và cả ba người sống hạnh phúc bên nhau.",
+        "movie-genre": "Kinh dị, Tình cảm",
+        "slide": "1",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/8Znp2GHc3"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/3491454782065?nochat=1"
+                }
+            ]
+        }
+    },
+    {
+        "id": "dong-mau-oan-hon",
+        "title": "Dòng Máu Oan Hồn - New Blood",
+        "year": "2002",
+        "actor": "Nhan Dĩnh Tư, Trương Mẫn, Lý Xán Sâm",
+        "poster": "img/dong-mau-oan-hon.webp",
+        "category": "phim-le",
+        "country": "Hồng Kông",
+        "description": "Ba người xa lạ gặp nhau trong bệnh viện để hiến máu khẩn cấp, nhằm cứu sống một cặp đôi đã cùng nhau tự tử vì một trong hai mắc bệnh ung thư giai đoạn cuối. Tuy nhiên, ca truyền máu chỉ thành công một nửa: chàng trai rơi vào hôn mê, còn cô gái thì không qua khỏi.",
+        "movie-genre": "Kinh dị, Tâm lý",
+        "slide": "1",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/uXU3fGjQc"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/3491745696369?nochat=1"
+                }
+            ]
+        }
+    },
+    {
+        "id": "thanh-thi-dac-canh",
+        "title": "Thành Thị Đặc Cảnh - The Big Heat",
+        "year": "1988",
+        "actor": "Lý Tử Hùng, Vương Tổ Hiền, Huỳnh Diễn Mông, Quách Chấn Phong, Chu Giang",
+        "poster": "img/thanh-thi-dac-canh.webp",
+        "category": "phim-le",
+        "country": "Hồng Kông",
+        "description": "Thanh tra Huỳnh Duy Bang đã phải làm đơn từ chức vì có liên quan đến vụ giết người bí ẩn của người bạn cộng tác cũ. Và nhóm của anh gồm ba người công an khác đã phát hiện ra là một âm mưu thâm độc hơn nhiều so với dự đoán ban đầu của họ. Lý Tử Hùng, Vương Tổ Hiền, Huỳnh Diễn Mông, Quách Chấn Phong, Chu Giang, Mạch Thúy Nhàn, Lê Bỉ Đắc, Chu Văn Kiện, Trương Diệu Dương, Cừu Vân Ba, Ông Thế Kiệt",
+        "movie-genre": "Hành động, Hình sự, Giật gân",
+        "slide": "1",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/Ub4MW9al6"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/3492006398577?nochat=1"
+                }
+            ]
+        }
+    },
+    {
+        "id": "danur-i-can-see-ghosts",
+        "title": "Bạn Âm - Danur: I Can See Ghosts",
+        "year": "2017",
+        "actor": "Prilly Latuconsina, Sandrinna Michelle, Shareefa Daanish, Kinaryosih",
+        "poster": "img/danur-i-can-see-ghosts.webp",
+        "category": "phim-le",
+        "country": "Indonesia",
+        "description": "Risa, một cô bé sống cô lập trong gia đình không hạnh phúc, vô tình kết bạn với ba hồn ma người Hà Lan sau khi nghe bài hát “Boneka Abdi”. Chín năm sau, cô trở lại ngôi nhà cũ để chăm sóc bà và phát hiện y tá Asih thực chất là một hồn ma từng giết con rồi tự sát. Asih bắt cóc em gái Riri, buộc Risa phải nhờ đến sự giúp đỡ của các hồn ma để giải cứu. Cuối cùng, lời nguyền được hóa giải, nhưng chiếc lược của Asih bị người khác nhặt lên, báo hiệu tai họa chưa kết thúc.",
+        "movie-genre": "Kinh dị",
+        "slide": "1",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/ArcHMTZO8"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/3511634954865?nochat=1"
+                }
+            ]
+        }
+    },
+    {
+        "id": "once-upon-a-time-in-hong-kong",
+        "title": "Bóng Tối Hồng Kông – Once Upon a Time in Hong Kong",
+        "year": "2021",
+        "actor": "Cổ Thiên Lạc, Lương Gia Huy, Ngô Trấn Vũ, Lâm Gia Đống",
+        "poster": "img/once-upon-a-time-in-hong-kong.webp",
+        "category": "phim-le",
+        "country": "Hồng Kông",
+        "description": "Nội dung phim Bóng Tối Hồng Kông – Once Upon a Time in Hong Kong (2021): Cổ Thiên Lạc cùng Lâm Gia Đống vào vai các điều tra viên của Ủy ban Độc lập chống tham những (ICAC) Hồng Kông chống lại trùm ma túy khét tiếng Crippled Ho (Lương Triều Vỹ đóng) và cảnh sát thoái hóa Chui Lok (Ngô Trấn Vũ đóng)",
+        "movie-genre": "Hành động, Hình sự",
+        "slide": "0",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/rPesKSpnb"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/3570952243825?nochat=1"
+                }
+            ]
+        }
+    },
+    {
+        "id": "nhuc-bo-doan-3",
+        "title": "Nhục Bồ Đoàn 3 : Khâm Sai Chốn Thanh Lâu - The Carnal Sutra Mat III",
+        "year": "1996",
+        "actor": "Từ Cẩm Giang, Quan Bảo Tuệ, Dương Ngọc Mai, Hà Gia Câu, Lâm Thượng Nghi",
+        "poster": "img/nhuc-bo-doan-3.webp",
+        "category": "phim-le",
+        "country": "Hồng Kông",
+        "description": "Khâm Sai Chốn Thanh Lâu - Yu Pui Tsuen Iii (1996) Đại Nội Mật Thám Linh Linh Tinh Tinh - Yu Pui Tsuen III (1996) là một bộ phim 18+ Cổ Trang do Hồng Kong sản xuất, phim được thực hiện bởi đạo diễn Lê Khải Cường cùng sự góp mặt của dàn diễn viên 18+ quen thuộc Từ Cẩm Giang, Quan Bảo Tuệ, Dương Ngọc Mai, Hà Gia Câu, Lâm Thượng Nghi, Huỳnh Nhất Phi, Hồng Hiểu Vân... Nội dung phim xoay quanh một tên mật thám của nhà Minh có biệt danh là 000, hắn ta nhận được nhiệm vụ từ cấp trên điều tra về việc một tửu lầu có khách bị đầu độc bởi nha phiến. Tuy nhiên khi đến đây điều tra trong phim Đại Nội Mật Thám Linh Linh Tinh Tinh - Yu Pui Tsuen III (1996), tên mật thám này chưa nắm rõ ràng chứng cứ thì lại rõ từng người kĩ nữ làm việc tại đây. Cho đến một ngày khi cô giúp việc bị mù tình cờ nghe được chuyện thuốc độc trên, 000 đã rũ bỏ gái gú để điều tra nhằm lập công rồi sau đó quay lại mua lại lầu xanh này.",
+        "movie-genre": "Cổ trang, Điều tra",
+        "age": "18+",
+        "slide": "1",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/TLCRHnQ1J"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/3575577119345?nochat=1"
+                }
+            ]
+        }
+    },
+    {
+        "id": "chanh-tong-nhuc-bo-doan",
+        "title": "Chánh Tông Nhục Bồ Đoàn - The Carnal Sutra Mat",
+        "year": "1987",
+        "actor": "Chung-Kun Teng, Yuen-Man Cheng, Chi-Wai Yu, Sun Yueh, Chin Fei Lam",
+        "poster": "img/chanh-tong-nhuc-bo-doan.webp",
+        "category": "phim-le",
+        "country": "Hồng Kông",
+        "description": "Chánh Tông Nhục Bồ Đoàn là bộ phim Hồng Kông ra mắt năm 1987, do đạo diễn Fan Ho chỉ đạo với sự tham gia của các diễn viên như Chung-Kun Teng, Yuen-Man Cheng, Chi-Wai Yu... Phim xoay quanh một chàng trai mơ thấy mình chết đuối sau một đêm hoan lạc và nhờ một nhà sư lý giải giấc mơ kỳ lạ đó. Nhà sư cảnh báo rằng giấc mơ là lời nhắc không nên đắm chìm trong dục vọng, nhưng chàng trai bỏ ngoài tai và tiếp tục chạy theo khoái lạc bằng cách cưới một trinh nữ và quan hệ liên tục. Dần dần, anh ta bắt đầu hiểu ra sự đúng đắn trong lời khuyên của nhà sư và phải đối mặt với những hậu quả nghiệt ngã do chính lối sống buông thả của mình gây ra.",
+        "movie-genre": "Cổ trang, Tâm lý",
+        "age": "18+",
+        "slide": "0",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/uhbPydUmx"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/3576029383281?nochat=1"
+                }
+            ]
+        }
+    },
+    {
+        "id": "truc-phu-nhan",
+        "title": "Trúc Phu Nhân - Madame Bamboo",
+        "year": "1991",
+        "actor": "Đơn Lập Văn, Lâm Hy Sến, Lý Nguyệt tiên, Trương Trinh",
+        "poster": "img/truc-phu-nhan.webp",
+        "category": "phim-le",
+        "country": "Hồng Kông",
+        "description": "Trúc Phu Nhân – Madame Bamboo (1991) xoay quanh 2 cô nàng kỹ nữ với những câu chuyện trong quá khứ đã đưa họ đến với lầu xanh. Người phụ nữ đầu tiên đã có chồng với nhu cầu chăn gối cao hơn người thường, trong lúc chồng đi làm việc xa nhà, ả ta lén lút với một gã thợ rèn to khỏe, có thể phục vụ ả mọi lúc mọi nơi. Thế rồi, “đi đêm lắm cũng có ngày gặp ma” khi vào một ngày đẹp trời ả bị chồng bắt gặp đang ân ái cuồng nhiệt với gã thợ rèn nên đã bị bán vào lầu xanh. Người phụ nữ thứ hai đã đính hôn với người con trai cô yêu nhưng cha mẹ cô vì tiền bạc mà hứa hôn với một cậu bé mới 7 tuổi. Không thể chống lại quyết định của cha mẹ, cô đành chấp nhận lên kiệu hoa với một đứa trẻ, và trong cái đêm tân hôn của 2 người, người yêu của cô nàng đã lén lút đột nhập vào phòng tân hôn để ân ái cùng người mình yêu để rồi sau cũng bị người ta phát hiện và kết cục là bị bán vào lầu xanh.",
+        "movie-genre": "Cổ trang, Tâm lý",
+        "age": "18+",
+        "slide": "1",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/k2aFHtmwN"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/3576360340081?nochat=1"
+                }
+            ]
+        }
+    },
+    {
+        "id": "ran-doc--naked-poison",
+        "title": "Rắn Độc – Naked Poison",
+        "year": "2000",
+        "actor": "Lương Trác Mãn, Đàm Quân, Nhan仟 văn, Trịnh Hạo Nam",
+        "poster": "img/ran-doc--naked-poison.webp",
+        "category": "phim-le",
+        "country": "Hồng Kông",
+        "description": "Ông Kim là một y sĩ chuyên bào chế và bán thuốc đông y, nhưng lại không muốn cháu mình là Mẫn đi theo nghề vì chuyện hồi nhỏ của anh luôn lén nhìn phụ nữ đi vệ sinh, thích chụp lén quần xì của các cô gái ngoài đường. Trong một lần trông thấy ông ngoại đang lấy nọc rắn để bào chế thuốc độc thì vô tình té ngã ra chết, mọi thứ để lại hết cho thằng cháu, cũng chỉ mong thằng cháu nên người. Nhưng, từ khi biết được công thức từ nọc rắn độc thì Mẫn lại dùng nó mà đầu độc những người đã ức hiếp anh. Từ sếp cho đến cô thư ký và ngay cả cô hàng xóm mướn nhà anh. Có được thứ thuốc đó, anh đầu độc từng người và bắt họ nghe lời anh, dâng hiến anh tiền bạc và bắt phải “nhún nhảy, đẩy đưa” cùng anh hằng đêm...",
+        "movie-genre": "Kinh dị, Giật gân",
+        "age": "18+",
+        "slide": "1",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/4nj1jN9oD"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/3578159368817?nochat=1"
+                }
+            ]
+        }
+    },
+    {
+        "id": "cuc-do-thu-tinh",
+        "title": "Cực Độ Thú Tính - Evil Instinct",
+        "year": "1996",
+        "actor": "Carrie Ng, Diana Pang, Bowie Lam, Mak Bau, Stuart Yung",
+        "poster": "img/cuc-do-thu-tinh.webp",
+        "category": "phim-le",
+        "country": "Hồng Kông",
+        "description": "Cực Độ Thú Tính - Evil Instinct 1996 xoay quanh câu chuyện của anh chàng cảnh sát tên Sam đã tình cờ làm quen được 2 mỹ nữ trong quán bar và sau đó cả 3 người xảy ra một cuộc quan hệ đầy máu lửa trong đêm cùng nhau vô cùng thõa mãn. Trong khi đang quan hệ, nhóm của Sam bị phá rối bởi một cuộc gọi nặc danh thông báo về vụ án mạng chết người gần đó trong phim Cực Độ Thú Tính - Evil Instinct (1996). Nhưng tất cả chỉ là khởi màn của các vụ án mạng sẽ xảy ra sau đó, khi Sam điều tra theo manh mối đến một tủ bảo hiểm thì phát hiện ra 2 cô gái mình từng quan hệ đang làm việc tại đây.",
+        "movie-genre": "Hành động, Xã hội",
+        "age": "18+",
+        "slide": "1",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/13WDL7idQO"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/3578415549041?nochat=1"
+                }
+            ]
+        }
+    },
+    {
+        "id": "kim-binh-song-diem",
+        "title": "Kim Bình Song Diễm - The Golden Lotus",
+        "year": "1974",
+        "actor": "Dương Quân, Hồ Cẩm, Điềm Ni, Trần Bình, Vương Lai, Thành Long",
+        "poster": "img/kim-binh-song-diem.webp",
+        "category": "phim-le",
+        "country": "Hồng Kông",
+        "description": "Kim Bình Song Diễm - The Golden Lotus (1974) là một bộ Hồng Kong của đạo diễn Lý Hàn Tường, có sự tham gia của các diễn viên Thành Long, Dương Quân, Điềm Ni, Thạch Thiên, Trần Bình... Kim Bình Song Diễm quy tụ những cái tên đình đám trong làng điện ảnh như đạo diễn Lý Hàn Tường, nhà sản xuất Thiệu Dật Phu, tài tử Thành Long (Kim Bình Song Diễm bộ phim đầu tay củangôi sao võ thuật), đây chắc hẳn là đội hình mạnh nhất trong lịch sử phim cấp 3 xứ Cảng thơm.Peter Yang,Hồ Cẩm,Điềm Ni,Trần Bình,Wang Lai,Thành Long,Hạ Bình,Uông Vũ,",
+        "movie-genre": "Cổ trang, Tâm lý",
+        "age": "18+",
+        "slide": "0",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/1S_HljKVM"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/3578878233201?nochat=1"
+                }
+            ]
+        }
+    },
+    {
+        "id": "kim-binh-phong-nguyet",
+        "title": "Kim Bình Phong Nguyệt - The Golden Lotus: Love and Desire",
+        "year": "1991",
+        "actor": "Đơn Lập Văn, Phương D玉婷, Kỷ倩 nhi, Tào Tra理",
+        "poster": "img/kim-binh-phong-nguyet.webp",
+        "category": "phim-le",
+        "country": "Hồng Kông",
+        "description": "Tây Môn Khánh, một tên quan vô lại, tham lam và dâm dục, 2 thứ mà hắn thèm khát chính là phụ nữ và tiền bạc, theo đuổi người vợ trẻ của anh trai mình, Lý Bình Nhi. Bình Nhi đã nhanh chóng bị cuốn hút với vẻ ngoài hấp dẫn và đào hoa của cậu em chồng, trong khi người chồng của cô suốt ngày chỉ biết say sỉn thì cô và Tây Môn Khánh thường “tranh thủ” thực hiện những tư thế mới được vẽ trong cuốn “Golden Lotus”.",
+        "movie-genre": "Cổ trang, Tâm lý",
+        "age": "18+",
+        "slide": "0",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/1S_HljKVM"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/3578878233201?nochat=1"
+                }
+            ]
+        }
+    },
+    {
+        "id": "that-nghiep-sinh",
+        "title": "Thất Nghiệp Sinh - On Trial",
+        "year": "1981",
+        "actor": "Trần Bách Cường, Trương Quốc Vinh, Chung Bảo La, Đặng藹霖, Hoàng Mạn Ng凝",
+        "poster": "img/that-nghiep-sinh.webp",
+        "category": "phim-le",
+        "country": "Hồng Kông",
+        "description": "Bộ phim kể về ba người bạn thân từ thời trung học: Khổng Gia Bảo (Trần Bách Cường), Lâm Chí Vinh (Trương Quốc Vinh) và em trai của Gia Bảo là Khổng Gia Huy (Chung Bảo La). Sau khi tốt nghiệp, mỗi người chọn cho mình một con đường riêng: Gia Bảo theo đuổi đam mê âm nhạc và sau nhiều thất bại đã tổ chức thành công liveshow của riêng mình; Chí Vinh sinh ra trong gia cảnh nghèo khó, tính cách nổi loạn và trải qua nhiều gian truân; còn Gia Huy thì sống phóng túng nhưng cuối cùng lại chọn con đường mà cha mẹ mong muốn. Phim có hai kết thúc: một là Chí Vinh sa ngã, bị xã hội đen lừa và bị chém đến chết; hai là Chí Vinh xuất hiện tại buổi diễn của Gia Bảo, ôm bạn gái nói lời chia tay. Khi phát hành tại rạp, phim dùng kết thúc đầu tiên; phiên bản đĩa VCD chủ yếu cũng giữ kết thúc này, chỉ một số ít có kết thúc thứ hai. Đến năm 2017, bản phục chế kỹ thuật số và bản Blu-ray phát hành năm 2018 sử dụng kết thúc thứ hai.",
+        "movie-genre": "Drama, Học đường",
+        "slide": "1",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/RtVz4-qrl"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/3727903230577?nochat=1"
+                }
+            ]
+        }
+    },
+    {
+        "id": "khuc-nhac-thang-7",
+        "title": "Khúc Nhạc Tháng 7 - July Rhapsody",
+        "year": "2002",
+        "actor": "Trương Học Hữu, Mai Diễm Phương, Lâm Gia Hân, Đàm Tuấn Ngạn",
+        "poster": "img/khuc-nhac-thang-7.webp",
+        "category": "phim-le",
+        "country": "Hồng Kông",
+        "description": "Lam Yiu-kwok (Trương Học Hữu), một giáo viên trung học ở Hồng Kông, đang đối mặt với khủng hoảng tuổi trung niên, hôn nhân rạn nứt và sự quyến rũ từ một nữ sinh. Anh sống cùng vợ là Man-ching (Mai Diễm Phương) và hai con trai trong một căn hộ nhỏ, nhưng con trai cả Ang thực chất là kết quả từ mối quan hệ giữa Man-ching và thầy giáo cũ – ông Shing. Khi xưa, Man-ching từng quyến rũ thầy Shing khi còn là học sinh, dẫn đến việc mang thai. Trong khi bạn bè cũ của Yiu-kwok đều thành đạt và sống xa hoa, anh vẫn chật vật với nghề giáo. Khi ông Shing trở về Hồng Kông trong bệnh tật và tuổi già, Man-ching cảm thấy có trách nhiệm chăm sóc tình cũ, khiến mối quan hệ vợ chồng thêm căng thẳng. Cùng lúc, Yiu-kwok dần không cưỡng lại được sự ve vãn của Choi-lam (Lâm Gia Hân), một nữ sinh trong lớp yêu thầm anh.",
+        "movie-genre": "Drama, Tình cảm",
+        "slide": "0",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/1NzWQ6L-x"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/3772642429553?nochat=1"
+                }
+            ]
+        }
+    },
+    {
+        "id": "the-dead-and-the-deadly",
+        "title": "Tang Lễ Và Lễ Tang - The Dead And The Deadly",
+        "year": "1982",
+        "actor": "Hồng Kim Bảo, Ngọ Mã, Lâm Chánh Anh, Chung Sở Hồng, Trần Long",
+        "poster": "img/the-dead-and-the-deadly.webp",
+        "category": "phim-le",
+        "country": "Hồng Kông",
+        "description": "Chu Hoằng Lợi (do Hồng Kim Bảo thủ vai) là một thợ phụ trong tiệm làm đồ mã, từ nhỏ được nhị thúc công đạo sĩ (Lâm Chánh Anh) nuôi dưỡng. Tuy không giỏi đạo thuật và đôi khi hành xử vụng về, nhưng anh luôn giữ tấm lòng chính trực. Vì sợ liên lụy đến vị hôn thê Á Vân (Chung Sở Hồng), anh thường cố tỏ ra lạnh nhạt với cô. Một ngày, người bạn thân Mã Lân Tường (Ngọ Mã) trở về quê trong hình hài một xác chết, cùng nhóm người lạ áp giải thi thể và một phụ nữ tự xưng là vợ đang mang thai của anh. Thực chất, Mã Lân Tường giả chết để đột nhập mộ tổ nhằm trộm báu vật, nhưng sau khi phát hiện kho báu không có giá trị, đồng bọn đã giết anh để cướp tài sản thật sự do trưởng thôn nắm giữ. Linh hồn oan khuất của Lân Tường tìm đến Chu Hoằng Lợi nhờ báo thù. Bất chấp nguy hiểm, Chu Hoằng Lợi nhờ nhị thúc công trợ giúp để tiêu diệt đám phản bội. Trong quá trình nhập hồn cho bạn báo thù, linh hồn của anh không kịp trở lại thể xác trước bình minh, khiến anh mất mạng và bị quỷ sai bắt xuống địa phủ. Trong đau khổ, Á Vân cầu cứu nhị thúc công và quyết chiến cùng quỷ sai trong đêm thất thất để đoạt lại hồn phách của người yêu.",
+        "movie-genre": "Hài, Kinh dị, Hành động",
+        "slide": "0",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/F8-eQIEF7"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/3875730950769?nochat=1"
+                }
+            ]
+        }
+    },
+    {
+        "id": "ma-vui-ve-4",
+        "title": "Ma Vui Vẻ 4 - Happy Ghost 4",
+        "year": "1990",
+        "actor": "Hoàng Bách Minh, Beyond, Lý Lệ Trân, Trần Gia Linh, Dương Bảo Linh",
+        "poster": "img/ma-vui-ve-4.webp",
+        "category": "phim-le",
+        "country": "Hồng Kông",
+        "description": "Ma Vui Vẻ 4 là bộ phim Hồng Kông ra mắt năm 1990, thuộc thể loại hài – kinh dị, mang đến một trải nghiệm giải trí độc đáo và mới mẻ. Nội dung phim xoay quanh một nhóm sinh viên đại học tình cờ phát hiện hài cốt của một vị bạo tướng thời xưa và vô tình đánh thức linh hồn của ông. Từ đó, hàng loạt tình huống kỳ quái, rùng rợn nhưng cũng đầy hài hước liên tiếp xảy ra. Dưới sự chỉ đạo của đạo diễn Clifton Ko, bộ phim có sự góp mặt của nhiều tên tuổi như Dương Bảo Linh, Hồ Phong và Hoàng Bách Minh. Với lối kể chuyện duyên dáng, phim không chỉ mang lại tiếng cười sảng khoái mà còn gợi mở những suy ngẫm về tâm lý, nhân quả và sự tác động của quá khứ đến hiện tại. Ma Vui Vẻ 4 là sự pha trộn khéo léo giữa yếu tố ma quái và đời thường, mang đậm dấu ấn điện ảnh Hồng Kông thập niên 90.",
+        "movie-genre": "Hài, Ma",
+        "slide": "0",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/1UA-fFD7H"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/3920021752433?nochat=1"
+                }
+            ]
+        }
+    },
+    {
+        "id": "tan-that-long-chau",
+        "title": "Tân Thất Long Châu - Dragon Ball The Magic Begins",
+        "year": "1991",
+        "actor": "Trần Tử Cường, Tạ Kim Yến, Hoàng Trọng Dụ, Trịnh Đồng Chấn",
+        "poster": "img/tan-that-long-chau.webp",
+        "category": "phim-le",
+        "country": "Hồng Kông",
+        "description": "Trái Đất có bảy viên ngọc rồng, mỗi viên được đánh dấu từ một đến bảy sao và phân tán khắp nơi trên thế giới. Khi ai đó thu thập đủ bảy viên, họ có thể triệu hồi rồng thần Shenlong để ban cho một điều ước. Trong một buổi lễ nhậm chức trưởng làng mới, ngọc rồng được xem là báu vật của làng bất ngờ bị Ma Ngưu Vương – một sinh vật ngoài hành tinh – cùng thuộc hạ xông vào cướp lấy. Hắn tin rằng nếu sở hữu đủ bảy viên ngọc rồng, hắn sẽ có thể thống trị nhân loại. Sau khi có trong tay hai viên, hắn phái Sparta và Maria đi truy tìm năm viên còn lại. Thuộc hạ của hắn đã tìm được ngọc rồng bốn sao từ Tôn Ngộ Phàn, giết ông và cướp lấy viên ngọc. Tôn Ngộ Không, sau khi vừa quen biết một cô gái, phát hiện ông nội bị giết liền tức giận và quyết tâm trả thù. Trên hành trình, cậu gặp Lạc Ba và Ú Long, sau đó hợp lực cùng Quy Lão Tiên Sinh để đối đầu với Ma Ngưu Vương. Cuối cùng, phát hiện Tôn Ngộ Phàn chưa chết, và các viên ngọc rồng đều đang nằm trong bụng Ma Ngưu Vương. Ngộ Không dùng gậy Như Ý đánh viên ngọc cuối cùng vào bụng hắn, triệu hồi rồng thần. Cô con gái của trưởng làng đã ước tất cả mọi người sống lại, kết thúc phim trong niềm vui hân hoan của mọi người.",
+        "movie-genre": "Hành động, Phiêu lưu, Giả tưởng",
+        "slide": "1",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/4a3KiyIyA"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/4050764302961?nochat=1"
+                }
+            ]
+        }
+    },
+    {
+        "id": "horoscope-ii-the-woman-from-hell",
+        "title": "Chớ Tới Gần Người Lạ: Giáng Đầu Thuật - Horoscope II: The Woman from Hell",
+        "year": "2000",
+        "actor": "Trương Văn Từ, Nhan仟 văn, Nhậm Đạt Hoa, Hà Hoa 초, Chung Khiết",
+        "poster": "img/horoscope-ii-the-woman-from-hell.webp",
+        "category": "phim-le",
+        "country": "Hồng Kông",
+        "description": "Sau cái chết của đứa con sơ sinh, vợ chồng Yeung từ một cặp đôi hạnh phúc dần trở nên xa cách và lạnh nhạt. Vào ngày kỷ niệm hôn nhân, Jimmy – một người bạn thân của họ – bất ngờ tự sát sau khi nói rằng mình bị trúng bùa chú. Từ đó, hàng loạt cơn ác mộng kỳ lạ và đáng sợ liên tiếp xảy ra, khiến Yeung và vợ bị cuốn vào một chuỗi hiện tượng siêu nhiên đầy ám ảnh.",
+        "movie-genre": "Kinh dị, Bí ẩn",
+        "slide": "0",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/_McMDMI3Q"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/4106505161329?nochat=1"
+                }
+            ]
+        }
+    },
+    {
+        "id": "cau-chuyen-ma-am",
+        "title": "Câu Chuyện Ma Ám - Haunted Tales",
+        "year": "1980",
+        "actor": "Tỉnh Lệ, Lăng雲, Lâm Trân Kỳ, Lưu Lục Hoa",
+        "poster": "img/cau-chuyen-ma-am.webp",
+        "category": "phim-le",
+        "country": "Hồng Kông",
+        "description": "Một vụ tai nạn thảm khốc khiến người chồng tử vong và người vợ bị thương nặng, nhưng bi kịch chưa dừng lại khi linh hồn người chồng quay trở lại, mang theo ý định đưa vợ sang thế giới bên kia cùng mình. Trong một câu chuyện khác, một người trông nhà may mắn trúng số nhờ sự giúp đỡ của hồn ma cư ngụ trong một chiếc đĩa cổ, thế nhưng mọi chuyện nhanh chóng trở nên tồi tệ khi anh ta phá vỡ lời hứa với linh hồn đó, khiến tai họa liên tiếp ập đến.",
+        "movie-genre": "Kinh dị, Tâm linh",
+        "slide": "0",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/gPoahf0mx"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/4165351049841?nochat=1"
+                }
+            ]
+        }
+    },
+    {
+        "id": "khong-son-linh-vu",
+        "title": "Không Sơn Linh Vũ - Raining In The Mountain",
+        "year": "1979",
+        "actor": "Từ Phong, Tôn Việt, Điền Phong, Trần Tuệ Lâu, Thạch Tuấn",
+        "poster": "img/khong-son-linh-vu.webp",
+        "category": "phim-le",
+        "country": "Hồng Kông",
+        "description": "Sau khi nghe tin trụ trì chùa Tam Bảo sắp viên tịch, giới giang hồ xôn xao bởi lời đồn về quyển kinh viết tay quý giá “Đại Thừa Khởi Tín Luận” đang được lưu giữ tại đây. Quyển kinh này sẽ thuộc về người kế nhiệm vị trí trụ trì, khiến nhiều thế lực âm thầm nhòm ngó. Trụ trì có ba đệ tử và muốn truyền kinh bát cho một trong số họ, nên đã mời Vương tướng quân, thí chủ Văn An và pháp sư Ngộ Ngoại đến bàn bạc. Tuy nhiên, Vương tướng quân và Văn An đều có âm mưu chiếm đoạt quyển kinh, thậm chí Văn An còn mang theo nữ tặc Bạch Hồ phòng khi có biến. Trong ba đệ tử, chỉ có Tam sư đệ Tuệ Tư là người thật tâm bảo vệ chùa, còn hai người còn lại đã bị thu mua. Đúng lúc tình hình căng thẳng, một người đàn ông tên Khâu Minh – dân tị nạn lang bạt giang hồ – bất ngờ vào chùa xin quy y, mang theo nhiều ẩn tình chưa được sáng tỏ.",
+        "movie-genre": "Võ thuật, Phiêu lưu",
+        "slide": "0",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/3mJb3_Vaa8"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/4327388875377?nochat=1"
+                }
+            ]
+        }
+    },
+    {
+        "id": "quai-vat-yokai",
+        "title": "Quái vật Yokai: 100 Quái Vật - Yokai Monsters: 100 Monsters",
+        "year": "1968",
+        "actor": "Jun Fujimaki, Miwa Takada, Ryūtarō Gomi, Shinobu Araki",
+        "poster": "img/quai-vat-yokai.webp",
+        "category": "phim-le",
+        "country": "Nhật Bản",
+        "description": "Một thế giới kỳ ảo chưa từng thấy mở ra khi một tên phát triển bất động sản tham lam bắt tay với vị quan đền tham nhũng nhằm cưỡng ép người dân rời khỏi khu nhà tập thể và phá hủy ngôi đền linh thiêng phía sau. Tuy nhiên, hắn đã phạm sai lầm nghiêm trọng khi tổ chức nghi lễ kể 100 chuyện ma mà không thực hiện nghi thức thanh tẩy kết thúc, vô tình mở cánh cổng cho các Yōkai – những yêu quái cổ truyền – xuất hiện để trừng phạt kẻ ác.",
+        "movie-genre": "Kinh dị, Kỳ ảo",
+        "slide": "1",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/jN4636wy9"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/4378453412465?nochat=1"
+                }
+            ]
+        }
+    },
+    {
+        "id": "can-phong-mau-do-1999",
+        "title": "Căn Phòng Màu Đỏ 1- Red Room 1",
+        "year": "1999",
+        "actor": "Yuki Tsukamoto, Mayumi Ookawa, Chiyuki Makimoto, Sheena Nagamori",
+        "poster": "img/can-phong-mau-do-1999.webp",
+        "category": "phim-le",
+        "country": "Nhật Bản",
+        "description": "Một nhóm người tham gia Trò Chơi Vua để tranh giải thưởng trị giá mười triệu yên. Bốn người chơi – vợ chồng Isawa và Masako đang chìm trong nợ nần, nữ sinh Hiromi và nhân viên văn phòng Kanako – bị nhốt chung trong một căn phòng được giám sát bằng camera ẩn. Họ phải lần lượt rút một trong bốn lá bài. Người rút được lá bài Vua có thể ra lệnh cho hai người còn lại làm bất cứ điều gì. Bất kỳ ai từ chối thử thách sẽ mất tiền thưởng. Các vòng chơi ngày càng trở nên cực đoan hơn – từ sỉ nhục và đánh đập đến ép uống nước tiểu và lạm dụng tình dục.",
+        "movie-genre": "Kinh dị, Giật gân",
+        "age": "18+",
+        "slide": "0",
+        "sources": {
+            "Vietsub": [
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/uTptLRu7o"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/4397499091569?nochat=1"
+                }
+            ]
+        }
+    },
     {
         "id": "can-phong-mau-do-2000",
         "title": "Căn Phòng Màu Đỏ 2- Red Room",
@@ -529,8 +904,14 @@ const MOVIES_DATA = [
         "slide": "0",
         "sources": {
             "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/LpFBpVj0I" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/4397499157105?nochat=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/LpFBpVj0I"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/4397499157105?nochat=1"
+                }
             ]
         }
     },
@@ -548,8 +929,14 @@ const MOVIES_DATA = [
         "slide": "0",
         "sources": {
             "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/bfL_jZc4c" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/4436485081713?nochat=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/bfL_jZc4c"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/4436485081713?nochat=1"
+                }
             ]
         }
     },
@@ -566,8 +953,14 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/qmls5TndRr" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/4545403030129?nochat=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/qmls5TndRr"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/4545403030129?nochat=1"
+                }
             ]
         }
     },
@@ -585,8 +978,14 @@ const MOVIES_DATA = [
         "slide": "0",
         "sources": {
             "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/Rr_yX-1Oy" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/4654121093745?nochat=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/Rr_yX-1Oy"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/4654121093745?nochat=1"
+                }
             ]
         }
     },
@@ -604,8 +1003,14 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/cIn7k66J3" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/4654204390001?nochat=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/cIn7k66J3"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/4654204390001?nochat=1"
+                }
             ]
         }
     },
@@ -623,8 +1028,14 @@ const MOVIES_DATA = [
         "slide": "0",
         "sources": {
             "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/AiWc9fQibn" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/4654206749297?nochat=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/AiWc9fQibn"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/4654206749297?nochat=1"
+                }
             ]
         }
     },
@@ -642,8 +1053,14 @@ const MOVIES_DATA = [
         "slide": "0",
         "sources": {
             "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/7Guxidpcw" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/4674731510385?nochat=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/7Guxidpcw"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/4674731510385?nochat=1"
+                }
             ]
         }
     },
@@ -661,8 +1078,14 @@ const MOVIES_DATA = [
         "slide": "0",
         "sources": {
             "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/PZ0HCKCTq" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/4674731510385?nochat=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/PZ0HCKCTq"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/4674731510385?nochat=1"
+                }
             ]
         }
     },
@@ -680,8 +1103,14 @@ const MOVIES_DATA = [
         "slide": "0",
         "sources": {
             "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/ZZWpxNTX8" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/4674741406321?nochat=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/ZZWpxNTX8"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/4674741406321?nochat=1"
+                }
             ]
         }
     },
@@ -699,8 +1128,14 @@ const MOVIES_DATA = [
         "slide": "0",
         "sources": {
             "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/vw9e_68rU" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/4674757462641?nochat=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/vw9e_68rU"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/4674757462641?nochat=1"
+                }
             ]
         }
     },
@@ -718,8 +1153,14 @@ const MOVIES_DATA = [
         "slide": "0",
         "sources": {
             "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/Fd1CK-_Fg" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/4677612079729?nochat=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/Fd1CK-_Fg"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/4677612079729?nochat=1"
+                }
             ]
         }
     },
@@ -736,8 +1177,14 @@ const MOVIES_DATA = [
         "slide": "0",
         "sources": {
             "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/YiLy6K5Ls" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/4677619157617?nochat=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/YiLy6K5Ls"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/4677619157617?nochat=1"
+                }
             ]
         }
     },
@@ -755,8 +1202,14 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/T4TfIgeLn" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/4677619485297?nochat=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/T4TfIgeLn"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/4677619485297?nochat=1"
+                }
             ]
         }
     },
@@ -773,8 +1226,14 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/1njA2bvUb" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/4692728220273?nochat=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/1njA2bvUb"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/4692728220273?nochat=1"
+                }
             ]
         }
     },
@@ -792,8 +1251,14 @@ const MOVIES_DATA = [
         "slide": "0",
         "sources": {
             "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/hMqt9Wq9C" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/4692754369137?nochat=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/hMqt9Wq9C"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/4692754369137?nochat=1"
+                }
             ]
         }
     },
@@ -811,8 +1276,14 @@ const MOVIES_DATA = [
         "slide": "0",
         "sources": {
             "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/7I9iq-NPE" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/4692756073073?nochat=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/7I9iq-NPE"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/4692756073073?nochat=1"
+                }
             ]
         }
     },
@@ -829,8 +1300,14 @@ const MOVIES_DATA = [
         "slide": "0",
         "sources": {
             "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/SxdrO8ZzB" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/7541256555121?nochat=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/SxdrO8ZzB"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/7541256555121?nochat=1"
+                }
             ]
         }
     },
@@ -848,8 +1325,14 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/ZIAkior2D" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/9937987963505?nochat=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/ZIAkior2D"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/9937987963505?nochat=1"
+                }
             ]
         }
     },
@@ -867,8 +1350,14 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/zCM6L1bf-" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/9938018437745?nochat=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/zCM6L1bf-"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/9938018437745?nochat=1"
+                }
             ]
         }
     },
@@ -886,8 +1375,14 @@ const MOVIES_DATA = [
         "slide": "0",
         "sources": {
             "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/FxWMQmXw3s" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/10002833410673?nochat=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/FxWMQmXw3s"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/10002833410673?nochat=1"
+                }
             ]
         }
     },
@@ -905,8 +1400,14 @@ const MOVIES_DATA = [
         "slide": "0",
         "sources": {
             "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/8bCKTpXq6" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/10002867948145?nochat=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/8bCKTpXq6"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/10002867948145?nochat=1"
+                }
             ]
         }
     },
@@ -924,8 +1425,14 @@ const MOVIES_DATA = [
         "slide": "0",
         "sources": {
             "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/NqcaRsYSh" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/10003197987441?nochat=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/NqcaRsYSh"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/10003197987441?nochat=1"
+                }
             ]
         }
     },
@@ -943,8 +1450,14 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/WRbBEmPSF" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/10011220249201?nochat=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/WRbBEmPSF"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/10011220249201?nochat=1"
+                }
             ]
         }
     },
@@ -961,8 +1474,14 @@ const MOVIES_DATA = [
         "slide": "0",
         "sources": {
             "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/T4T-BpvBp" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/10026959309425?nochat=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/T4T-BpvBp"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/10026959309425?nochat=1"
+                }
             ]
         }
     },
@@ -979,8 +1498,14 @@ const MOVIES_DATA = [
         "slide": "0",
         "sources": {
             "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/89ofTm9r8" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/10040161798769?nochat=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/89ofTm9r8"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/10040161798769?nochat=1"
+                }
             ]
         }
     },
@@ -997,8 +1522,14 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Vietsub": [
-                { "name": "Sever 1", "url": "https://short.icu/RznvS4YBA" },
-                { "name": "Sever 2", "url": "//ok.ru/videoembed/10040197646961?nochat=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://short.icu/RznvS4YBA"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "//ok.ru/videoembed/10040197646961?nochat=1"
+                }
             ]
         }
     },
@@ -1015,9 +1546,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/4130f3c457a1" },
-                { "name": "Sever 2", "url": "https://short.icu/zcbVPcy7B" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239033&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/4130f3c457a1"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/zcbVPcy7B"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239033&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1034,8 +1574,14 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Thuyết Minh": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/1bc276aed009" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239116&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/1bc276aed009"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239116&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1052,9 +1598,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Thuyết Minh": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/2ea134250009" },
-                { "name": "Sever 2", "url": "https://short.icu/QFZ2wjFpv" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239049&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/2ea134250009"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/QFZ2wjFpv"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239049&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1071,9 +1626,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Thuyết Minh": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/16b2397d592c" },
-                { "name": "Sever 2", "url": "https://short.icu/IhC8k9bY7" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239036&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/16b2397d592c"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/IhC8k9bY7"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239036&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1090,10 +1654,22 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Thuyết Minh": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/f1b975b5c894" },
-                { "name": "Sever 2", "url": "https://short.icu/PLx4lyI69"},
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239050&hd=2&autoplay=1" },
-                { "name": "Sever 4", "url": "https://geo.dailymotion.com/player/xk0qb.html?video=x8ocjk4" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/f1b975b5c894"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/PLx4lyI69"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239050&hd=2&autoplay=1"
+                },
+                {
+                    "name": "Sever 4",
+                    "url": "https://geo.dailymotion.com/player/xk0qb.html?video=x8ocjk4"
+                }
             ]
         }
     },
@@ -1110,9 +1686,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Thuyết Minh": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/3637e3614ca7" },
-                { "name": "Sever 2", "url": "https://short.icu/nwQGZcg5T"},
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239061&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/3637e3614ca7"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/nwQGZcg5T"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239061&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1129,8 +1714,14 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Thuyết Minh": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/c752d58ab1d2" },
-                { "name": "Sever 2", "url": "https://short.icu/vQiwYp2Wx" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/c752d58ab1d2"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/vQiwYp2Wx"
+                }
             ]
         }
     },
@@ -1147,8 +1738,14 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Thuyết Minh": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/ae7adb0b0c94" },
-                { "name": "Sever 2", "url": "https://short.icu/E6AZctKh8" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/ae7adb0b0c94"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/E6AZctKh8"
+                }
             ]
         }
     },
@@ -1165,9 +1762,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/328c5464e299" },
-                { "name": "Sever 2", "url": "https://short.icu/jR7JsksBe" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239020&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/328c5464e299"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/jR7JsksBe"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239020&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1184,9 +1790,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/64ab4ab1cd89" },
-                { "name": "Sever 2", "url": "https://short.icu/YmJiwR9rs" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239070&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/64ab4ab1cd89"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/YmJiwR9rs"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239070&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1203,9 +1818,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/51156969b496" },
-                { "name": "Sever 2", "url": "https://short.icu/RzY8tkaSA" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239034&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/51156969b496"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/RzY8tkaSA"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239034&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1222,9 +1846,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/2f87914d01e7" },
-                { "name": "Sever 2", "url": "https://short.icu/N3iTpK2Qg" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239060&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/2f87914d01e7"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/N3iTpK2Qg"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239060&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1241,9 +1874,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/5a0d2d2aae41" },
-                { "name": "Sever 2", "url": "https://short.icu/vR7NlO4jF" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239030&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/5a0d2d2aae41"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/vR7NlO4jF"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239030&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1260,9 +1902,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/731a185047d2" },
-                { "name": "Sever 2", "url": "https://short.icu/tJp-7S3Rt" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239031&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/731a185047d2"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/tJp-7S3Rt"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239031&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1279,9 +1930,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/261cc925f85e" },
-                { "name": "Sever 2", "url": "https://short.icu/Uw4g119Az" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239053&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/261cc925f85e"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/Uw4g119Az"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239053&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1298,12 +1958,24 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/1c4103ee7075" },
-                { "name": "Sever 2", "url": "https://short.icu/EC4TREe3v" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239024&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/1c4103ee7075"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/EC4TREe3v"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239024&hd=2&autoplay=1"
+                }
             ],
             "Vietsub": [
-                { "name": "Vietsub", "url": "https://helvid.com/play/index/f3e0d29010aa" }
+                {
+                    "name": "Vietsub",
+                    "url": "https://helvid.com/play/index/f3e0d29010aa"
+                }
             ]
         }
     },
@@ -1320,9 +1992,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/b0e2461769c7" },
-                { "name": "Sever 2", "url": "https://short.icu/RaLPtdfrQ" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239022&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/b0e2461769c7"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/RaLPtdfrQ"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239022&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1339,9 +2020,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/b532283f3bb7" },
-                { "name": "Sever 2", "url": "https://short.icu/SJ3lZvsIE7" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239019&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/b532283f3bb7"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/SJ3lZvsIE7"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239019&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1358,9 +2048,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/3b2fe5440ca4" },
-                { "name": "Sever 2", "url": "https://short.icu/zTIGCREjq" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239048&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/3b2fe5440ca4"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/zTIGCREjq"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239048&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1377,9 +2076,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/31d73d3c8f58" },
-                { "name": "Sever 2", "url": "https://short.icu/fwKuA4-Y_" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=4562390473&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/31d73d3c8f58"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/fwKuA4-Y_"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=4562390473&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1396,9 +2104,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/84e8d2b8a3aa" },
-                { "name": "Sever 2", "url": "https://short.icu/J1JHqfQeg" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239040&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/84e8d2b8a3aa"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/J1JHqfQeg"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239040&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1415,9 +2132,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/17322f16fad1" },
-                { "name": "Sever 2", "url": "https://short.icu/jjieawPRx" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239071&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/17322f16fad1"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/jjieawPRx"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239071&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1434,9 +2160,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/1c40145ae304" },
-                { "name": "Sever 2", "url": "https://short.icu/rcqraYZKz" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239039&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/1c40145ae304"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/rcqraYZKz"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239039&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1453,9 +2188,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/83867fd69e11" },
-                { "name": "Sever 2", "url": "https://short.icu/YlTgzTME9r" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239029&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/83867fd69e11"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/YlTgzTME9r"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239029&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1472,9 +2216,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/3f7602850bdb" },
-                { "name": "Sever 2", "url": "https://short.icu/2MAVhslzN" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239051&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/3f7602850bdb"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/2MAVhslzN"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239051&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1491,9 +2244,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/b6dc4a1e9bb0" },
-                { "name": "Sever 2", "url": "https://short.icu/quf19syBw" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239066&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/b6dc4a1e9bb0"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/quf19syBw"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239066&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1510,9 +2272,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/964bc71fb07c" },
-                { "name": "Sever 2", "url": "https://short.icu/bk41JHBW4" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239063&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/964bc71fb07c"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/bk41JHBW4"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239063&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1529,9 +2300,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/7af33751c370" },
-                { "name": "Sever 2", "url": "https://short.icu/uv2I4GL9v" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239062&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/7af33751c370"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/uv2I4GL9v"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239062&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1548,13 +2328,28 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "VNLT": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/0a2f63d14fdd" },
-                { "name": "Sever 2", "url": "https://short.icu/va2S83BU2" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239021&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/0a2f63d14fdd"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/va2S83BU2"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239021&hd=2&autoplay=1"
+                }
             ],
             "USLT": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/9ece5280ebf9" },
-                { "name": "Sever 2", "url": "https://short.icu/fE63J8liR" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/9ece5280ebf9"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/fE63J8liR"
+                }
             ]
         }
     },
@@ -1571,9 +2366,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/d115f26056ad" },
-                { "name": "Sever 2", "url": "https://short.icu/RZoGhtVd1" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239059&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/d115f26056ad"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/RZoGhtVd1"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239059&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1590,9 +2394,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/0a0614eb9333" },
-                { "name": "Sever 2", "url": "https://short.icu/XU421Fo71" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239072&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/0a0614eb9333"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/XU421Fo71"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239072&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1609,9 +2422,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/f267731dc47c" },
-                { "name": "Sever 2", "url": "https://short.icu/hSyCdEZFG" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239046&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/f267731dc47c"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/hSyCdEZFG"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239046&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1628,9 +2450,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/e60a220c07c9" },
-                { "name": "Sever 2", "url": "https://short.icu/zcq0yAmlP" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239045&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/e60a220c07c9"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/zcq0yAmlP"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239045&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1647,9 +2478,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/2d3d25251dee" },
-                { "name": "Sever 2", "url": "https://short.icu/456239044" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239021&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/2d3d25251dee"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/456239044"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239021&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1666,9 +2506,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/82e64d50df1e" },
-                { "name": "Sever 2", "url": "https://short.icu/ClcDMow-5" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239043&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/82e64d50df1e"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/ClcDMow-5"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239043&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1685,9 +2534,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/5fe3e224e91d" },
-                { "name": "Sever 2", "url": "https://short.icu/Mgvk7blY0" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239027&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/5fe3e224e91d"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/Mgvk7blY0"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239027&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1704,9 +2562,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/bb0fac82936d" },
-                { "name": "Sever 2", "url": "https://short.icu/KFVFziMKU" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239026&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/bb0fac82936d"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/KFVFziMKU"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239026&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1723,9 +2590,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/3b084e95fba3" },
-                { "name": "Sever 2", "url": "https://short.icu/uYI5Cm5Og" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239025&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/3b084e95fba3"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/uYI5Cm5Og"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239025&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1742,9 +2618,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/efd3f78cc747" },
-                { "name": "Sever 2", "url": "https://short.icu/rEd4mnpMN" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239035&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/efd3f78cc747"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/rEd4mnpMN"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239035&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1761,9 +2646,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/7d6082aba6e6" },
-                { "name": "Sever 2", "url": "https://short.icu/dGDBQt3lS" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239023&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/7d6082aba6e6"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/dGDBQt3lS"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239023&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1780,9 +2674,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/1d1c0678090f" },
-                { "name": "Sever 2", "url": "https://short.icu/GBFNhvcox" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239056&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/1d1c0678090f"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/GBFNhvcox"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239056&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1799,9 +2702,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/83dae477e0c6" },
-                { "name": "Sever 2", "url": "https://short.icu/TDyVk-UNQ" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239069&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/83dae477e0c6"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/TDyVk-UNQ"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239069&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1818,7 +2730,10 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Thuyết Minh": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/4e71ce495517" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/4e71ce495517"
+                }
             ]
         }
     },
@@ -1835,7 +2750,10 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Vietsub": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/bd58c75eeae6" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/bd58c75eeae6"
+                }
             ]
         }
     },
@@ -1852,8 +2770,14 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Vietsub": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/0f98c83c57e2" },
-                { "name": "Sever 2", "url": "https://www.youtube.com/embed/BZiJrhp9qQI" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/0f98c83c57e2"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://www.youtube.com/embed/BZiJrhp9qQI"
+                }
             ]
         }
     },
@@ -1870,9 +2794,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/e8e10ac96cc2" },
-                { "name": "Sever 2", "url": "https://short.icu/NcvqBN_qi" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239032&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/e8e10ac96cc2"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/NcvqBN_qi"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239032&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1889,9 +2822,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/60b16222616a" },
-                { "name": "Sever 2", "url": "https://short.icu/GFdct44B6" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239058&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/60b16222616a"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/GFdct44B6"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239058&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1908,8 +2850,14 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/ec4d24df88b9" },
-                { "name": "Sever 2", "url": "https://short.icu/GrGSxaECZ" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/ec4d24df88b9"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/GrGSxaECZ"
+                }
             ]
         }
     },
@@ -1926,9 +2874,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/4b9f275363ec" },
-                { "name": "Sever 2", "url": "https://short.icu/N0en3VuKP" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239041&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/4b9f275363ec"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/N0en3VuKP"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239041&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1945,9 +2902,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/982ea64fa59b" },
-                { "name": "Sever 2", "url": "https://short.icu/Ytx5HEmfl" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239037&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/982ea64fa59b"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/Ytx5HEmfl"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239037&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1964,8 +2930,14 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/058b0bf63530" },
-                { "name": "Sever 2", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239054&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/058b0bf63530"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239054&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -1982,9 +2954,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/2da7be587479" },
-                { "name": "Sever 2", "url": "https://short.icu/ewQTLuWp1" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239055&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/2da7be587479"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/ewQTLuWp1"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239055&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -2001,9 +2982,18 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/bef486d42357" },
-                { "name": "Sever 2", "url": "https://short.icu/VkbQff_xh" },
-                { "name": "Sever 3", "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239038&hd=2&autoplay=1" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/bef486d42357"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/VkbQff_xh"
+                },
+                {
+                    "name": "Sever 3",
+                    "url": "https://vkvideo.ru/video_ext.php?oid=834137738&id=456239038&hd=2&autoplay=1"
+                }
             ]
         }
     },
@@ -2020,8 +3010,14 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/20a7a7e2e892" },
-                { "name": "Sever 2", "url": "https://short.icu/U-SLDgV_Y" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/20a7a7e2e892"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/U-SLDgV_Y"
+                }
             ]
         }
     },
@@ -2038,11 +3034,15 @@ const MOVIES_DATA = [
         "slide": "1",
         "sources": {
             "Lồng Tiếng": [
-                { "name": "Sever 1", "url": "https://helvid.net/play/index/a83133c9c1dc" },
-                { "name": "Sever 2", "url": "https://short.icu/e40c_2LD5" }
+                {
+                    "name": "Sever 1",
+                    "url": "https://helvid.net/play/index/a83133c9c1dc"
+                },
+                {
+                    "name": "Sever 2",
+                    "url": "https://short.icu/e40c_2LD5"
+                }
             ]
         }
     }
 ];
-
-
