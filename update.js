@@ -1,5 +1,27 @@
 // update.js
 document.addEventListener('DOMContentLoaded', () => {
+    // =================================================================
+    // CÀI ĐẶT TÊN ĐĂNG NHẬP VÀ MẬT KHẨU
+    // Thay đổi "admin" và "12345" thành thông tin bạn muốn
+    // =================================================================
+    const CORRECT_USERNAME = "admin";
+    const CORRECT_PASSWORD = "12346";
+
+    // --- Elements for Password Protection ---
+    const passwordOverlay = document.getElementById('password-overlay');
+    const mainContent = document.getElementById('main-content');
+    const passwordForm = document.getElementById('password-form');
+    const passwordInput = document.getElementById('password-input');
+    const passwordError = document.getElementById('password-error');
+
+    // --- Elements for Custom Alert ---
+    const alertOverlay = document.getElementById('custom-alert-overlay');
+    const alertBox = document.getElementById('custom-alert-box');
+    const alertIcon = document.getElementById('custom-alert-icon');
+    const alertMessage = document.getElementById('custom-alert-message');
+    const alertConfirmBtn = document.getElementById('custom-alert-confirm-btn');
+    const alertCancelBtn = document.getElementById('custom-alert-cancel-btn');
+
     // Make a copy of the original data to work with
     let moviesData = JSON.parse(JSON.stringify(MOVIES_DATA));
     let currentFilteredMovies = [...moviesData]; // The list of movies currently being displayed (can be all or filtered)
@@ -33,9 +55,55 @@ document.addEventListener('DOMContentLoaded', () => {
     const autofillLoader = document.getElementById('autofill-loader');
     const searchInput = document.getElementById('search-input');
 
+    // --- Custom Alert Function ---
+    function showCustomAlert(message, type = 'success') {
+        return new Promise((resolve) => {
+            alertMessage.innerHTML = message; 
+            
+            alertIcon.className = '';
+            alertBox.style.borderColor = '';
+
+            switch (type) {
+                case 'error':
+                    alertIcon.innerHTML = '<i class="fas fa-times-circle"></i>';
+                    alertIcon.className = 'error';
+                    alertBox.style.borderColor = '#dc3545';
+                    alertCancelBtn.style.display = 'none';
+                    alertConfirmBtn.innerText = 'Đóng';
+                    break;
+                case 'confirm':
+                    alertIcon.innerHTML = '<i class="fas fa-question-circle"></i>';
+                    alertIcon.className = 'confirm';
+                    alertBox.style.borderColor = 'var(--color-accent-hover)';
+                    alertCancelBtn.style.display = 'inline-block';
+                    alertConfirmBtn.innerText = 'Xác nhận';
+                    break;
+                case 'success':
+                default:
+                    alertIcon.innerHTML = '<i class="fas fa-check-circle"></i>';
+                    alertIcon.className = 'success';
+                    alertBox.style.borderColor = '#28a745';
+                    alertCancelBtn.style.display = 'none';
+                    alertConfirmBtn.innerText = 'OK';
+                    break;
+            }
+
+            alertOverlay.classList.add('visible');
+
+            alertConfirmBtn.onclick = () => {
+                alertOverlay.classList.remove('visible');
+                resolve(true);
+            };
+
+            alertCancelBtn.onclick = () => {
+                alertOverlay.classList.remove('visible');
+                resolve(false);
+            };
+        });
+    }
+
 
     // --- Helper Functions for ID Generation ---
-
     function removeVietnameseTones(str) {
         if (!str) return '';
         str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
@@ -81,9 +149,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    async function getApiKey() {
+        try {
+            const response = await fetch('api.txt');
+            if (!response.ok) throw new Error('Không tìm thấy file api.txt.');
+            const text = await response.text();
+            const key = text.split(':')[1].trim().replace(/"/g, '');
+            if (!key) throw new Error('Định dạng file api.txt không đúng.');
+            return key;
+        } catch (error) {
+            console.error("Lỗi khi đọc API key:", error);
+            return null;
+        }
+    }
+
 
     // --- Core Functions ---
-
     function updateMovieCount() {
         if (movieCountDisplay) {
             const filteredCount = currentFilteredMovies.length;
@@ -97,6 +178,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function displayPage(page) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
         currentPage = page;
         movieListEl.innerHTML = '';
         
@@ -132,38 +215,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (totalPages <= 1) return;
 
-        // Previous Button
         const prevButton = document.createElement('button');
-        prevButton.innerHTML = '&laquo;';
+        prevButton.innerHTML = '«';
         prevButton.disabled = currentPage === 1;
         prevButton.addEventListener('click', () => {
-            if (currentPage > 1) {
-                displayPage(currentPage - 1);
-            }
+            if (currentPage > 1) displayPage(currentPage - 1);
         });
         paginationContainer.appendChild(prevButton);
 
-        // Page Number Buttons (simplified logic for now)
         for (let i = 1; i <= totalPages; i++) {
             const pageButton = document.createElement('button');
             pageButton.innerText = i;
-            if (i === currentPage) {
-                pageButton.classList.add('active');
-            }
-            pageButton.addEventListener('click', () => {
-                displayPage(i);
-            });
+            if (i === currentPage) pageButton.classList.add('active');
+            pageButton.addEventListener('click', () => displayPage(i));
             paginationContainer.appendChild(pageButton);
         }
 
-        // Next Button
         const nextButton = document.createElement('button');
-        nextButton.innerHTML = '&raquo;';
+        nextButton.innerHTML = '»';
         nextButton.disabled = currentPage === totalPages;
         nextButton.addEventListener('click', () => {
-            if (currentPage < totalPages) {
-                displayPage(currentPage + 1);
-            }
+            if (currentPage < totalPages) displayPage(currentPage + 1);
         });
         paginationContainer.appendChild(nextButton);
     }
@@ -208,27 +280,27 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.style.display = 'none';
     }
 
-    function deleteMovie(movieId) {
-        if (confirm(`Bạn có chắc chắn muốn xóa phim có ID: ${movieId}?`)) {
+    async function deleteMovie(movieId) {
+        const confirmed = await showCustomAlert(`Bạn có chắc chắn muốn xóa phim có ID: ${movieId}?`, 'confirm');
+        if (confirmed) {
             moviesData = moviesData.filter(m => m.id !== movieId);
-            // Re-filter the list after deletion
             filterMovies();
-            alert('Đã xóa phim thành công!');
+            showCustomAlert('Đã xóa phim thành công!', 'success');
         }
     }
 
-    function saveMovie(e) {
+    async function saveMovie(e) {
         e.preventDefault();
         const existingId = document.getElementById('movie-id-input').value;
         const newId = idInput.value.trim();
         
         if (!newId) {
-            alert('ID phim là bắt buộc! Vui lòng nhập tiêu đề và năm để tạo ID.');
+            showCustomAlert('ID phim là bắt buộc! Vui lòng nhập tiêu đề và năm để tạo ID.', 'error');
             return;
         }
 
         if (!existingId && moviesData.some(m => m.id === newId)) {
-            alert(`ID phim "${newId}" đã tồn tại. Vui lòng chọn ID khác.`);
+            showCustomAlert(`ID phim "${newId}" đã tồn tại. Vui lòng chọn ID khác.`, 'error');
             return;
         }
         
@@ -238,11 +310,10 @@ document.addEventListener('DOMContentLoaded', () => {
         
         sourceTypeGroups.forEach(group => {
             if (hasDuplicateAudioType) return;
-
             const audioType = group.querySelector('.audio-type-select').value;
             if (audioType) {
                 if (sources[audioType]) {
-                    alert(`Lỗi: Loại âm thanh "${audioType}" bị trùng lặp. Vui lòng chỉ sử dụng mỗi loại một lần.`);
+                    showCustomAlert(`Lỗi: Loại âm thanh "${audioType}" bị trùng lặp.`, 'error');
                     hasDuplicateAudioType = true;
                     return;
                 }
@@ -253,30 +324,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     const type = item.querySelector('.server-type-select').value;
                     const value = item.querySelector('.server-value-input').value.trim();
                     let url = '';
-
                     if (name && value) {
                         switch (type) {
-                            case 'abyss':
-                                url = `https://short.icu/${value}`;
-                                break;
-                            case 'okru':
-                                url = `//ok.ru/videoembed/${value}?nochat=1`;
-                                break;
-                            case 'other':
-                                url = value;
-                                break;
+                            case 'abyss': url = `https://short.icu/${value}`; break;
+                            case 'okru': url = `//ok.ru/videoembed/${value}?nochat=1`; break;
+                            case 'other': url = value; break;
                         }
-                        if (url) {
-                           sources[audioType].push({ name, url });
-                        }
+                        if (url) sources[audioType].push({ name, url });
                     }
                 });
             }
         });
 
-        if (hasDuplicateAudioType) {
-            return; // Stop the save process if duplicates are found
-        }
+        if (hasDuplicateAudioType) return;
 
         const movieData = {
             id: newId,
@@ -295,16 +355,14 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (existingId) {
             const index = moviesData.findIndex(m => m.id === existingId);
-            if (index > -1) {
-                moviesData[index] = movieData;
-            }
+            if (index > -1) moviesData[index] = movieData;
         } else {
             moviesData.unshift(movieData);
         }
 
-        filterMovies(); // Re-filter and display
+        filterMovies();
         closeModal();
-        alert('Lưu phim thành công!');
+        showCustomAlert('Lưu phim thành công!', 'success');
     }
     
     function addSourceTypeToForm(audioType = 'Lồng Tiếng', servers = []) {
@@ -318,7 +376,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <option value="Thuyết Minh" ${audioType === 'Thuyết Minh' ? 'selected' : ''}>Thuyết Minh</option>
                     <option value="Vietsub" ${audioType === 'Vietsub' ? 'selected' : ''}>Vietsub</option>
                 </select>
-                <button type="button" class="remove-btn remove-type-btn">&times;</button>
+                <button type="button" class="remove-btn remove-type-btn">×</button>
             </div>
             <div class="servers-list"></div>
             <button type="button" class="action-btn add-server-btn" style="font-size: 0.8rem; padding: 5px 10px;"><i class="fas fa-plus"></i> Thêm Server</button>
@@ -335,9 +393,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function parseUrl(url = '') {
-        if (url.startsWith('https://short.icu/')) {
-            return { type: 'abyss', value: url.substring('https://short.icu/'.length) };
-        }
+        if (url.startsWith('https://short.icu/')) return { type: 'abyss', value: url.substring('https://short.icu/'.length) };
         if (url.startsWith('//ok.ru/videoembed/')) {
             const end = url.indexOf('?');
             const start = '//ok.ru/videoembed/'.length;
@@ -358,15 +414,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (value) {
             switch (type) {
-                case 'abyss':
-                    fullUrl = `https://short.icu/${value}`;
-                    break;
-                case 'okru':
-                    fullUrl = `//ok.ru/videoembed/${value}?nochat=1`;
-                    break;
-                case 'other':
-                    fullUrl = value;
-                    break;
+                case 'abyss': fullUrl = `https://short.icu/${value}`; break;
+                case 'okru': fullUrl = `//ok.ru/videoembed/${value}?nochat=1`; break;
+                case 'other': fullUrl = value; break;
             }
         }
         fullLinkDisplay.textContent = fullUrl ? `Link đầy đủ: ${fullUrl}` : '';
@@ -375,44 +425,53 @@ document.addEventListener('DOMContentLoaded', () => {
     function addServerToForm(serversListEl, name = '', url = '') {
         const serverDiv = document.createElement('div');
         serverDiv.className = 'server-item';
-
+    
         const parsed = parseUrl(url);
         const placeholder = parsed.type === 'other' ? 'Nhập link đầy đủ' : 'Nhập ID phim';
-
+    
         serverDiv.innerHTML = `
             <div class="server-inputs">
-                <input type="text" placeholder="Tên Server (vd: Server 1)" class="server-name-input" value="${name}">
+                <select class="server-name-input">
+                    <option value="Server 1">Server 1</option>
+                    <option value="Server 2">Server 2</option>
+                    <option value="Server 3">Server 3</option>
+                    <option value="Server 4">Server 4</option>
+                </select>
                 <select class="server-type-select">
                     <option value="abyss" ${parsed.type === 'abyss' ? 'selected' : ''}>abyss</option>
                     <option value="okru" ${parsed.type === 'okru' ? 'selected' : ''}>okru</option>
                     <option value="other" ${parsed.type === 'other' ? 'selected' : ''}>Khác</option>
                 </select>
                 <input type="text" placeholder="${placeholder}" class="server-value-input" value="${parsed.value}">
-                <button type="button" class="remove-btn remove-server-btn">&times;</button>
+                <button type="button" class="remove-btn remove-server-btn">×</button>
             </div>
             <div class="server-full-link-display"></div>
         `;
         serversListEl.appendChild(serverDiv);
-
+    
+        if (name) {
+            serverDiv.querySelector('.server-name-input').value = name;
+        }
+    
         const typeSelect = serverDiv.querySelector('.server-type-select');
         const valueInput = serverDiv.querySelector('.server-value-input');
         
         const eventHandler = () => updateFullLinkDisplay(serverDiv);
-
+    
         typeSelect.addEventListener('change', (e) => {
             valueInput.placeholder = e.target.value === 'other' ? 'Nhập link đầy đủ' : 'Nhập ID phim';
             valueInput.value = '';
             eventHandler();
         });
         valueInput.addEventListener('input', eventHandler);
-
+    
         updateFullLinkDisplay(serverDiv);
     }
 
-    function generateAndDownloadFile() {
-        if (!confirm('Hành động này sẽ tạo file data.js mới với tất cả các thay đổi hiện tại. Bạn có muốn tiếp tục?')) {
-            return;
-        }
+    async function generateAndDownloadFile() {
+        const confirmed = await showCustomAlert('Hành động này sẽ tạo file data.js mới?', 'confirm');
+        if (!confirmed) return;
+        
         const fileContent = `const MOVIES_DATA = ${JSON.stringify(moviesData, null, 4)};`;
         const blob = new Blob([fileContent], { type: 'application/javascript;charset=utf-8' });
         const link = document.createElement('a');
@@ -421,97 +480,58 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-        alert('File data.js đã được tạo. Vui lòng thay thế file cũ trên máy chủ của bạn bằng file vừa tải về.');
+        showCustomAlert('File data.js đã được tạo. Vui lòng thay thế file cũ trên máy chủ.', 'success');
     }
     
     async function fetchAndFillMovieData() {
         const title = titleInput.value.trim();
         const year = yearInput.value.trim();
-
         if (!title || !year) {
-            alert('Vui lòng nhập Tiêu đề và Năm sản xuất trước khi lấy thông tin.');
+            showCustomAlert('Vui lòng nhập Tiêu đề và Năm sản xuất.', 'error');
             return;
         }
-
         autofillLoader.style.display = 'block';
         autofillBtn.disabled = true;
-
-        const prompt = `Cung cấp thông tin chi tiết cho bộ phim tên là '${title}' sản xuất năm ${year}. Trả về dữ liệu dưới dạng JSON với các trường sau: "country" (quốc gia sản xuất chính, ví dụ: 'Hồng Kông'), "genres" (một chuỗi các thể loại cách nhau bởi dấu phẩy, ví dụ: 'Hành động, Hài hước'), "actors" (một chuỗi các diễn viên chính cách nhau bởi dấu phẩy), và "description" (mô tả chi tiết nội dung phim bằng tiếng Việt, dài khoảng 10 dòng).`;
         
-        const chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
-        const payload = {
-            contents: chatHistory,
-            generationConfig: {
-                responseMimeType: "application/json",
-                responseSchema: {
-                    type: "OBJECT",
-                    properties: {
-                        "country": { "type": "STRING" },
-                        "genres": { "type": "STRING" },
-                        "actors": { "type": "STRING" },
-                        "description": { "type": "STRING" }
-                    },
-                    required: ["country", "genres", "actors", "description"]
-                }
-            }
-        };
-        
-        const apiKey = "AIzaSyCrUTt3plrtQxXJRJWyjCtOi_Q7dBXnJWU"; 
-
-        if (apiKey === "DÁN_API_KEY_CỦA_BẠN_VÀO_ĐÂY") {
-            alert("Lỗi: Vui lòng điền API Key của Google AI vào file update.js để sử dụng tính năng này.");
+        const apiKey = await getApiKey();
+        if (!apiKey) {
+            showCustomAlert("Lỗi: Không thể lấy được API key từ file api.txt.", 'error');
             autofillLoader.style.display = 'none';
             autofillBtn.disabled = false;
             return;
         }
 
+        const prompt = `Cung cấp thông tin chi tiết cho bộ phim tên là '${title}' sản xuất năm ${year}. Trả về dữ liệu dưới dạng JSON với các trường sau: "country", "genres", "actors", và "description".`;
+        const payload = { contents: [{ role: "user", parts: [{ text: prompt }] }], generationConfig: { responseMimeType: "application/json", responseSchema: { type: "OBJECT", properties: { "country": { "type": "STRING" }, "genres": { "type": "STRING" }, "actors": { "type": "STRING" }, "description": { "type": "STRING" } }, required: ["country", "genres", "actors", "description"] } } };
+        
         const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-
+        
         try {
-            const response = await fetch(apiUrl, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            });
-
+            const response = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
             if (!response.ok) {
                 const errorBody = await response.json().catch(() => null);
                 let errorMessage = `API call failed with status: ${response.status}`;
-                if (errorBody && errorBody.error && errorBody.error.message) {
-                    errorMessage += `\nMessage: ${errorBody.error.message}`;
-                }
+                if (errorBody && errorBody.error && errorBody.error.message) errorMessage += `\nMessage: ${errorBody.error.message}`;
                 throw new Error(errorMessage);
             }
-
             const result = await response.json();
-            
             if (result.candidates && result.candidates[0].content && result.candidates[0].content.parts && result.candidates[0].content.parts.length > 0) {
-                const text = result.candidates[0].content.parts[0].text;
-                const movieInfo = JSON.parse(text);
-
+                const movieInfo = JSON.parse(result.candidates[0].content.parts[0].text);
                 countryInput.value = movieInfo.country || '';
                 genreInput.value = movieInfo.genres || '';
                 actorInput.value = movieInfo.actors || '';
                 descriptionInput.value = movieInfo.description || '';
-                
-                alert('Đã tự động điền thông tin phim!');
+                showCustomAlert('Đã tự động điền thông tin phim!', 'success');
             } else {
-                throw new Error('Không nhận được dữ liệu hợp lệ từ API. Phản hồi có thể trống.');
+                throw new Error('Không nhận được dữ liệu hợp lệ từ API.');
             }
         } catch (error) {
-            console.error('LỖI CHI TIẾT KHI LẤY DỮ LIỆU PHIM:', error);
-            
-            let userMessage = 'Đã xảy ra lỗi khi lấy thông tin phim. Vui lòng thử lại hoặc điền thủ công.';
-
-            if (error instanceof TypeError && error.message.includes('Failed to fetch')) {
-                userMessage = 'Lỗi Mạng hoặc CORS: Không thể kết nối đến máy chủ API.\n\nĐiều này thường xảy ra khi chạy file trên máy tính cục bộ. Hãy kiểm tra kết nối mạng và xem lỗi chi tiết trong Console (nhấn F12).';
-            } else if (error.message.includes('API key not valid')) {
-                userMessage = 'Lỗi: API Key không hợp lệ. Vui lòng kiểm tra lại key bạn đã dán trong file update.js.';
-            } else if (error.message.includes('429')) {
-                userMessage = 'Lỗi: Bạn đã vượt quá hạn ngạch sử dụng API. Vui lòng thử lại sau.';
-            }
-
-            alert(userMessage);
+            console.error('LỖI CHI TIẾT:', error);
+            let userMessage = 'Đã xảy ra lỗi khi lấy thông tin phim.';
+            if (error instanceof TypeError && error.message.includes('Failed to fetch')) userMessage = 'Lỗi Mạng hoặc CORS. Kiểm tra Console (F12).';
+            else if (error.message.includes('API key not valid')) userMessage = 'Lỗi: API Key không hợp lệ.';
+            else if (error.message.includes('429')) userMessage = 'Lỗi: Vượt quá hạn ngạch API.';
+            showCustomAlert(userMessage, 'error');
         } finally {
             autofillLoader.style.display = 'none';
             autofillBtn.disabled = false;
@@ -521,31 +541,16 @@ document.addEventListener('DOMContentLoaded', () => {
     function filterMovies() {
         const query = searchInput.value.trim();
         const normalizedQuery = removeVietnameseTones(query.toLowerCase());
-
-        if (normalizedQuery === '') {
-            currentFilteredMovies = [...moviesData];
-        } else {
-            currentFilteredMovies = moviesData.filter(m => {
-                const normalizedTitle = removeVietnameseTones(m.title.toLowerCase());
-                return normalizedTitle.includes(normalizedQuery);
-            });
-        }
-        displayPage(1); // Go back to page 1 after filtering
+        currentFilteredMovies = (normalizedQuery === '') ? [...moviesData] : moviesData.filter(m => removeVietnameseTones(m.title.toLowerCase()).includes(normalizedQuery));
+        displayPage(1);
     }
 
-    // --- Search and Header Logic ---
     function setupSearchAndHeader() {
         const header = document.querySelector('header');
-        if (header) {
-            window.addEventListener('scroll', () => {
-                header.classList.toggle('scrolled', window.scrollY > 50);
-            });
-        }
-
+        if (header) window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 50));
         const searchGroup = document.querySelector('.search-group');
         const searchBtn = document.getElementById('search-btn');
         const headerContainer = document.querySelector('.header-container');
-
         if (searchGroup && searchInput && searchBtn && headerContainer) {
             searchBtn.addEventListener('click', (e) => {
                 if (!searchGroup.classList.contains('active')) {
@@ -555,73 +560,83 @@ document.addEventListener('DOMContentLoaded', () => {
                     searchInput.focus();
                 }
             });
-
             document.addEventListener('click', (e) => {
                 if (!searchGroup.contains(e.target) && searchInput.value === '') {
                     searchGroup.classList.remove('active');
                     headerContainer.classList.remove('search-active');
                 }
             });
-
             searchInput.addEventListener('input', filterMovies);
         }
     }
 
-
-    // --- Event Listeners ---
+    function handlePassword() {
+        // Luôn hiển thị form đăng nhập và ẩn nội dung chính khi bắt đầu
+        passwordOverlay.style.display = 'flex';
+        mainContent.style.display = 'none';
     
-    titleInput.addEventListener('input', autoUpdateGeneratedFields);
-    yearInput.addEventListener('input', autoUpdateGeneratedFields);
-
-    idInput.addEventListener('input', () => {
-        if (!idInput.readOnly) {
-            const currentId = idInput.value.trim();
-            posterInput.value = currentId ? `img/${currentId}.webp` : '';
-        }
-    });
-
-    autofillBtn.addEventListener('click', fetchAndFillMovieData);
-
-    addNewMovieBtn.addEventListener('click', () => openModal());
-    closeModalBtn.addEventListener('click', closeModal);
-    window.addEventListener('click', (event) => {
-        if (event.target == modal) closeModal();
-    });
-
-    movieListEl.addEventListener('click', (e) => {
-        const checkBtn = e.target.closest('.check-btn');
-        const editBtn = e.target.closest('.edit-btn');
-        const deleteBtn = e.target.closest('.delete-btn');
-
-        if (checkBtn) {
-            const movieId = checkBtn.dataset.id;
-            window.open(`watch.html?id=${movieId}`, '_blank');
-        }
-        if (editBtn) {
-            openModal(editBtn.dataset.id);
-        }
-        if (deleteBtn) {
-            deleteMovie(deleteBtn.dataset.id);
-        }
-    });
-
-    editForm.addEventListener('submit', saveMovie);
-    downloadBtn.addEventListener('click', generateAndDownloadFile);
-    addSourceTypeBtn.addEventListener('click', () => addSourceTypeToForm());
+        const usernameInput = document.getElementById('username-input');
     
-    sourcesContainer.addEventListener('click', (e) => {
-        if (e.target.classList.contains('add-server-btn')) {
-            addServerToForm(e.target.previousElementSibling);
-        }
-        if (e.target.classList.contains('remove-server-btn')) {
-            e.target.closest('.server-item').remove();
-        }
-        if (e.target.classList.contains('remove-type-btn')) {
-            e.target.closest('.source-type-group').remove();
-        }
-    });
+        // Sử dụng một hàm có tên để có thể gỡ bỏ listener sau khi đăng nhập thành công
+        const loginSubmitHandler = (e) => {
+            e.preventDefault();
+            
+            // Kiểm tra thông tin đăng nhập
+            if (usernameInput.value === CORRECT_USERNAME && passwordInput.value === CORRECT_PASSWORD) {
+                // Ẩn form đăng nhập và hiện nội dung chính
+                passwordOverlay.style.display = 'none';
+                mainContent.style.display = 'block';
+    
+                // Khởi tạo các chức năng của trang chính
+                initializePage();
+    
+                // Gỡ bỏ event listener của form để tránh việc submit lại không cần thiết
+                passwordForm.removeEventListener('submit', loginSubmitHandler);
+            } else {
+                passwordError.textContent = 'Tên đăng nhập hoặc mật khẩu không chính xác.';
+                passwordInput.value = '';
+                usernameInput.focus();
+            }
+        };
+    
+        // Gán event listener cho form
+        passwordForm.addEventListener('submit', loginSubmitHandler);
+    }
+
+    function initializePage() {
+        titleInput.addEventListener('input', autoUpdateGeneratedFields);
+        yearInput.addEventListener('input', autoUpdateGeneratedFields);
+        idInput.addEventListener('input', () => {
+            if (!idInput.readOnly) {
+                const currentId = idInput.value.trim();
+                posterInput.value = currentId ? `img/${currentId}.webp` : '';
+            }
+        });
+        autofillBtn.addEventListener('click', fetchAndFillMovieData);
+        addNewMovieBtn.addEventListener('click', () => openModal());
+        closeModalBtn.addEventListener('click', closeModal);
+        window.addEventListener('click', (event) => { if (event.target == modal) closeModal(); });
+        movieListEl.addEventListener('click', (e) => {
+            const checkBtn = e.target.closest('.check-btn');
+            const editBtn = e.target.closest('.edit-btn');
+            const deleteBtn = e.target.closest('.delete-btn');
+            if (checkBtn) window.open(`watch.html?id=${checkBtn.dataset.id}`, '_blank');
+            if (editBtn) openModal(editBtn.dataset.id);
+            if (deleteBtn) deleteMovie(deleteBtn.dataset.id);
+        });
+        editForm.addEventListener('submit', saveMovie);
+        downloadBtn.addEventListener('click', generateAndDownloadFile);
+        addSourceTypeBtn.addEventListener('click', () => addSourceTypeToForm());
+        sourcesContainer.addEventListener('click', (e) => {
+            if (e.target.classList.contains('add-server-btn')) addServerToForm(e.target.previousElementSibling);
+            if (e.target.classList.contains('remove-server-btn')) e.target.closest('.server-item').remove();
+            if (e.target.classList.contains('remove-type-btn')) e.target.closest('.source-type-group').remove();
+        });
+        displayPage(1);
+        setupSearchAndHeader();
+    }
 
     // --- Initial Load ---
-    displayPage(1); // Initial render with pagination
-    setupSearchAndHeader();
+    // Chỉ gọi handlePassword để bắt đầu quá trình, không gọi initializePage ở đây nữa
+    handlePassword();
 });

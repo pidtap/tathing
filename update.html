@@ -6,425 +6,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="favion-01.png">
     <title>Cập nhật dữ liệu phim</title>
+    
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="update.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <style>
-        /* Custom styles for the update page */
-        body {
-            background-color: var(--color-background-medium);
-        }
-
-        /* === CẬP NHẬT GIAO DIỆN HEADER & FOOTER === */
-        header {
-            background: var(--color-background-dark);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-        }
-        footer {
-            background-color: var(--color-background-dark);
-        }
-        /* === KẾT THÚC CẬP NHẬT === */
-
-        .update-container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: var(--color-background-dark);
-            border-radius: 8px;
-        }
-
-        .update-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start; /* Changed alignment */
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--color-surface-dark);
-        }
-
-        .update-header h1 {
-            color: var(--color-highlight);
-            margin-bottom: 5px; /* Added margin */
-        }
-        
-        /* Style for the movie count display */
-        #movie-count-display {
-            font-size: 16px;
-            font-style: italic;
-            color: var(--color-text-tertiary);
-        }
-
-        .action-btn {
-            padding: 10px 20px;
-            font-size: 1rem;
-            font-weight: bold;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.2s;
-            border: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .add-btn {
-            background-color: var(--color-accent);
-            color: var(--color-text-on-accent);
-        }
-
-        .add-btn:hover {
-            background-color: var(--color-accent-hover);
-        }
-        
-        .download-btn {
-            background-color: #28a745;
-            color: white;
-        }
-        .download-btn:hover {
-            background-color: #218838;
-        }
-
-        .movie-list-item {
-            display: flex;
-            align-items: center;
-            padding: 15px;
-            margin-bottom: 10px;
-            background-color: var(--color-surface-dark);
-            border-radius: 5px;
-            border-left: 5px solid var(--color-surface-medium);
-            transition: border-color 0.3s;
-        }
-        .movie-list-item:hover {
-            border-left-color: var(--color-accent);
-        }
-
-        .movie-list-item img {
-            width: 60px;
-            height: 90px;
-            object-fit: cover;
-            border-radius: 4px;
-            margin-right: 15px;
-        }
-
-        .movie-list-info {
-            flex-grow: 1;
-        }
-        .movie-list-info h3 {
-            margin: 0 0 5px 0;
-            color: var(--color-text-primary);
-        }
-        .movie-list-info p {
-            margin: 0;
-            font-size: 0.85rem;
-            color: var(--color-text-tertiary);
-        }
-
-        .movie-list-actions button {
-            background: none;
-            border: 1px solid var(--color-border-light);
-            color: var(--color-text-secondary);
-            padding: 8px 12px;
-            margin-left: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        .movie-list-actions button:hover {
-            background-color: var(--color-accent);
-            color: var(--color-text-on-accent);
-            border-color: var(--color-accent);
-        }
-        .movie-list-actions .delete-btn:hover {
-            background-color: #dc3545;
-            border-color: #dc3545;
-        }
-        .movie-list-actions .check-btn:hover {
-            background-color: #17a2b8;
-            border-color: #17a2b8;
-        }
-
-
-        /* Modal Styles */
-        #edit-modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.6);
-        }
-
-        .modal-content {
-            background-color: var(--color-background-medium);
-            margin: 5% auto;
-            padding: 25px;
-            border: 1px solid var(--color-surface-light);
-            width: 80%;
-            max-width: 700px;
-            border-radius: 8px;
-            position: relative;
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 15px;
-            margin-bottom: 20px;
-            border-bottom: 1px solid var(--color-surface-light);
-        }
-
-        .modal-header h2 {
-            margin: 0;
-            color: var(--color-highlight);
-        }
-
-        .close-btn {
-            color: var(--color-text-tertiary);
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .close-btn:hover,
-        .close-btn:focus {
-            color: var(--color-text-primary);
-        }
-
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-        .form-group.full-width {
-            grid-column: 1 / -1;
-        }
-        
-        .form-group.autofill-group {
-            grid-column: 1 / -1;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 10px;
-            padding: 10px;
-            background-color: var(--color-surface-dark);
-            border-radius: 5px;
-        }
-
-        .form-group label {
-            margin-bottom: 5px;
-            color: var(--color-text-secondary);
-            font-weight: bold;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid var(--color-border-light);
-            background-color: var(--color-surface-dark);
-            color: var(--color-text-primary);
-            font-size: 0.9rem;
-        }
-        .form-group textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        .modal-footer {
-            display: flex;
-            justify-content: flex-end;
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 1px solid var(--color-surface-light);
-        }
-        
-        #sources-container .source-type-group {
-            border: 1px solid var(--color-surface-light);
-            border-radius: 5px;
-            padding: 15px;
-            margin-bottom: 15px;
-        }
-        
-        #sources-container .source-type-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-            gap: 10px;
-        }
-
-        .source-type-header .audio-type-select {
-            flex-grow: 1;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid var(--color-border-light);
-            background-color: var(--color-surface-dark);
-            color: var(--color-text-primary);
-            font-size: 0.9rem;
-        }
-        
-        #sources-container .server-item {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            margin-bottom: 15px;
-            align-items: stretch;
-        }
-        
-        #sources-container .server-item .server-inputs {
-             display: flex;
-             gap: 10px;
-             align-items: center;
-        }
-
-        #sources-container .server-item .server-name-input {
-            flex-basis: 150px;
-            flex-shrink: 0;
-        }
-        #sources-container .server-item .server-type-select {
-            flex-basis: 120px;
-            flex-shrink: 0;
-        }
-        #sources-container .server-item .server-value-input {
-            flex-grow: 1;
-        }
-        
-        .server-full-link-display {
-            font-size: 0.8rem;
-            color: var(--color-text-tertiary);
-            margin-top: 5px;
-            padding: 5px 8px;
-            background-color: var(--color-background-dark);
-            border-radius: 4px;
-            word-break: break-all;
-            min-height: 1.2em;
-            font-style: italic;
-        }
-        
-        .remove-btn {
-            background: #6c757d;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 25px;
-            height: 25px;
-            cursor: pointer;
-            font-weight: bold;
-            flex-shrink: 0;
-        }
-        .remove-btn:hover {
-            background: #5a6268;
-        }
-
-        /* Loading Spinner */
-        .loader {
-            border: 4px solid var(--color-surface-light);
-            border-top: 4px solid var(--color-accent);
-            border-radius: 50%;
-            width: 24px;
-            height: 24px;
-            animation: spin 1s linear infinite;
-            display: none; /* Hidden by default */
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        /* Pagination Styles */
-        #pagination-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            margin-top: 30px;
-            padding-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        #pagination-container button {
-            background-color: var(--color-surface-medium);
-            color: var(--color-text-primary);
-            border: 1px solid var(--color-border-light);
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: background-color 0.2s, color 0.2s, border-color 0.2s;
-            min-width: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #pagination-container button:hover:not(:disabled) {
-            background-color: var(--color-accent);
-            color: var(--color-text-on-accent);
-            border-color: var(--color-accent);
-        }
-
-        #pagination-container button.active {
-            background-color: var(--color-accent);
-            color: var(--color-text-on-accent);
-            border-color: var(--color-accent);
-            font-weight: bold;
-        }
-
-        #pagination-container button:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-    </style>
 </head>
 
 <body>
-    <header>
-        <div class="header-container">
-            <a href="index.html" id="logo-link"><img id="logo" src="logo.png" alt="Logo Phim Nhanh"></a>
-            <div class="search-group">
-                <input type="search" id="search-input" placeholder="Tìm phim trong danh sách..." />
-                <button id="search-btn"><i class="fas fa-search"></i></button>
-            </div>
-        </div>
-    </header>
 
-    <main class="update-container" style="padding-top: 104px;">
-        <div class="update-header">
-            <div>
-                <h1>Danh sách phim</h1>
-                <span id="movie-count-display"></span>
-            </div>
-            <div>
-                <button class="action-btn add-btn" id="add-new-movie-btn"><i class="fas fa-plus"></i> Thêm phim mới</button>
-                <button class="action-btn download-btn" id="download-btn"><i class="fas fa-download"></i> Tạo và Tải file data.js</button>
-            </div>
+    <div id="password-overlay">
+        <div id="password-prompt">
+            <h2>Yêu cầu xác thực</h2>
+            <p>Vui lòng nhập tên đăng nhập và mật khẩu để truy cập trang quản trị.</p>
+            <form id="password-form">
+                <input type="text" id="username-input" placeholder="Tên đăng nhập" required>
+                <input type="password" id="password-input" placeholder="••••••••" required>
+                <button type="submit" class="action-btn add-btn">Truy cập</button>
+            </form>
+            <p id="password-error"></p>
         </div>
-        <div id="movie-list">
-            <!-- Movie items will be loaded here by JavaScript -->
-        </div>
-        <div id="pagination-container">
-            <!-- Pagination controls will be loaded here -->
-        </div>
-    </main>
+    </div>
 
-    <!-- The Modal -->
+    <div id="main-content" style="display: none;">
+        <header>
+            <div class="header-container">
+                <a href="index.html" id="logo-link"><img id="logo" src="logo.png" alt="Logo Phim Nhanh"></a>
+                <div class="search-group">
+                    <input type="search" id="search-input" placeholder="Tìm phim trong danh sách..." />
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </header>
+
+        <main class="update-container" style="padding-top: 104px;">
+            <div class="update-header">
+                <div>
+                    <h1>Danh sách phim</h1>
+                    <span id="movie-count-display"></span>
+                </div>
+                <div>
+                    <button class="action-btn add-btn" id="add-new-movie-btn"><i class="fas fa-plus"></i> Thêm phim mới</button>
+                    <button class="action-btn download-btn" id="download-btn"><i class="fas fa-download"></i> Tạo và Tải file data.js</button>
+                </div>
+            </div>
+            <div id="movie-list">
+                </div>
+            <div id="pagination-container">
+                </div>
+        </main>
+        
+        <footer>
+            <div class="footer-container">
+                <div class="footer-top">
+                    <div class="footer-col about-us">
+                        <img class="footer-logo" src="logo.png" alt="Logo Phim Nhanh">
+                        <p>HONGKONG MOVIE VIETSUB<br>
+                            Web xem phim chủ chất lượng của TatHing.</p>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i>Việt Nam, Trái Đất, Mặt Trời</li>
+                            <li><i class="fas fa-envelope"></i>tathing056@gmail.com</li>
+                            <li><i class="fas fa-phone"></i>(+84) 918 273645 </li>
+                        </ul>
+                    </div>
+    
+                    <div class="footer-col links-group">
+                        <div class="quick-links">
+                            <h3>Liên Kết Nhanh</h3>
+                            <ul>
+                                <li><a href="index.html">Trang Chủ</a></li>
+                                <li><a href="#">Điều Khoản Dịch Vụ</a></li>
+                                <li><a href="#">Chính Sách Bảo Mật</a></li>
+                            </ul>
+                        </div>
+                        <div class="connect">
+                            <h3>Kết Nối</h3>
+                            <p>Theo dõi chúng tôi trên các mạng xã hội để không bỏ lỡ những bộ phim hay nhất.</p>
+                            <div class="social-icons">
+                                <a href="https://www.facebook.com/tathingsubber" target="_blank" aria-label="Facebook"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a href="#" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                                <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                                <a href="#" target="_blank" aria-label="Web"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="footer-map-row">
+                    <h3>Bản Đồ</h3>
+                    <div class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15743719.228722906!2d95.23465243854287!3d15.555198294291175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31157a4d736a1e5f%3A0xb03bb0c9e2fe62be!2zVmnhu4d0IE5hbQ!5e0!3m2!1svi!2sus!4v1753078778948!5m2!1svi!2sus"
+                            width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 HongKong Movie Vietsub. Phụ Đề Việt Ngữ bởi TatHing</p>
+            </div>
+        </footer>
+    </div>
+
+
     <div id="edit-modal">
         <div class="modal-content">
             <div class="modal-header">
                 <h2 id="modal-title">Thêm/Sửa phim</h2>
-                <span class="close-btn">&times;</span>
+                <span class="close-btn">×</span>
             </div>
             
             <form id="edit-form">
@@ -470,8 +159,11 @@
                         <input type="text" id="category" value="phim-le">
                     </div>
                     <div class="form-group">
-                        <label for="age">Giới hạn tuổi (vd: 18+)</label>
-                        <input type="text" id="age">
+                        <label for="age">Giới hạn tuổi</label>
+                        <select id="age">
+                            <option value="">None</option>
+                            <option value="18+">18+</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="slide">Hiển thị trên Slide (1 = có, 0 = không)</label>
@@ -488,8 +180,7 @@
                     <div class="form-group full-width">
                         <label>Nguồn phát</label>
                         <div id="sources-container">
-                            <!-- Source types and servers will be generated here -->
-                        </div>
+                            </div>
                         <button type="button" class="action-btn add-btn" id="add-source-type-btn" style="margin-top: 10px; width: fit-content;"><i class="fas fa-plus"></i> Thêm Nguồn Phát</button>
                     </div>
                 </div>
@@ -501,57 +192,16 @@
         </div>
     </div>
 
-    <footer>
-        <div class="footer-container">
-            <div class="footer-top">
-                <div class="footer-col about-us">
-                    <img class="footer-logo" src="logo.png" alt="Logo Phim Nhanh">
-                    <p>HONGKONG MOVIE VIETSUB<br>
-                        Web xem phim chủ chất lượng của TatHing.</p>
-                    <ul class="contact-info">
-                        <li><i class="fas fa-map-marker-alt"></i>Việt Nam, Trái Đất, Mặt Trời</li>
-                        <li><i class="fas fa-envelope"></i>tathing056@gmail.com</li>
-                        <li><i class="fas fa-phone"></i>(+84) 918 273645 </li>
-                    </ul>
-                </div>
-
-                <div class="footer-col links-group">
-                    <div class="quick-links">
-                        <h3>Liên Kết Nhanh</h3>
-                        <ul>
-                            <li><a href="index.html">Trang Chủ</a></li>
-                            <li><a href="#">Điều Khoản Dịch Vụ</a></li>
-                            <li><a href="#">Chính Sách Bảo Mật</a></li>
-                        </ul>
-                    </div>
-                    <div class="connect">
-                        <h3>Kết Nối</h3>
-                        <p>Theo dõi chúng tôi trên các mạng xã hội để không bỏ lỡ những bộ phim hay nhất.</p>
-                        <div class="social-icons">
-                            <a href="https://www.facebook.com/tathingsubber" target="_blank" aria-label="Facebook"><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a href="#" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
-                            <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                            <a href="#" target="_blank" aria-label="Web"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-map-row">
-                <h3>Bản Đồ</h3>
-                <div class="map-container">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15743719.228722906!2d95.23465243854287!3d15.555198294291175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31157a4d736a1e5f%3A0xb03bb0c9e2fe62be!2zVmnhu4d0IE5hbQ!5e0!3m2!1svi!2sus!4v1753078778948!5m2!1svi!2sus"
-                        width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
+    <div id="custom-alert-overlay">
+        <div id="custom-alert-box">
+            <div id="custom-alert-icon"><i class="fas fa-check-circle"></i></div>
+            <p id="custom-alert-message">Nội dung thông báo</p>
+            <div id="custom-alert-buttons">
+                <button id="custom-alert-confirm-btn">OK</button>
+                <button id="custom-alert-cancel-btn">Hủy</button>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2025 HongKong Movie Vietsub. Phụ Đề Việt Ngữ bởi TatHing</p>
-        </div>
-    </footer>
+    </div>
 
     <script src="data.js"></script>
     <script src="update.js"></script>
