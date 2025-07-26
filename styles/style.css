@@ -803,21 +803,19 @@ footer {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     z-index: 1001;
     color: var(--color-text-primary);
-
-    /* THAY ĐỔI: Chuyển sang layout block và cho phép cuộn toàn bộ popup */
     display: block;
-    overflow-y: auto; /* Thêm thanh trượt chính cho popup */
-
-    /* Gán kích thước cho popup */
+    overflow-y: auto;
     width: 90vw;
     max-width: 450px;
-    max-height: 70vh; /* Dùng max-height để giới hạn chiều cao */
-
+    max-height: 70vh;
     padding: 0;
-
-    /* Animation */
     transform-origin: center;
     animation: fadeInScale 0.3s ease-out forwards;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+#filter-popup::-webkit-scrollbar {
+    display: none;
 }
 
 @keyframes fadeInScale {
@@ -838,56 +836,10 @@ footer {
     align-items: center;
     border-bottom: 1px solid var(--color-surface-light);
     padding: 20px;
-
-    /* THÊM: Ghim header lên trên cùng khi cuộn */
     position: sticky;
     top: 0;
-    background-color: var(--color-background-medium); /* Nền để không bị nội dung bên dưới đè lên */
+    background-color: var(--color-background-medium);
     z-index: 10;
-}
-
-/* Phần thân của Popup (chứa các bộ lọc và nút) */
-.filter-body {
-    padding: 20px;
-    /* Xóa các thuộc tính flex không còn cần thiết */
-}
-
-/* Điều chỉnh lại nút Áp dụng */
-#filter-popup .filter-apply-btn {
-    width: 100%;
- 
-}
-
-/* Điều chỉnh kích thước cho màn hình Desktop */
-@media (min-width: 821px) {
-    #filter-popup {
-        max-width: 500px;
-        max-height: 80vh;
-    }
-}
-
-/* ===== KẾT THÚC CẬP NHẬT CHO BẢNG LỌC ===== */
-
-
-@keyframes fadeInScale {
-    from {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-    }
-}
-
-.filter-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid var(--color-surface-light);
-    margin-bottom: 20px;
-    padding: 20px; /* Thêm padding cho header */
-    flex-shrink: 0; /* Không cho header co lại */
 }
 
 .filter-header h3 {
@@ -911,6 +863,10 @@ footer {
     color: var(--color-text-primary);
 }
 
+.filter-body {
+    padding: 20px;
+}
+
 .filter-group {
     margin-bottom: 15px;
 }
@@ -922,50 +878,109 @@ footer {
     color: var(--color-text-secondary);
 }
 
-.filter-group select {
-    width: 100%;
+.checkbox-container {
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px solid var(--color-surface-light);
+    border-radius: 4px;
     padding: 10px;
-    border-radius: 5px;
-    border: 1px solid var(--color-border-light);
     background-color: var(--color-surface-dark);
-    color: var(--color-text-primary);
-    font-size: 0.9rem;
-    appearance: none; /* Loại bỏ mũi tên mặc định trên một số trình duyệt */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin-right: 8px;
+    appearance: none;
     -webkit-appearance: none;
-    -moz-appearance: none;
-    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23F0F0F0%22%20d%3D%22M287%2C197.3L159.1%2C69.5c-3.6-3.6-8-5.4-12.3-5.4s-8.7%2C1.8-12.3%2C5.4L5.4%2C197.3c-7.2%2C7.2-7.2%2C18.8%2C0%2C26.1c3.6%2C3.6%2C8.1%2C5.4%2C12.3%2C5.4s8.7-1.8%2C12.3-5.4l119.8-119.8L262.3%2C223.4c7.2%2C7.2%2C18.8%2C7.2%2C26.1%2C0C294.2%2C216.1%2C294.2%2C204.5%2C287%2C197.3z%22%2F%3E%3C%2Fsvg%3E');
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 12px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--color-text-tertiary);
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    top: -1px;
 }
 
-.filter-group select:focus {
-    outline: none;
-    border-color: var(--color-accent);
+.checkbox-item input[type="checkbox"]:checked {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent-hover);
 }
 
-.filter-apply-btn {
-    width: 100%;
-    margin-top: 10px;
-    justify-content: center; /* To center icon and text */
+.checkbox-item input[type="checkbox"]:checked::after {
+    content: '✔';
+    font-size: 12px;
+    color: var(--color-text-on-accent);
+    position: absolute;
+    left: 2px;
+    top: 0px;
+}
+
+.checkbox-item label {
+    cursor: pointer;
+    font-weight: normal;
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    flex-grow: 1;
+    margin: 0;
+}
+
+.checkbox-item:hover label {
+    color: var(--color-text-primary);
+}
+
+.filter-footer {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    background-color: var(--color-background-medium);
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    border-top: 1px solid var(--color-surface-light);
+}
+
+#apply-filter-btn,
+.filter-reset-btn {
+    flex: 1;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    border: none;
-    padding: 12px 25px;
+    justify-content: center;
+    padding: 12px 10px;
+    margin: 0;
     font-size: 1rem;
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
-    text-decoration: none;
-    color: var(--color-text-on-accent);
-    background-color: var(--color-accent);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    gap: 8px;
+    border: 1px solid; 
 }
 
-.filter-apply-btn:hover {
+.filter-reset-btn {
+    background-color: var(--color-surface-medium);
+    border-color: var(--color-border-light);
+    color: var(--color-text-primary);
+}
+.filter-reset-btn:hover {
+    background-color: var(--color-surface-light);
+}
+
+#apply-filter-btn {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-text-on-accent);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+#apply-filter-btn:hover {
     background-color: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
     transform: translateY(-1px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
@@ -977,23 +992,35 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Darker and more opaque */
-    z-index: 1000; /* Below filter popup but above other content */
-    display: none; /* Hidden by default */
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: none;
 }
 
+/* Nút Filter nổi (FAB) */
+#filter-fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--color-accent);
+    color: var(--color-text-on-accent);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    z-index: 1000;
+}
 
-/* === STYLE CHO BỘ LỌC CHECKBOX === */
-.checkbox-container {
-    max-height: 150px; /* Giới hạn chiều cao cho từng phần, có thể điều chỉnh */
-    overflow-y: auto; /* Thêm thanh cuộn khi cần */
-    border: 1px solid var(--color-surface-light);
-    border-radius: 4px;
-    padding: 10px;
-    background-color: var(--color-surface-dark);
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Hiển thị 2 cột */
-    gap: 8px;
+#filter-fab:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-3px);
 }
 
 /* === Responsive === */
@@ -1043,17 +1070,21 @@ footer {
         border-color: var(--color-border-light);
     }
     
-    /* ===== CẬP NHẬT MỚI - Giao diện Filter Popup cho Mobile ===== */
     #filter-popup {
-        width: 90vw; /* Chiều rộng 90% */
-        height: 70vh; /* Chiều cao 70% màn hình */
+        width: 90vw;
+        max-height: 70vh;
     }
 
     .checkbox-container {
-        /* Có thể giảm chiều cao tối đa của từng box trên mobile nếu cần */
         max-height: 120px; 
     }
-    /* ===== KẾT THÚC CẬP NHẬT ===== */
+}
+
+@media (min-width: 821px) {
+    #filter-popup {
+        max-width: 500px;
+        max-height: 80vh;
+    }
 }
 
 @media (max-width: 600px) {
@@ -1193,51 +1224,21 @@ html {
   .links-group {
     padding-top: 84px;
 }
-@media (max-width: 820px) {
-    .slide-text-wrapper .meta {
-        font-size: 0.8rem;
-    }
-}
 }
 
-/* Nút Filter nổi (FAB) */
-#filter-fab {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: var(--color-accent);
-    color: var(--color-text-on-accent);
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    border: none;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    cursor: pointer;
-    transition: background-color 0.2s, transform 0.2s;
-    z-index: 1000;
-}
-
-#filter-fab:hover {
-    background-color: var(--color-accent-hover);
-    transform: translateY(-3px);
-}
-
-/* Pagination controls */
-.pagination {
+/* === TỐI ƯU & GỘP: Pagination Styles === */
+/* NOTE: Cần đảm bảo container phân trang của bạn có class="pagination-controls" */
+.pagination-controls, .pagination {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
     margin-top: 30px;
     padding-bottom: 20px;
-    flex-wrap: wrap; /* Cho phép xuống dòng trên màn hình nhỏ */
+    flex-wrap: wrap;
 }
 
-.pagination button {
+.pagination-controls button, .pagination button {
     background-color: var(--color-surface-medium);
     color: var(--color-text-primary);
     border: 1px solid var(--color-border-light);
@@ -1246,26 +1247,26 @@ html {
     cursor: pointer;
     font-size: 0.9rem;
     transition: background-color 0.2s, color 0.2s, border-color 0.2s;
-    min-width: 40px; /* Đảm bảo kích thước tối thiểu cho các nút icon */
+    min-width: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.pagination button:hover:not(:disabled) {
+.pagination-controls button:hover:not(:disabled), .pagination button:hover:not(:disabled) {
     background-color: var(--color-accent);
     color: var(--color-text-on-accent);
     border-color: var(--color-accent);
 }
 
-.pagination button.active {
+.pagination-controls button.active, .pagination button.active {
     background-color: var(--color-accent);
     color: var(--color-text-on-accent);
     border-color: var(--color-accent);
     font-weight: bold;
 }
 
-.pagination button:disabled {
+.pagination-controls button:disabled, .pagination button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
 }
@@ -1275,166 +1276,563 @@ html {
     font-size: 0.9rem;
 }
 
-/* Style cho dấu chấm lửng */
 .pagination .ellipsis {
     background: none;
     border: none;
     color: var(--color-text-secondary);
     cursor: default;
-    padding: 8px 0; /* Padding để căn chỉnh với các nút khác */
+    padding: 8px 0;
 }
 .pagination .ellipsis:hover {
     background: none;
     color: var(--color-text-secondary);
 }
 
-
-.checkbox-item {
-    display: flex;
-    align-items: center;
-}
-
-.checkbox-item input[type="checkbox"] {
-    margin-right: 8px;
-    /* Tùy chỉnh giao diện checkbox */
-    appearance: none;
-    -webkit-appearance: none;
-    width: 16px;
-    height: 16px;
-    border: 1px solid var(--color-text-tertiary);
-    border-radius: 3px;
-    cursor: pointer;
-    position: relative;
-    top: -1px;
-}
-
-.checkbox-item input[type="checkbox"]:checked {
-    background-color: var(--color-accent);
-    border-color: var(--color-accent-hover);
-}
-
-.checkbox-item input[type="checkbox"]:checked::after {
-    content: '✔';
-    font-size: 12px;
-    color: var(--color-text-on-accent);
-    position: absolute;
-    left: 2px;
-    top: 0px;
-}
-
-.checkbox-item label {
-    cursor: pointer;
-    font-weight: normal;
-    color: var(--color-text-secondary);
-    font-size: 0.9rem;
-    flex-grow: 1;
-    margin: 0;
-}
-
-.checkbox-item:hover label {
-    color: var(--color-text-primary);
-}
-
-/* Thay đổi nút Áp dụng */
-#apply-filter-btn i {
-    margin-right: 8px;
-}
-/* CSS cho phần footer của popup lọc phim */
-.filter-footer {
-    padding: 15px 20px;
-    background-color: var(--color-background-medium); /* Nền để không bị nội dung bên dưới đè lên */
-    
-    /* Ghim footer xuống dưới cùng */
-    position: sticky;
-    bottom: 0;
-    z-index: 10;
-
-    /* Thêm một đường kẻ mờ để phân tách với nội dung */
-    border-top: 1px solid var(--color-surface-light);
-}
-
-/* Bỏ khoảng cách thừa của nút khi đã có padding ở footer */
-#apply-filter-btn {
-    margin-top: 0;
-    width: 100%; /* Đảm bảo nút rộng hết phần footer */
-}
-/* CSS để ẩn thanh trượt của popup filter */
-#filter-popup {
-    /* Cho trình duyệt Firefox */
-    scrollbar-width: none;
-    /* Cho trình duyệt Internet Explorer và Edge cũ */
-    -ms-overflow-style: none;
-}
-
-#filter-popup::-webkit-scrollbar {
-    /* Cho trình duyệt Chrome, Safari, Edge mới và các trình duyệt nền tảng WebKit */
-    display: none;
-}
-/* Cập nhật layout cho filter-footer để chứa hai nút */
-/* --- BẮT ĐẦU KHỐI CSS HOÀN CHỈNH CHO FILTER FOOTER --- */
-/* (Khối này thay thế các khối .filter-footer, .filter-reset-btn, #apply-filter-btn đã thêm trước đó) */
-
-.filter-footer {
-    display: flex;
-    gap: 10px;
-    padding: 20px;
-    background-color: var(--color-background-medium);
-    position: sticky;
-    bottom: 0;
-    z-index: 10;
-    border-top: 1px solid var(--color-surface-light);
-}
-
-/* QUY TẮC CHUNG - GHI ĐÈ CÁC STYLE CŨ ĐỂ ĐỒNG BỘ HAI NÚT
+/*
+=================================================================
+====                STYLES FOR UPDATE PAGE                   ====
+====    (Đã gộp từ update.css và tối ưu hóa)                ====
+=================================================================
 */
-#apply-filter-btn,
-.filter-reset-btn {
-    /* Kích thước & Căn chỉnh */
-    flex: 1; /* Chiều rộng bằng nhau */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 10px;
-    margin: 0; /* Xóa các margin cũ */
 
-    /* Font chữ & Giao diện */
+/* Custom styles for the update page, scoped with .update-page */
+.update-page {
+    background-color: var(--color-background-medium);
+}
+
+.update-page header {
+    position: static; /* Ghi đè position: fixed từ style chính */
+    background: var(--color-background-dark);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.update-page .header-container {
+    height: auto; /* Ghi đè chiều cao cố định */
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.update-page footer {
+    background-color: var(--color-background-dark);
+}
+
+.update-page .update-container {
+    padding-top: 20px; /* Bỏ padding-top lớn vì header không còn fixed */
+}
+
+/* === CSS CHO FORM ĐĂNG NHẬP === */
+#password-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 11000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#password-prompt {
+    background-color: var(--color-background-medium);
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    text-align: center;
+    border-top: 5px solid var(--color-accent);
+    width: 90%;
+    max-width: 400px;
+}
+
+#password-prompt h2 {
+    color: var(--color-highlight);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#password-prompt p {
+    color: var(--color-text-secondary);
+    margin-bottom: 25px;
+}
+
+#password-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#password-form input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--color-border-light);
+    background-color: var(--color-surface-dark);
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+#password-form button {
+    margin-top: 10px;
+}
+
+#password-error {
+    color: #dc3545;
+    margin-top: 15px;
+    min-height: 1em;
+    font-weight: bold;
+}
+
+/* === Custom Alert Modal Styles === */
+#custom-alert-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 10000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#custom-alert-box {
+    background-color: var(--color-background-medium);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    text-align: center;
+    border-top: 5px solid var(--color-accent);
+    width: 90%;
+    max-width: 400px;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+}
+
+#custom-alert-overlay.visible {
+    display: flex;
+}
+#custom-alert-overlay.visible #custom-alert-box {
+    transform: scale(1);
+    opacity: 1;
+}
+
+#custom-alert-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+#custom-alert-icon.success { color: #28a745; }
+#custom-alert-icon.error { color: #dc3545; }
+#custom-alert-icon.confirm { color: var(--color-accent-hover); }
+
+#custom-alert-message {
+    font-size: 1.1rem;
+    color: var(--color-text-primary);
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+#custom-alert-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+#custom-alert-buttons button {
+    padding: 10px 25px;
     font-size: 1rem;
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.2s;
-    gap: 8px;
-
-    /* SỬA LỖI CHIỀU CAO: Đặt border 1px cho CẢ HAI nút */
-    border: 1px solid; 
-    /* margin-top: 20px; */
+    border: 1px solid transparent;
 }
 
-/* STYLE RIÊNG CHO TỪNG NÚT 
-*/
+#custom-alert-confirm-btn {
+    background-color: var(--color-accent);
+    color: var(--color-text-on-accent);
+}
+#custom-alert-confirm-btn:hover { background-color: var(--color-accent-hover); }
 
-/* Nút Đặt lại */
-.filter-reset-btn {
+#custom-alert-cancel-btn {
     background-color: var(--color-surface-medium);
-    border-color: var(--color-border-light); /* Chỉ định màu viền */
+    color: var(--color-text-primary);
+    border-color: var(--color-border-light);
+}
+#custom-alert-cancel-btn:hover { background-color: var(--color-surface-light); }
+
+/* === Main Update Page Content === */
+.update-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--color-background-dark);
+    border-radius: 8px;
+}
+
+.update-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--color-surface-dark);
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.update-header h1 {
+    color: var(--color-highlight);
+    margin: 0;
+}
+
+#movie-count-display {
+    font-size: 16px;
+    font-style: italic;
+    color: var(--color-text-tertiary);
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.add-btn {
+    background-color: var(--color-accent);
+    color: var(--color-text-on-accent);
+}
+.add-btn:hover {
+    background-color: var(--color-accent-hover);
+}
+
+.download-btn {
+    background-color: #28a745;
+    color: white;
+}
+.download-btn:hover {
+    background-color: #218838;
+}
+
+.action-btn.secondary-btn {
+    background-color: #6c757d;
+    color: white;
+}
+.action-btn.secondary-btn:hover {
+    background-color: #5a6268;
+}
+
+.movie-list-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: var(--color-surface-dark);
+    border-radius: 5px;
+    border-left: 5px solid var(--color-surface-medium);
+    transition: border-color 0.3s;
+}
+.movie-list-item:hover {
+    border-left-color: var(--color-accent);
+}
+
+.movie-list-item img {
+    width: 60px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 15px;
+}
+
+.movie-list-info {
+    flex-grow: 1;
+}
+.movie-list-info h3 {
+    margin: 0 0 5px 0;
     color: var(--color-text-primary);
 }
-.filter-reset-btn:hover {
-    background-color: var(--color-surface-light);
+.movie-list-info p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--color-text-tertiary);
 }
 
-/* Nút Áp dụng */
-#apply-filter-btn {
+.movie-list-actions button {
+    background: none;
+    border: 1px solid var(--color-border-light);
+    color: var(--color-text-secondary);
+    padding: 8px 12px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.movie-list-actions button:hover {
     background-color: var(--color-accent);
-    border-color: var(--color-accent); /* Đặt màu viền trùng màu nền để "ẩn" nó đi */
     color: var(--color-text-on-accent);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    border-color: var(--color-accent);
 }
-#apply-filter-btn:hover {
-    background-color: var(--color-accent-hover);
-    border-color: var(--color-accent-hover);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+.movie-list-actions .delete-btn:hover {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+.movie-list-actions .check-btn:hover {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
 }
 
-/* --- KẾT THÚC KHỐI CSS HOÀN CHỈNH --- */
+/* === Edit Modal Styles === */
+#edit-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    background-color: var(--color-background-medium);
+    margin: 5% auto;
+    padding: 25px;
+    border: 1px solid var(--color-surface-light);
+    width: 80%;
+    max-width: 700px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--color-surface-light);
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: var(--color-highlight);
+}
+
+.close-btn {
+    color: var(--color-text-tertiary);
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--color-text-primary);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group.autofill-group {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: var(--color-surface-dark);
+    border-radius: 5px;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    color: var(--color-text-secondary);
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--color-border-light);
+    background-color: var(--color-surface-dark);
+    color: var(--color-text-primary);
+    font-size: 0.9rem;
+}
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-surface-light);
+}
+
+#sources-container .source-type-group {
+    border: 1px solid var(--color-surface-light);
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+#sources-container .source-type-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.source-type-header .audio-type-select {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--color-border-light);
+    background-color: var(--color-surface-dark);
+    color: var(--color-text-primary);
+    font-size: 0.9rem;
+}
+
+#sources-container .server-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 15px;
+    align-items: stretch;
+}
+
+#sources-container .server-item .server-inputs {
+     display: flex;
+     gap: 10px;
+     align-items: center;
+}
+
+#sources-container .server-item .server-name-input {
+    flex-basis: 150px;
+    flex-shrink: 0;
+}
+#sources-container .server-item .server-type-select {
+    flex-basis: 120px;
+    flex-shrink: 0;
+}
+#sources-container .server-item .server-value-input {
+    flex-grow: 1;
+}
+
+.server-full-link-display {
+    font-size: 0.8rem;
+    color: var(--color-text-tertiary);
+    margin-top: 5px;
+    padding: 5px 8px;
+    background-color: var(--color-background-dark);
+    border-radius: 4px;
+    word-break: break-all;
+    min-height: 1.2em;
+    font-style: italic;
+}
+
+.remove-btn {
+    background: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+.remove-btn:hover {
+    background: #5a6268;
+}
+
+.loader {
+    border: 4px solid var(--color-surface-light);
+    border-top: 4px solid var(--color-accent);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#api-key-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 11000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#api-key-prompt {
+    background-color: var(--color-background-medium);
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    text-align: center;
+    border-top: 5px solid var(--color-accent);
+    width: 90%;
+    max-width: 450px;
+}
+
+#api-key-prompt h2 {
+    color: var(--color-highlight);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#api-key-prompt p {
+    color: var(--color-text-secondary);
+    margin-bottom: 25px;
+}
+
+#api-key-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

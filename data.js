@@ -1,5 +1,215 @@
 const MOVIES_DATA = [
     {
+        "id": "la-blue-girl-revenge-of-the-shikima-realm-1995",
+        "title": "La Blue Girl: Revenge of the Shikima Realm",
+        "year": "1995",
+        "poster": "img/la-blue-girl-revenge-of-the-shikima-realm-1995.webp",
+        "country": "Nhật Bản",
+        "movie-genre": "Hành động, Kinh dị",
+        "actor": "Saya Hidaka, Megumi Takahashi, Masato Gunji",
+        "category": "phim-le",
+        "age": "18+",
+        "slide": "0",
+        "description": "Một phiên bản live‑action chuyển thể từ manga/OVA nổi tiếng La Blue Girl, kể về hai nữ ninja thuộc tộc Bido (Saya Hidaka và Megumi Takahashi) chiến đấu chống lại tộc Shikima – những quái vật tình dục từ thế giới khác. Shikima tung ra một nghi lễ triệu hồi để Vương Quỷ Hanzaki (Masato Gunji) xâm nhập thế giới loài người và bắt giữ bạn bè của Miko. Hai ninja trẻ giữ vai trò bảo vệ, chiến đấu qua các nghi lễ ma thuật và đối mặt với sinh vật xúc tua nhạy cảm, mang tầm ảnh hưởng hentai. Phim pha trộn yếu tố kinh dị quái vật, hành động ninja, và nội dung khiêu dâm rõ rệt; kỹ xảo thô sơ, cảnh quay siêu thực và hài kích dục. Mặc dù cảnh quay thiên về soft‑core, phim vẫn tạo ấn tượng với các phân cảnh tentacle lạ lùng và thiết kế cảnh ninja gợi cảm. Kết cục mở, để ngỏ phần tiếp theo trong series.",
+        "sources": {
+            "Lồng Tiếng": [
+                {
+                    "name": "Server 1",
+                    "url": "https://short.icu/SVMy4qgvP"
+                }
+            ]
+        }
+    },
+    {
+        "id": "ac-canh-tan-nhan-loai-genx-cops-1999",
+        "title": "Đặc Cảnh Tân Nhân Loại – Gen‑X Cops",
+        "year": "1999",
+        "poster": "img/ac-canh-tan-nhan-loai-genx-cops-1999.webp",
+        "country": "Hồng Kông",
+        "movie-genre": "Hành động, Hình sự, Tội phạm, Viễn tưởng, Hài",
+        "actor": "Tạ Đình Phong, Phùng Đức Luân, Lý Xán Sâm",
+        "category": "phim-le",
+        "age": "",
+        "slide": "0",
+        "description": "Một cảnh sát lão làng (Eric Tsang) từng bị đồng nghiệp khinh khi nhưng vẫn được giao nhiệm vụ lãnh đạo một nhóm cảnh sát trẻ “Gen X” gồm Jack, Match và Alien—những học viên bị đá khỏi trường cảnh sát vì thái độ thiếu kỷ luật. Họ được đưa vào hoạt động ngầm để điều tra một nhóm buôn lậu vũ khí nằm vùng do Akatora (một tên tội phạm người Nhật) cầm đầu. Khi nhóm Gen‑X đi sâu vào thế giới ngầm, họ phát hiện âm mưu bán lô chất nổ cực lớn với mục đích khủng bố. Trong quá trình đó, bộ ba này vừa phải ứng phó với kẻ thù nguy hiểm, vừa phải vượt qua khác biệt cá nhân để hợp tác. Daniel Wu vào vai một tên trùm đường phố liên kết với mafia Nhật; Grace Yip đóng hacker Y2K giúp nhóm tiếp cận nội bộ. Tác phẩm kết hợp những màn hành động bạo lực, rượt đuổi tốc độ, và yếu tố tếu táo hài hước từ lối ứng xử nổi loạn của nhóm cảnh sát trẻ. Phim nổi bật bởi cảnh quay thực, kỹ xảo stunt cao, phong cách neon và nhịp điệu nhanh, phản ánh tinh thần tuổi trẻ đầy nhiệt huyết và phiêu lưu của Gen‑X Hong Kong cuối thiên niên kỷ.",
+        "sources": {
+            "Lồng Tiếng": [
+                {
+                    "name": "Server 1",
+                    "url": "https://short.icu/rWgJl3U_q"
+                }
+            ]
+        }
+    },
+    {
+        "id": "trong-an-trung-cang-rocknrollcop-1994",
+        "title": "Trọng Án Trung Cảng – Rock n’ Roll Cop",
+        "year": "1994",
+        "poster": "img/trong-an-trung-cang-rocknrollcop-1994.webp",
+        "country": "Hồng Kông, Trung Quốc",
+        "movie-genre": "Hành động, Hình sự",
+        "actor": "Anthony Wong Chau Sang, Ngô Hưng Quốc, Vu Vinh Quang, Carrie Ng Ka-Lai, Chen Ming Chen",
+        "category": "phim-le",
+        "age": "",
+        "slide": "0",
+        "description": "Một vụ cướp máu lạnh tại một trường Mahjong ở Hồng Kông khiến cảnh sát điều tra. Cảnh sát Anthony Wong (Anthony Wong Chau Sang) tham gia vụ án và bị điều đến Trung Quốc đại lục để hỗ trợ truy bắt băng nhóm “Khăn Đỏ Liên Lệ”. Anh được ghép đội với sĩ quan Trung Quốc Captain Wong (Wu Hsing‑kuo). Họ cùng hợp tác phá án xuyên biên giới và dần hiểu được sự khác biệt văn hóa trong cách làm việc. Carrie Ng vào vai Hou‑Yee, người yêu cũ của Hung, hiện đang giúp băng nhóm tội phạm, gây xung đột tình cảm và nghề nghiệp. Cuộc điều tra leo thang đến những màn rượt đuổi tốc độ, đấu súng rùng rợn và cuối cùng là trận hỗn loạn giữa Hong Kong và lực lượng đại lục. Phim khai thác các chủ đề như tương tác cảnh sát hai bên biên giới, mâu thuẫn giá trị, lòng trung thành và tinh thần hợp tác trước năm 1997. Phong cách quay nhanh, ánh sáng neon và bạo lực táo bạo tạo nên không khí căng thẳng và chân thực. Kết thúc mở, khi Hung qua mặt hiểm nguy và băng nhóm tội phạm bị triệt phá, khán giả cảm nhận rõ thông điệp về sự đoàn kết vượt qua biên giới.",
+        "sources": {
+            "Lồng Tiếng": [
+                {
+                    "name": "Server 1",
+                    "url": "https://short.icu/e_44oSEaU"
+                }
+            ]
+        }
+    },
+    {
+        "id": "bua-bo-cap-red-spell-spells-red-1983",
+        "title": "Bùa Bọ Cạp – Red Spell Spells Red",
+        "year": "1983",
+        "poster": "img/bua-bo-cap-red-spell-spells-red-1983.webp",
+        "country": "Hồng Kông",
+        "movie-genre": "Kinh dị, Hành động, Võ thuật",
+        "actor": "Thang Trấn Nghiệp, Poon Lai‑Yin",
+        "category": "phim-le",
+        "age": "18+",
+        "slide": "0",
+        "description": "Một đoàn sản xuất truyền hình do đạo diễn Stephen và MC Lý Ỵ Vỹ dẫn đầu đến Malaysia (bao gồm vùng Mã Lay Châu và Mã Lai) để sản xuất một tập phim về truyền thuyết căm scorpion (bọ cạp đỏ), được cho là một yêu thuật sư lùn bị phong ấn trong quan tài đá vì luyện ác đạo. Họ xâm nhập huyệt mộ và quay lại cảnh phong ấn. Khi đoàn đến sống tại nhà dài của bộ tộc, họ bị mời tham gia nghi lễ “kết hôn thử”, sau đó nhiều thành viên lần lượt bị chết một cách đáng sợ hoặc bị bọ cạp tấn công hàng loạt. Nữ MC vô tình dính nghi lễ thiên xiếp (天蠍降) và gây ra cái chết của chủ nhà. Đạo sĩ được gọi đến để trừ tà, phát hiện cô là cháu ngoại của yêu sư. Cả đoàn quay về Hồng Kông nhưng vẫn bị ma quỷ truy đuổi. Tăng dẫn đàn đưa áo xanh bảo hộ cho nữ chính, rồi sau nhiều bi kịch và hành động siêu nhiên, mọi thứ kết thúc trong bế tắc, khi yêu sư và linh hồn thống trị bị khống chế nhưng bí ẩn chưa được giải đáp. Phim chứa nhiều cảnh kinh dị bạo lực, tôn giáo bản địa, hiệu ứng quái dị với bọ cạp thực và bùa chú tôn giáo truyền thống. Phim nổi bật với độ kinh dị tàn bạo và yếu tố mê tín dân gian.",
+        "sources": {
+            "Lồng Tiếng": [
+                {
+                    "name": "Server 1",
+                    "url": "https://short.icu/QaXjbZ4kb"
+                }
+            ]
+        }
+    },
+    {
+        "id": "cao-oc-ma-am-operation-pink-squad-ii-1989",
+        "title": "Cao Ốc Ma Ám – Operation Pink Squad II",
+        "year": "1989",
+        "poster": "img/cao-oc-ma-am-operation-pink-squad-ii-1989.webp",
+        "country": "Hồng Kông",
+        "movie-genre": "Hài, Tội phạm, Kinh dị, Siêu nhiên",
+        "actor": "Bill Tung, Stanley Fung, Sibelle Hu, Sandra Ng, Ellen Chan, Ann Bridgewater, Billy Lau, Charlie Cho, Peter Chan Lung, Yip San",
+        "category": "phim-le",
+        "age": "",
+        "slide": "0",
+        "description": "Một tổ điều tra đặc biệt gồm nữ cảnh sát cải trang thành tiếp viên quán bar để phá một đường dây làm giả tiền. Họ chọn địa điểm giao dịch là một chung cư bị cho là ma ám. Khi nhóm cảnh sát tiến hành bắt giữ, một bóng hồn nữ bất ngờ xuất hiện phá vỡ kế hoạch. Kể từ đó, những cảnh rượt đuổi ma quái diễn ra khắp tòa nhà với đầu ma lơ lửng, cơ thể không đầu, thậm chí là máy bay trực thăng đồ chơi bay kỳ lạ. Họ buộc phải nhờ đến sự trợ giúp của một tăng niệt tế, và một nhóm yêu tinh Trung Hoa xuất hiện bất ngờ (có người chơi mandolin) để cứu xét diễn biến hỗn loạn này. Phim mang phong cách cực kỳ hài hước, những tình huống diễn ra nhanh, quái dị và vui nhộn. Những hiệu ứng siêu nhiên tuy thô sơ nhưng vẫn đủ gây ấn tượng trong từng cảnh quay. Sự pha trộn giữa yếu tố kinh dị và châm biếm khiến nội dung vừa kịch tính vừa giải trí. Cốt truyện có vẻ kỳ quái nhưng được giữ vững nhịp tốc độ cao và kịch tính thông qua cách dàn dựng độc đáo của đạo diễn Jeffrey Lau.",
+        "sources": {
+            "Lồng Tiếng": [
+                {
+                    "name": "Server 1",
+                    "url": "https://short.icu/33h5QCy"
+                }
+            ]
+        }
+    },
+    {
+        "id": "vo-danh-hidden-blade-2023",
+        "title": "Vô Danh – Hidden Blade",
+        "year": "2023",
+        "poster": "img/vo-danh-hidden-blade-2023.webp",
+        "country": "Trung Quốc",
+        "movie-genre": "Gián điệp, Chiến tranh, Chính kịch, Bí ẩn",
+        "actor": "Lương Triều Vỹ, Vương Nhất Bác, Châu Tấn, Hoàng Lỗi, Vương Diêu, Đổng Thành Bằng, Tường Gia Lâm, Trương Tĩnh Nghi",
+        "category": "phim-le",
+        "age": "",
+        "slide": "0",
+        "description": "Một nhóm điệp viên cộng sản hoạt động bí mật tại Thượng Hải trong thời kỳ Nhật Bản chiếm đóng, xây dựng mạng lưới tình báo dưới chính quyền bù nhìn của Vương Kính Nghi. Họ mạo hiểm lấy thông tin quan trọng nhằm làm lung lay hòa bình giả tạo và bảo vệ đất nước. Phim khai thác cấu trúc phi tuyến tính, khiến khán giả phải tập trung theo dõi từng đoạn ghép thời gian từ 1941 đến 1946. Lương Triều Vỹ trong vai Giám đốc Hè – một nhân vật mâu thuẫn tôn ti trật tự nhưng trung thành với chính quyền – tạo dấu ấn sâu sắc bằng ánh mắt lạnh lùng và câu chuyện đầy mâu thuẫn nội tâm. Vương Nhất Bác trong vai ông Di, người dấn thân vào âm mưu tình báo với tâm lý căng thẳng và đầy cảm xúc. Âm mưu dần hé lộ những âm mưu phản bội, chủ nghĩa hai mặt, và đằng sau đó là những mảnh quá khứ đầy bi kịch. Tác phẩm kết hợp yếu tố gián điệp căng thẳng, biên kịch tinh tế cùng hình ảnh quay phim và thiết kế phục trang phong phú, gợi nhớ đến các phim như Cliff Walkers và Lust, Caution về độ chi tiết lịch sử. Phim nhận nhiều lời khen cho diễn xuất, đặc biệt là màn thể hiện của Lương Triều Vỹ và Vương Nhất Bác, dù có ý kiến cho rằng cấu trúc cốt truyện quá rối khiến cảm xúc đôi khi bị đứt đoạn.",
+        "sources": {
+            "Lồng Tiếng": [
+                {
+                    "name": "Server 1",
+                    "url": "https://short.icu/5xteGoDgM"
+                }
+            ]
+        }
+    },
+    {
+        "id": "karaoke-ma-am-haunted-karaoke-1997",
+        "title": "Karaoke Ma Ám – Haunted Karaoke",
+        "year": "1997",
+        "poster": "img/karaoke-ma-am-haunted-karaoke-1997.webp",
+        "country": "Hồng Kông",
+        "movie-genre": "Hài, Kinh dị",
+        "actor": "Đào Đại Vũ, Lê Diệu Tường, Chung Chân, Trương Quốc Anh, Vạn Vạn Hân, Ng Chí Hùng, Lý Thiệu Kỷ, Lộ Lệ, Helena Law Lan",
+        "category": "phim-le",
+        "age": "",
+        "slide": "0",
+        "description": "Một vụ hỏa hoạn ở quán karaoke “New World Karaoke” khiến hơn 20 thanh niên thiệt mạng. Một năm sau, linh hồn của họ quay trở lại để báo thù. Hai viên cảnh sát Tào Đại Vũ và Lê Diệu Tường bị cuốn vào thế giới siêu nhiên khi điều tra vụ án. Họ phát hiện quán karaoke không chỉ là hiện trường vụ cháy mà còn là nơi giam giữ các hồn ma đang tìm cách tố cáo kẻ chủ mưu. Trong khi theo dấu vết, họ đối mặt với những hiện tượng kỳ quái, karaoke trở thành “sân khấu” ám ảnh. Ngoài yếu tố kinh dị rùng rợn, phim còn xen kẽ yếu tố hài đen với phong cách làm việc dễ thương và nửa mùa của hai ngài cảnh sát. Chung Chân xuất hiện như một cô ma bí ẩn, xây dựng tình cảm kỳ lạ với Lê Diệu Tường. Monica Chan vào vai cấp trên, tạo thêm nhiều chi tiết hài hước và gây phản ứng trái chiều với khán giả. Tác phẩm này từng bị đánh giá là hời hợt và dễ bị lãng quên, dù vẫn có những cảnh trực quan khá ấn tượng.",
+        "sources": {
+            "Lồng Tiếng": [
+                {
+                    "name": "Server 1",
+                    "url": "https://short.icu/H2p1mCUi4"
+                }
+            ]
+        }
+    },
+    {
+        "id": "khau-vi-kinh-di-bad-taste-1987",
+        "title": "Khẩu Vị Kinh Dị - Bad Taste",
+        "year": "1987",
+        "poster": "img/khau-vi-kinh-di-bad-taste-1987.webp",
+        "country": "New Zealand",
+        "movie-genre": "Kinh dị, Khoa học viễn tưởng",
+        "actor": "Peter O'Herne, Pete Smith, Terry Potter, Craig Smith",
+        "category": "phim-le",
+        "age": "",
+        "slide": "0",
+        "description": "Bộ phim **Bad Taste (1987)** kể về cuộc điều tra của bốn đặc vụ Derek, Frank, Ozzy và Barry thuộc Cục Điều tra và Phòng vệ Thiên văn (AIDS) sau khi toàn bộ cư dân thị trấn Kaihoro biến mất. Họ phát hiện thị trấn bị xâm lược bởi những sinh vật ngoài hành tinh ăn thịt người, cải trang thành con người. Barry giết một trong số chúng và bị truy sát, trong khi Derek bắt giữ và tra tấn một sinh vật tên Robert nhưng bị tấn công và rơi xuống vực, tưởng rằng đã chết. Giles, một người quyên góp tình cờ đi qua, bị bắt và chuẩn bị bị nấu chín, nhưng Derek và nhóm đặc vụ kịp thời cứu thoát. Frank cải trang thành người ngoài hành tinh và phát hiện kế hoạch biến con người thành thức ăn. Sau khi trốn thoát, họ lên kế hoạch phản công, giải cứu Giles và mở cuộc đấu súng với lũ quái vật. Derek, dù bị thương nặng và mất trí, vẫn tái xuất với cưa máy, tiêu diệt nhiều kẻ thù và thay thế phần não bị hỏng của mình bằng não người ngoài hành tinh. Trong trận chiến cuối cùng, căn nhà biến thành tàu vũ trụ khổng lồ đưa thủ lĩnh Lord Crumb lên không gian. Derek phục kích và giết Crumb bằng cưa máy, sau đó tuyên chiến với bọn chúng khi phóng tàu bay về hành tinh của quái vật. Trên Trái Đất, Frank, Ozzy và Giles sống sót và rời khỏi thị trấn đầy hỗn loạn.",
+        "sources": {
+            "Lồng Tiếng": [
+                {
+                    "name": "Server 1",
+                    "url": "https://short.icu/QAeJ0bL8i"
+                }
+            ]
+        }
+    },
+    {
+        "id": "hong-lau-xuan-mong-erotic-dream-of-the-red-chamber-1978",
+        "title": "Hồng Lâu Xuân Mộng - Erotic Dream of the Red Chamber",
+        "year": "1978",
+        "poster": "img/hong-lau-xuan-mong-erotic-dream-of-the-red-chamber-1978.webp",
+        "country": "Hồng Kông",
+        "movie-genre": "Khiêu dâm,  Cổ trang",
+        "actor": "Trương Quốc Vinh, Thẩm Khánh Nghi, Hoàng Hạnh Thụ",
+        "category": "phim-le",
+        "age": "18+",
+        "slide": "0",
+        "description": "Một tác phẩm gợi cảm châu Á mang màu sắc độc đáo, có thể sánh với những bộ phim kinh điển thuộc dòng gợi cảm châu Âu như câu chuyện về O, Emanuelle và những mối tình nồng cháy. Dựa trên một vở kinh kịch Quảng Đông, bộ phim được dàn dựng công phu này kể về Pao-Yu, chàng thiếu niên 15 tuổi cùng sự say mê của anh dành cho vẻ đẹp và sự quyến rũ của người phụ nữ.",
+        "sources": {
+            "Lồng Tiếng": [
+                {
+                    "name": "Server 1",
+                    "url": "https://short.icu/AnEeeYulR"
+                }
+            ]
+        }
+    },
+    {
+        "id": "thieu-nu-phan-kim-lien-the-amorous-lotus-pan-1994",
+        "title": "Thiếu Nữ Phan Kim Liên  - The Amorous Lotus Pan",
+        "year": "1994",
+        "poster": "img/thieu-nu-phan-kim-lien-the-amorous-lotus-pan-1994.webp",
+        "country": "Hồng Kông",
+        "movie-genre": "Kịch, Cổ Trang",
+        "actor": "Đơn Lập Văn, Vương Tư Ý",
+        "category": "phim-le",
+        "age": "18+",
+        "slide": "0",
+        "description": "Đơn Lập Văn – trong vai kép Võ Tòng và Tây Môn Khánh. Câu chuyện được kể ngược dòng thời gian, xoay quanh Võ Tòng, người được ân xá khỏi ngục tù và tìm đến Phan Kim Liên đầy nhục dục (do Hoàng Mỹ Tĩnh thủ vai) để báo thù cho cái chết của anh trai mình. Trong nỗi hối hận, Kim Liên kể lại cuộc đời bi thương của mình, bắt đầu từ khi cô bị bán vào nhà họ Trương giàu có làm hầu gái. Nhưng tại đây, cô bị ông chủ cưỡng bức và dần sa vào mối tình vụng trộm với Tây Môn Khánh cùng nhiều kẻ hào hoa khác.",
+        "sources": {
+            "Lồng Tiếng": [
+                {
+                    "name": "Server 1",
+                    "url": "https://short.icu/Knmk62nMm"
+                }
+            ]
+        }
+    },
+    {
         "id": "tam-canh-three-extremes-2-2002",
         "title": "Tam Canh - Three Extremes 2",
         "year": "2002",

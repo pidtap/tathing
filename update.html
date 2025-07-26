@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="brand/favion.png">
+    <title>Cập nhật dữ liệu phim</title>
+
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+
+<body class="update-page">
+
+    <div id="password-overlay">
+        <div id="password-prompt">
+            <h2>Yêu cầu xác thực</h2>
+            <p>Vui lòng nhập tên đăng nhập và mật khẩu để truy cập trang quản trị.</p>
+            <form id="password-form">
+                <input type="text" id="username-input" placeholder="Tên đăng nhập" required>
+                <input type="password" id="password-input" placeholder="••••••••" required>
+                <button type="submit" class="action-btn add-btn">Truy cập</button>
+            </form>
+            <p id="password-error"></p>
+        </div>
+    </div>
+
+    <div id="main-content" style="display: none;">
+        <header>
+            <div class="header-container">
+                <a href="index.html" id="logo-link"><img id="logo" src="brand/logo.png" alt="Logo Phim Nhanh"></a>
+                <div class="search-group">
+                    <input type="search" id="search-input" placeholder="Tìm phim trong danh sách..." />
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </header>
+
+        <main class="update-container">
+            <div class="update-header">
+                <div>
+                    <h1>Danh sách phim</h1>
+                    <span id="movie-count-display"></span>
+                </div>
+                <div class="header-buttons"> <button class="action-btn add-btn" id="add-new-movie-btn"><i
+                            class="fas fa-plus"></i> Thêm phim mới</button>
+                    <button class="action-btn download-btn" id="download-btn"><i class="fas fa-download"></i> Tạo và Tải
+                        file data.js</button>
+                </div>
+            </div>
+            <div id="movie-list">
+            </div>
+            <div id="pagination-container" class="pagination-controls">
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-top">
+                    <div class="footer-col about-us">
+                        <img class="footer-logo" src="brand/logo.png" alt="Logo Phim Nhanh">
+                        <p>HONGKONG MOVIE VIETSUB<br>
+                            Web xem phim chủ chất lượng của TatHing.</p>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i>Việt Nam, Trái Đất, Mặt Trời</li>
+                            <li><i class="fas fa-envelope"></i>tathing056@gmail.com</li>
+                            <li><i class="fas fa-phone"></i>(+84) 918 273645 </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col links-group">
+                        <div class="quick-links">
+                            <h3>Liên Kết Nhanh</h3>
+                            <ul>
+                                <li><a href="index.html">Trang Chủ</a></li>
+                                <li><a href="#">Điều Khoản Dịch Vụ</a></li>
+                                <li><a href="#">Chính Sách Bảo Mật</a></li>
+                            </ul>
+                        </div>
+                        <div class="connect">
+                            <h3>Kết Nối</h3>
+                            <p>Theo dõi chúng tôi trên các mạng xã hội để không bỏ lỡ những bộ phim hay nhất.</p>
+                            <div class="social-icons">
+                                <a href="https://www.facebook.com/tathingsubber" target="_blank"
+                                    aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" target="_blank" aria-label="Telegram"><i
+                                        class="fab fa-telegram-plane"></i></a>
+                                <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                                <a href="#" target="_blank" aria-label="Web"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-map-row">
+                    <h3>Bản Đồ</h3>
+                    <div class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15743719.228722906!2d95.23465243854287!3d15.555198294291175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31157a4d736a1e5f%3A0xb03bb0c9e2fe62be!2zVmnhu4d0IE5hbQ!5e0!3m2!1svi!2sus!4v1753078778948!5m2!1svi!2sus"
+                            width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 HongKong Movie Vietsub. Phụ Đề Việt Ngữ bởi TatHing</p>
+            </div>
+        </footer>
+    </div>
+
+
+    <div id="edit-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Thêm/Sửa phim</h2>
+                <span class="close-btn">×</span>
+            </div>
+
+            <form id="edit-form">
+                <input type="hidden" id="movie-id-input">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="title">Tiêu đề</label>
+                        <input type="text" id="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="year">Năm sản xuất</label>
+                        <input type="text" id="year">
+                    </div>
+
+                    <div class="form-group autofill-group">
+                        <button type="button" class="action-btn add-btn" id="autofill-btn"><i class="fas fa-magic"></i>
+                            Lấy thông tin tự động</button>
+                        <div class="loader" id="autofill-loader"></div>
+                        <span style="color: var(--color-text-tertiary); font-size: 0.8rem;">(Dựa vào Tiêu đề và
+                            Năm)</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="id">ID (tự động tạo)</label>
+                        <input type="text" id="id" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="poster">Link Poster (tự động tạo)</label>
+                        <input type="text" id="poster">
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Quốc gia</label>
+                        <input type="text" id="country">
+                    </div>
+                    <div class="form-group">
+                        <label for="movie-genre">Thể loại (cách nhau bởi dấu phẩy ,)</label>
+                        <input type="text" id="movie-genre">
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="actor">Diễn viên (cách nhau bởi dấu phẩy ,)</label>
+                        <input type="text" id="actor">
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Phân loại (phim-le, phim-bo)</label>
+                        <input type="text" id="category" value="phim-le">
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Giới hạn tuổi</label>
+                        <select id="age">
+                            <option value="">None</option>
+                            <option value="18+">18+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="slide">Hiển thị trên Slide (1 = có, 0 = không)</label>
+                        <select id="slide">
+                            <option value="0">Không</option>
+                            <option value="1">Có</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="description">Mô tả</label>
+                        <textarea id="description"></textarea>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Nguồn phát</label>
+                        <div id="sources-container">
+                        </div>
+                        <button type="button" class="action-btn add-btn" id="add-source-type-btn"
+                            style="margin-top: 10px; width: fit-content;"><i class="fas fa-plus"></i> Thêm Nguồn
+                            Phát</button>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="action-btn secondary-btn" id="clear-draft-btn"
+                        style="display: none;">Xóa Nháp</button>
+                    <button type="submit" class="action-btn add-btn">Lưu thay đổi</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="custom-alert-overlay">
+        <div id="custom-alert-box">
+            <div id="custom-alert-icon"><i class="fas fa-check-circle"></i></div>
+            <p id="custom-alert-message">Nội dung thông báo</p>
+            <div id="custom-alert-buttons">
+                <button id="custom-alert-confirm-btn">OK</button>
+                <button id="custom-alert-cancel-btn">Hủy</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="logic/update.js"></script>
+    <div id="api-key-overlay" style="display: none;">
+        <div id="api-key-prompt">
+            <h2>Nhập API Key</h2>
+            <p>Vui lòng nhập Google AI API Key của bạn để sử dụng tính năng lấy thông tin tự động.</p>
+            <form id="api-key-form">
+                <input type="password" id="api-key-input" placeholder="•••••••••••••••••••••••••••••" required>
+                <button type="submit" id="save-api-key-btn" class="action-btn add-btn">Lưu và Tiếp tục</button>
+            </form>
+            <p id="api-key-error" style="color: #dc3545; margin-top: 15px; min-height: 1em; font-weight: bold;"></p>
+        </div>
+    </div>
+</body>
+
+</html>
